@@ -1,0 +1,107 @@
+
+-Goal-
+Given a text document that is potentially relevant to this activity, first identify all entities needed from the text in order to capture the information and ideas in the text.
+Next, report all relationships among the identified entities.
+
+-Steps-
+1. Identify all entities. For each identified entity, extract the following information:
+- entity_name: Name of the entity, capitalized
+- entity_type: Suggest several labels or categories for the entity. The categories should not be specific, but should be as general as possible.
+- entity_description: Comprehensive description of the entity's attributes and activities
+Format each entity as ("entity"{tuple_delimiter}<entity_name>{tuple_delimiter}<entity_type>{tuple_delimiter}<entity_description>)
+
+2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are *clearly related* to each other.
+For each pair of related entities, extract the following information:
+- source_entity: name of the source entity, as identified in step 1
+- target_entity: name of the target entity, as identified in step 1
+- relationship_description: explanation as to why you think the source entity and the target entity are related to each other
+- relationship_strength: a numeric score indicating strength of the relationship between the source entity and target entity
+Format each relationship as ("relationship"{tuple_delimiter}<source_entity>{tuple_delimiter}<target_entity>{tuple_delimiter}<relationship_description>{tuple_delimiter}<relationship_strength>)
+
+3. Return output in  as a single list of all the entities and relationships identified in steps 1 and 2. Use **{record_delimiter}** as the list delimiter.
+
+4. If you have to translate into , just translate the descriptions, nothing else!
+
+5. When finished, output {completion_delimiter}.
+
+-Examples-
+######################
+
+Example 1:
+
+text:
+,,1,2
+
+------------------------
+output:
+("entity"{tuple_delimiter}NO ENTITIES FOUND{tuple_delimiter}NO ENTITIES FOUND{tuple_delimiter}No entities were found in the provided text)
+{completion_delimiter}
+#############################
+
+
+Example 2:
+
+text:
+table_name,column_name,data_type,description,join_condition,sample_data
+Customer,Customer_Id,INTEGER,Unique identifier for each customer,Join Keys: Invoice.Customer_id, Streams.Customer_id,1
+Customer,First_Name,VARCHAR(15),First name of the customer,,Freedman
+Customer,Last_Name,VARCHAR(15),Last name of the customer,,Akroyd
+Customer,Email_ID,VARCHAR(32),Email address of the customer,,fakroyd0@umich.edu
+Customer,Phone_Number,VARCHAR(12),Phone number of the customer,,913-680-9878
+Customer,State,VARCHAR(19),State where the customer resides,,Kansas
+Customer,Country,VARCHAR(13),Country where the customer resides,,United States
+Customer,Sign_up_date,VARCHAR(11),Date when the customer signed up,,07-Aug-2010
+
+------------------------
+output:
+("entity"{tuple_delimiter}CUSTOMER{tuple_delimiter}CONCEPT{tuple_delimiter}A customer is an individual who has signed up for a service or purchased a product, and has a unique identifier})
+{record_delimiter}
+("entity"{tuple_delimiter}INVOICE{tuple_delimiter}CONCEPT{tuple_delimiter}An invoice is a document that lists the goods or services provided to a customer, along with the amount due})
+{record_delimiter}
+("entity"{tuple_delimiter}STREAMS{tuple_delimiter}CONCEPT{tuple_delimiter}Streams refer to the flow of data or information, possibly related to customer activity or transactions})
+{record_delimiter}
+("entity"{tuple_delimiter}CUSTOMER_ID{tuple_delimiter}ATTRIBUTE{tuple_delimiter}A unique identifier for each customer, used to join tables and track customer information})
+{record_delimiter}
+("entity"{tuple_delimiter}FIRST_NAME{tuple_delimiter}ATTRIBUTE{tuple_delimiter}The first name of the customer, used to personalize interactions and communications})
+{record_delimiter}
+("entity"{tuple_delimiter}LAST_NAME{tuple_delimiter}ATTRIBUTE{tuple_delimiter}The last name of the customer, used to personalize interactions and communications})
+{record_delimiter}
+("entity"{tuple_delimiter}EMAIL_ID{tuple_delimiter}ATTRIBUTE{tuple_delimiter}The email address of the customer, used for communication and notification})
+{record_delimiter}
+("entity"{tuple_delimiter}PHONE_NUMBER{tuple_delimiter}ATTRIBUTE{tuple_delimiter}The phone number of the customer, used for communication and notification})
+{record_delimiter}
+("entity"{tuple_delimiter}STATE{tuple_delimiter}ATTRIBUTE{tuple_delimiter}The state where the customer resides, used for demographic analysis and targeting})
+{record_delimiter}
+("entity"{tuple_delimiter}COUNTRY{tuple_delimiter}ATTRIBUTE{tuple_delimiter}The country where the customer resides, used for demographic analysis and targeting})
+{record_delimiter}
+("entity"{tuple_delimiter}SIGN_UP_DATE{tuple_delimiter}ATTRIBUTE{tuple_delimiter}The date when the customer signed up for the service or product, used for tracking and analysis})
+{record_delimiter}
+("relationship"{tuple_delimiter}CUSTOMER{tuple_delimiter}INVOICE{tuple_delimiter}A customer is associated with one or more invoices, which list the goods or services provided{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}CUSTOMER{tuple_delimiter}STREAMS{tuple_delimiter}A customer is associated with one or more streams of data or information, possibly related to their activity or transactions{tuple_delimiter}5)
+{record_delimiter}
+("relationship"{tuple_delimiter}CUSTOMER_ID{tuple_delimiter}CUSTOMER{tuple_delimiter}A customer ID is a unique identifier for each customer, used to track and analyze customer information{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}FIRST_NAME{tuple_delimiter}CUSTOMER{tuple_delimiter}A first name is an attribute of a customer, used to personalize interactions and communications{tuple_delimiter}6)
+{record_delimiter}
+("relationship"{tuple_delimiter}LAST_NAME{tuple_delimiter}CUSTOMER{tuple_delimiter}A last name is an attribute of a customer, used to personalize interactions and communications{tuple_delimiter}6)
+{record_delimiter}
+("relationship"{tuple_delimiter}EMAIL_ID{tuple_delimiter}CUSTOMER{tuple_delimiter}An email ID is an attribute of a customer, used for communication and notification{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}PHONE_NUMBER{tuple_delimiter}CUSTOMER{tuple_delimiter}A phone number is an attribute of a customer, used for communication and notification{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}STATE{tuple_delimiter}CUSTOMER{tuple_delimiter}A state is an attribute of a customer, used for demographic analysis and targeting{tuple_delimiter}5)
+{record_delimiter}
+("relationship"{tuple_delimiter}COUNTRY{tuple_delimiter}CUSTOMER{tuple_delimiter}A country is an attribute of a customer, used for demographic analysis and targeting{tuple_delimiter}5)
+{record_delimiter}
+("relationship"{tuple_delimiter}SIGN_UP_DATE{tuple_delimiter}CUSTOMER{tuple_delimiter}A sign-up date is an attribute of a customer, used for tracking and analysis{tuple_delimiter}8)
+{completion_delimiter}
+#############################
+
+
+
+-Real Data-
+######################
+text: {input_text}
+######################
+output:
