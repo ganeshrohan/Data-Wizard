@@ -2,7 +2,7 @@
 
 An enterprise-style analytics workbench that turns natural language into trusted data insights through Graph-RAG-powered SQL generation, visual code lineage, and conversational CSV analysis. Designed to improve both query accuracy and user trust, the platform unifies structured database querying, explainable AI, and no-code analytics in a single experience.
 
-![Project Banner](images/banner.png)
+![Project Banner](Screenprints/Home.png)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.9-blue" />
@@ -21,6 +21,10 @@ Data teams often face a familiar problem: business users need fast answers, but 
 Rather than treating Text-to-SQL as a standalone generation problem, this system approaches it as an end-to-end analytics workflow. It combines semantic retrieval, SQL generation, lineage transparency, and interactive exploration so users can move from question to validated insight with greater confidence. 
 
 ---
+![Project Banner](Screenprints/SQL-Generation.png)
+
+---
+![Project Banner](Screenprints/Data-rep.png)
 
 ## What Makes It Different
 
@@ -40,6 +44,9 @@ The result is a more production-oriented workflow that not only answers question
 - Deliver all of the above through a single Streamlit-based workbench. 
 
 ---
+![Project Banner](Screenprints/code-lineage.png) 
+
+![Project Banner](Screenprints/data-explore.png) 
 
 ## Architecture
 
@@ -63,6 +70,8 @@ The platform follows a dual-pathway architecture that supports both database-cen
 - The visualization layer enables drag-and-drop style exploration for deeper analysis. 
 
 ---
+![Project Banner](Screenprints/Ad-Hoc-file-analysis.png) 
+
 
 ## System Components
 
@@ -90,7 +99,7 @@ This project improves retrieval by grouping related tables into concept-level me
 
 Trust is a major adoption barrier for AI-generated SQL. Even when a query appears correct, users still need visibility into how source tables, joins, and transformations contribute to the final output.
 
-To address that, the system includes an automated code lineage engine that transforms SQL into Mermaid-based diagrams. This gives users a transparent, column-level view of the query flow, making the output easier to validate, debug, and audit. [file:1]
+To address that, the system includes an automated code lineage engine that transforms SQL into Mermaid-based diagrams. This gives users a transparent, column-level view of the query flow, making the output easier to validate, debug, and audit. 
 
 ---
 
@@ -112,7 +121,12 @@ To address that, the system includes an automated code lineage engine that trans
 
 The project compares a traditional metadata approach with an enriched knowledge-base design for SQL generation quality. The evaluation shows that the enriched Graph-RAG configuration improved required-data matching across complex test cases and delivered stronger semantic accuracy than the baseline approach.
 
-The findings reinforce a key design principle: reliable Text-to-SQL performance depends not just on model capability, but on the structure and richness of the metadata made available to the model.
+The findings reinforce a key design principle: 
+- Hypothesis Confirmed: An Enriched Knowledge Base is proven to significantly boost Text-to-SQL accuracy and reliability.
+
+- Transparency Enables Trust: Automated code lineage provides critical auditability, which is essential for enterprise adoption.
+
+- Unified Workbench Adds Value: The integrated solution effectively bridges the gap between user intent and complex data retrieval.
 
 ---
 
@@ -141,9 +155,11 @@ This project demonstrates how AI-assisted analytics can be made more useful in e
 
 ---
 
-## License
+## Contribute and Extend
 
-Choose a license that fits your intended use, such as MIT, Apache-2.0, or a private/internal license.
+This project is open for contributions and experimentation. Developers, researchers, and data professionals are welcome to improve SQL generation, lineage visualization, interactive analytics, and overall system reliability.
+
+New ideas, feature extensions, and performance improvements are encouraged.
 
 ---
 
