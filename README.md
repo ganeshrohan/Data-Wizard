@@ -2,7 +2,7 @@
 
 An enterprise-style analytics workbench that turns natural language into trusted data insights through Graph-RAG-powered SQL generation, visual code lineage, and conversational CSV analysis. Designed to improve both query accuracy and user trust, the platform unifies structured database querying, explainable AI, and no-code analytics in a single experience.
 
-![Project Banner](images/banner.png)
+![Project Banner](Screenprints/Home.png.png)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.9-blue" />
@@ -90,7 +90,7 @@ This project improves retrieval by grouping related tables into concept-level me
 
 Trust is a major adoption barrier for AI-generated SQL. Even when a query appears correct, users still need visibility into how source tables, joins, and transformations contribute to the final output.
 
-To address that, the system includes an automated code lineage engine that transforms SQL into Mermaid-based diagrams. This gives users a transparent, column-level view of the query flow, making the output easier to validate, debug, and audit. [file:1]
+To address that, the system includes an automated code lineage engine that transforms SQL into Mermaid-based diagrams. This gives users a transparent, column-level view of the query flow, making the output easier to validate, debug, and audit. 
 
 ---
 
@@ -112,7 +112,12 @@ To address that, the system includes an automated code lineage engine that trans
 
 The project compares a traditional metadata approach with an enriched knowledge-base design for SQL generation quality. The evaluation shows that the enriched Graph-RAG configuration improved required-data matching across complex test cases and delivered stronger semantic accuracy than the baseline approach.
 
-The findings reinforce a key design principle: reliable Text-to-SQL performance depends not just on model capability, but on the structure and richness of the metadata made available to the model.
+The findings reinforce a key design principle: 
+- Hypothesis Confirmed: An Enriched Knowledge Base is proven to significantly boost Text-to-SQL accuracy and reliability.
+
+- Transparency Enables Trust: Automated code lineage provides critical auditability, which is essential for enterprise adoption.
+
+- Unified Workbench Adds Value: The integrated solution effectively bridges the gap between user intent and complex data retrieval.
 
 ---
 
