@@ -1,0 +1,72 @@
+{
+  "table_name": "account_dim",
+  "columns": [
+    {
+      "column_name": "account_id",
+      "data_type": "BIGINT",
+      "description": "Unique identifier for each account",
+      "join_condition": null,
+      "sample_data": 1
+    },
+    {
+      "column_name": "account_name",
+      "data_type": "VARCHAR(255)",
+      "description": "Name of the account",
+      "join_condition": null,
+      "sample_data": "Account A"
+    },
+    {
+      "column_name": "account_type",
+      "data_type": "VARCHAR(50)",
+      "description": "Type of account (e.g., Corporate)",
+      "join_condition": null,
+      "sample_data": "Corporate"
+    },
+    {
+      "column_name": "country",
+      "data_type": "VARCHAR(100)",
+      "description": "Country associated with the account",
+      "join_condition": null,
+      "sample_data": "USA"
+    },
+    {
+      "column_name": "business_unit",
+      "data_type": "VARCHAR(100)",
+      "description": "Business unit responsible for the account",
+      "join_condition": null,
+      "sample_data": "Investment"
+    },
+    {
+      "column_name": "effective_from_date",
+      "data_type": "DATE",
+      "description": "SCD Type 2 start date for the account",
+      "join_condition": null,
+      "sample_data": "2023-01-01",
+      "scd_type": 2
+    },
+    {
+      "column_name": "effective_to_date",
+      "data_type": "DATE",
+      "description": "SCD Type 2 end date (NULL if current)",
+      "join_condition": null,
+      "sample_data": null,
+      "scd_type": 2
+    },
+    {
+      "column_name": "is_current",
+      "data_type": "BOOLEAN",
+      "description": "Flag to indicate if this is the current record",
+      "join_condition": null,
+      "sample_data": true,
+      "scd_type": 2
+    },
+    {
+      "column_name": "version",
+      "data_type": "INT",
+      "description": "Version of the record",
+      "join_condition": null,
+      "sample_data": 1,
+      "scd_type": 2
+    }
+  ]
+}

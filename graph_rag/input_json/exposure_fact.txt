@@ -1,0 +1,89 @@
+{
+  "table_name": "exposure_fact",
+  "columns": [
+    {
+      "column_name": "exposure_id",
+      "data_type": "BIGINT",
+      "description": "Unique identifier for each exposure",
+      "join_condition": null,
+      "sample_data": 1
+    },
+    {
+      "column_name": "account_id",
+      "data_type": "BIGINT",
+      "description": "Foreign key to account_dim",
+      "join_condition": "Join Keys: account_dim.account_id",
+      "sample_data": 1
+    },
+    {
+      "column_name": "security_id",
+      "data_type": "BIGINT",
+      "description": "Foreign key to security_dim",
+      "join_condition": "Join Keys: security_dim.security_id",
+      "sample_data": 1001
+    },
+    {
+      "column_name": "date_key",
+      "data_type": "DATE",
+      "description": "Foreign key to date_dim",
+      "join_condition": "Join Keys: date_dim.date_key",
+      "sample_data": "2024-01-01"
+    },
+    {
+      "column_name": "currency_code",
+      "data_type": "VARCHAR(10)",
+      "description": "Foreign key to currency_dim",
+      "join_condition": "Join Keys: currency_dim.currency_code",
+      "sample_data": "USD"
+    },
+    {
+      "column_name": "region_id",
+      "data_type": "BIGINT",
+      "description": "Foreign key to region_dim",
+      "join_condition": "Join Keys: region_dim.region_id",
+      "sample_data": 1
+    },
+    {
+      "column_name": "exposure_amount",
+      "data_type": "DECIMAL(18, 4)",
+      "description": "The amount of exposure in the respective currency",
+      "join_condition": null,
+      "sample_data": 500000
+    },
+    {
+      "column_name": "exposure_value",
+      "data_type": "DECIMAL(18, 4)",
+      "description": "Calculated value of exposure",
+      "join_condition": null,
+      "sample_data": 550000
+    },
+    {
+      "column_name": "market_value",
+      "data_type": "DECIMAL(18, 4)",
+      "description": "Market value of exposure",
+      "join_condition": null,
+      "sample_data": 600000
+    },
+    {
+      "column_name": "risk_category",
+      "data_type": "VARCHAR(100)",
+      "description": "Category of risk (e.g., High Risk)",
+      "join_condition": null,
+      "sample_data": "High Risk"
+    },
+    {
+      "column_name": "source_system",
+      "data_type": "VARCHAR(50)",
+      "description": "Source system for the exposure data",
+      "join_condition": null,
+      "sample_data": "System A"
+    },
+    {
+      "column_name": "load_timestamp",
+      "data_type": "TIMESTAMP",
+      "description": "Timestamp when the record was loaded",
+      "join_condition": null,
+      "sample_data": "CURRENT_TIMESTAMP"
+    }
+  ]
+}

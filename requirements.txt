@@ -1,0 +1,12 @@
+langchain
+pandas
+pydantic
+snowflake_snowpark_python
+snowflake-snowpark-python[pandas]
+streamlit
+unstructured
+tiktoken
+openai
+black
+replicate
+boto3

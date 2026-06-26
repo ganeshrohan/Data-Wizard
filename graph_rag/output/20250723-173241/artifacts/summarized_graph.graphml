@@ -1,0 +1,554 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d6" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d5" for="edge" attr.name="description" attr.type="string" />
+  <key id="d4" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d3" for="node" attr.name="entity_type" attr.type="string" />
+  <key id="d2" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="description" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="NETFLIX ANALYTICS SCHEMA">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">Enhanced metadata framework for analyzing customer behavior, content performance, and revenue tracking, supporting Graph RAG traversal for natural language queries to SQL}</data>
+      <data key="d2">6560620170abc6e57b18b7932d106d3f</data>
+    </node>
+    <node id="STREAMS">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">Primary fact table recording atomic streaming events with aliases 'viewing_history' and 'plays'. Stores engagement metrics in Netflix.Consum database schema}</data>
+      <data key="d2">6560620170abc6e57b18b7932d106d3f</data>
+      <data key="d3">CONCEPT</data>
+    </node>
+    <node id="CUSTOMER">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">Based on the provided descriptions for the **CUSTOMER** entity, the following consolidated summary is generated:
+
+The **CUSTOMER** entity is a dimension table that serves as the authoritative source for subscriber master data within the data warehouse. It stores comprehensive user information essential for analytical purposes and is commonly aliased as "subscribers" in downstream processes. This table is directly linked to critical business data sources, including streaming events and invoices, to enable multifaceted analysis. Its primary analytical functions include:  
+- **Segmentation** of subscribers based on user attributes  
+- **Engagement analysis** through correlations with streaming activity  
+- **Lifetime Value (LTV) calculations** leveraging integrated invoice and behavioral data  
+
+The table's design supports holistic customer analytics, unifying identity, transactional, and behavioral data to drive insights into subscriber value and engagement patterns. All descriptions consistently emphasize its role as a master data repository optimized for LTV-focused analytics and segmentation workflows.</data>
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7,6560620170abc6e57b18b7932d106d3f,cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">CONCEPT</data>
+    </node>
+    <node id="CONTENT">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">The **CONTENT** entity is a catalog table that contains detailed information about video titles, serving as a foundational dataset for analyzing title performance. It is explicitly connected to streaming events data to enable comprehensive performance analysis, such as viewership metrics and engagement trends. This table is also commonly aliased as **titles** in the system, reflecting its role as the primary reference for video content metadata. The catalog is specifically designed to support analytical workflows, ensuring seamless integration with streaming event records for efficient data-driven insights.</data>
+      <data key="d2">6560620170abc6e57b18b7932d106d3f,cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">CONCEPT</data>
+    </node>
+    <node id="INVOICE">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">Based on the provided descriptions for the **INVOICE** entity, the following coherent summary is synthesized:
+
+The **INVOICE** table stores subscription billing records associated with customers, serving as a core component for financial analysis. It contains payment details and service period information to support revenue tracking and analysis. Additionally, this table is instrumental in calculating customer lifetime value (LTV) metrics, linking billing data directly to customer relationships. Key attributes include payment specifics and defined service periods, enabling comprehensive revenue management and customer-centric financial insights.
+
+*Key elements consolidated from all descriptions*:  
+- **Purpose**: Revenue tracking, analysis, and lifetime value metrics  
+- **Content**: Subscription billing records with payment details and service periods  
+- **Context**: Direct association with customer relationships  
+- **Scope**: Supports both operational revenue management and strategic customer value assessment</data>
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7,6560620170abc6e57b18b7932d106d3f</data>
+      <data key="d3">CONCEPT</data>
+    </node>
+    <node id="STREAM_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Unique surrogate key identifier for stream events in the streams table, integer data type}</data>
+      <data key="d2">6560620170abc6e57b18b7932d106d3f</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="CUSTOMER_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1" />
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7,6560620170abc6e57b18b7932d106d3f,cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="CONTENT_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The CONTENT_ID is an integer column that serves dual roles across related database tables. In the **content catalog** (a dimension table), it functions as a **surrogate primary key** that uniquely identifies each content item, ensuring efficient and stable referencing in the data warehouse. 
+
+Simultaneously, in the **streams table** (a fact table), CONTENT_ID acts as a **foreign key** (with the alias `title_id`) linking streaming events to the corresponding entries in the content catalog. This establishes a critical relationship for analyzing content engagement, enabling joins between transactional streaming data and descriptive content metadata. 
+
+The integer data type supports optimized storage and indexing for both key roles. No contradictions exist; the descriptions reflect contextual usage: as a unique identifier in the content dimension and as a reference in the streams fact table.</data>
+      <data key="d2">6560620170abc6e57b18b7932d106d3f,cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STREAM_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Calendar date of streaming event in DD-Mon-YYYY format, stored as VARCHAR(11)}</data>
+      <data key="d2">6560620170abc6e57b18b7932d106d3f</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STREAM_TIME">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Local start time of stream in HH:MI AM/PM format, stored as VARCHAR(50)}</data>
+      <data key="d2">6560620170abc6e57b18b7932d106d3f</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STREAM_DURATION">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">&lt;think&gt;Okay, let's tackle this problem. The user wants a comprehensive summary of the STREAM_DURATION entity based on the provided descriptions. First, I need to parse the input data.
+
+The entity is STREAM_DURATION, and there are two descriptions. Both mention that it's the length of media playback or viewing duration in minutes, stored as an integer. The first description says "recorded as integer values," and the second specifies "integer data type." They seem consistent, but I should check for any contradictions. Both agree on the data type and the unit (minutes). 
+
+Now, I need to combine these into a single concise description. The key points are: measures media playback/viewing duration, in minutes, integer data type. Since both descriptions use slightly different terms ("media playback" vs. "viewing duration"), I can merge them by stating it represents both playback and viewing duration. Also, mention that it's a non-nullable integer to imply data integrity. 
+
+I should present this in third person, include the entity name, and ensure clarity. No contradictions here, so the summary should be straightforward. Make sure to avoid any markdown and keep it natural.
+&lt;/think&gt;
+
+STREAM_DURATION represents the total length of media consumption in a streaming context, specifically capturing both playback duration and viewing duration measured in whole minutes. This non-nullable integer field serves as a critical metric for analyzing user engagement patterns, content performance, and session length in media platforms. The dual descriptions confirm its consistent implementation as an integer data type (rather than decimal or time format) to simplify aggregation calculations and storage optimization. While described using slightly different terminology ("media playback" vs. "viewing duration"), both definitions align to indicate this metric excludes partial minutes and fractional time units, making it particularly valuable for business intelligence reports, viewer retention analysis, and content licensing calculations where minute-level granularity meets operational requirements.</data>
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7,6560620170abc6e57b18b7932d106d3f</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STREAM_RATING">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">### Summary for Entity: STREAM_RATING  
+The **STREAM_RATING** entity represents a user-assigned quality score for streamed content, recorded as an integer value on a scale of 1 to 5 stars. A rating of `1` indicates the lowest quality, while `5` signifies the highest. The data type is explicitly defined as an integer. If no rating is provided for a streaming session, the value is `NULL`, indicating an unrated session. This field is consistently used to capture user feedback on content quality, with `NULL` serving as a clear marker for missing or unsubmitted ratings.  
+
+#### Key Details from Descriptions:  
+- **Purpose**: User-generated quality assessment of streamed content.  
+- **Scale**: 1 (lowest) to 5 (highest) stars.  
+- **Data Type**: Integer.  
+- **NULL Handling**: `NULL` explicitly denotes unrated sessions or absent ratings.  
+- **Consistency**: All descriptions agree on the meaning of values and `NULL` semantics.  
+
+*Note: No contradictions were found; descriptions uniformly define the entity's structure and purpose.*</data>
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7,6560620170abc6e57b18b7932d106d3f</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STREAM">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">A table containing data about streaming events, including duration, user ratings, and precise timestamps for media consumption}</data>
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7</data>
+    </node>
+    <node id="STREAM_TIMESTAMP">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Precise ISO 8601 formatted start time derived from date and time components}</data>
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="INVOICE_NUMBER">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Unique surrogate key identifier for billing records, enforced as integer}Unique surrogate key identifier for billing records enforced as integer}</data>
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="SIGN_UP_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1" />
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7,cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="PLAN">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Subscription tier classification indicating service level (e.g., Premium, Basic, Standard)}</data>
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="SERVICE_PERIOD">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Active billing interval expressed as date range in 'YYYY-MM-DD to YYYY-MM-DD' format}</data>
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="PAYMENT_METHOD">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Financial instrument used for transaction settlement (e.g., Visa, MasterCard)}</data>
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="TOTAL">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Billed amount displayed with currency symbol representation}</data>
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="TOTAL_NUMERIC">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Derived monetary value without currency symbols stored as decimal for calculations}Derived monetary value without currency symbols, stored as decimal for calculations}</data>
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="SERVICE_START_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Extracted beginning date of service period from composite field}</data>
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="SERVICE_END_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Extracted expiration date of service period from composite field}</data>
+      <data key="d2">2c48c4a92d71155612fdbf70e9f0edc7</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="NETFLIX">
+      <data key="d0">SYSTEM</data>
+      <data key="d1">The database system storing customer and content data, serving as the foundational infrastructure for data management}</data>
+      <data key="d2">cffcda8a51675f1f2fce635cc560a247</data>
+    </node>
+    <node id="CONSUM">
+      <data key="d0">SCHEMA</data>
+      <data key="d1">A schema within the Netflix database that organizes and structures tables like customer and content}</data>
+      <data key="d2">cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">SCHEMA</data>
+    </node>
+    <node id="FIRST_NAME">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Legal given name of the customer, stored as a variable character string (VARCHAR) with a length of 15 characters}</data>
+      <data key="d2">cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="LAST_NAME">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Legal family name of the customer, stored as a variable character string (VARCHAR) with a length of 15 characters}</data>
+      <data key="d2">cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="EMAIL_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Unique account identifier for the customer, stored as a variable character string (VARCHAR) with a length of 32 characters}</data>
+      <data key="d2">cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="PHONE_NUMBER">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Primary contact number for the customer, stored as a variable character string (VARCHAR) with a length of 12 characters}</data>
+      <data key="d2">cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Sub-national region where the customer resides, stored as a variable character string (VARCHAR) with a length of 19 characters}</data>
+      <data key="d2">cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="COUNTRY">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">ISO country code indicating the customer's country, stored as a variable character string (VARCHAR) with a length of 13 characters}</data>
+      <data key="d2">cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="TITLE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Official display name of the content, stored as a variable character string (VARCHAR) with a length of 90 characters}</data>
+      <data key="d2">cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="EPISODE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Episode number (0 for movies), stored as an integer}</data>
+      <data key="d2">cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="GENRE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The **GENRE** entity represents a content classification category used to categorize media content. It is stored as a variable-length character string (`VARCHAR`) with a maximum length of 29 characters. Examples of genre classifications include **Documentary** and **Horror**, illustrating its role in organizing media into distinct thematic or stylistic groupings. This standardized data structure ensures efficient storage and retrieval of genre information within the database system.</data>
+      <data key="d2">2d6bb29d3cb7bfcead920894c56c1262,cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="DURATION">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1" />
+      <data key="d2">2d6bb29d3cb7bfcead920894c56c1262,cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="COST">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Monetary value associated with the content, stored as a decimal number with precision (10,2) for financial accuracy}</data>
+      <data key="d2">cffcda8a51675f1f2fce635cc560a247</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="MEDIA_CONTENT">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">A piece of media content such as a film or show, characterized by attributes like genre, duration, and release information}</data>
+      <data key="d2">2d6bb29d3cb7bfcead920894c56c1262</data>
+    </node>
+    <node id="COST_PER_STREAM">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Licensing expense incurred per view of media content, denominated in USD}</data>
+      <data key="d2">2d6bb29d3cb7bfcead920894c56c1262</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="RELEASE_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Original publication date of media content in DD-Mon-YYYY format}</data>
+      <data key="d2">2d6bb29d3cb7bfcead920894c56c1262</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="DISTRIBUTOR">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Entity holding distribution rights for media content}</data>
+      <data key="d2">2d6bb29d3cb7bfcead920894c56c1262</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <edge source="NETFLIX ANALYTICS SCHEMA" target="STREAMS">
+      <data key="d4">1.0</data>
+      <data key="d5">The streams table is a component of the Netflix Analytics Schema</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="NETFLIX ANALYTICS SCHEMA" target="CUSTOMER">
+      <data key="d4">1.0</data>
+      <data key="d5">The customer table is a component of the Netflix Analytics Schema</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="NETFLIX ANALYTICS SCHEMA" target="CONTENT">
+      <data key="d4">1.0</data>
+      <data key="d5">The content table is a component of the Netflix Analytics Schema</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="NETFLIX ANALYTICS SCHEMA" target="INVOICE">
+      <data key="d4">1.0</data>
+      <data key="d5">The invoice table is a component of the Netflix Analytics Schema</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="STREAMS" target="CUSTOMER">
+      <data key="d4">2.0</data>
+      <data key="d5">Streaming events link to customers via customer_id for user-level engagement analysis</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="STREAMS" target="CONTENT">
+      <data key="d4">2.0</data>
+      <data key="d5">Streaming events connect to content catalog via content_id for title performance analysis</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="STREAMS" target="INVOICE">
+      <data key="d4">2.0</data>
+      <data key="d5">Invoices connect to streaming events through customer linkage for revenue-per-content analysis</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_ID">
+      <data key="d4">2.0</data>
+      <data key="d5">Unique identifier attribute for stream events in the streams table</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="STREAMS" target="CUSTOMER_ID">
+      <data key="d4">2.0</data>
+      <data key="d5">Foreign key attribute in the streams tableForeign key attribute linking streams to customer dimension table</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="STREAMS" target="CONTENT_ID">
+      <data key="d4">2.0</data>
+      <data key="d5">Foreign key attribute in the streams tableForeign key attribute linking streams to content catalog table</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_DATE">
+      <data key="d4">2.0</data>
+      <data key="d5">Date attribute recording when streaming events occurredDate attribute for streaming events in the streams table</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_TIME">
+      <data key="d4">2.0</data>
+      <data key="d5">Time attribute for streaming events in the streams tableTime attribute indicating start time of streaming events</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_DURATION">
+      <data key="d4">2.0</data>
+      <data key="d5">Duration attribute measuring viewing length of streaming eventsDuration attribute for streaming events in the streams table</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_RATING">
+      <data key="d4">2.0</data>
+      <data key="d5">User rating attribute for streamed content in events tableRating attribute for streaming events in the streams table</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="CUSTOMER" target="INVOICE">
+      <data key="d4">18.0</data>
+      <data key="d5" />
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7,6560620170abc6e57b18b7932d106d3f</data>
+    </edge>
+    <edge source="CUSTOMER" target="CUSTOMER_ID">
+      <data key="d4">21.0</data>
+      <data key="d5">Based on the provided data about the entities **CUSTOMER** and **CUSTOMER_ID**, the consolidated description is:
+
+**CUSTOMER_ID** serves as the primary key in the **CUSTOMER** dimension table, uniquely identifying each customer or subscriber record. It also functions as a foreign key attribute that directly references the **CUSTOMER** dimension table to enable data linkage. Specifically, **CUSTOMER_ID** connects the streams table to the **CUSTOMER** dimension, establishing relationships across tables for integrated data analysis.  
+
+### Key Details from Descriptions:
+1. **Primary Role**: Uniquely identifies records in the **CUSTOMER** dimension table (primary key).  
+2. **Relational Role**: Acts as a foreign key linking external tables (e.g., the streams table) to the **CUSTOMER** dimension for data integrity and joins.  
+3. **Purpose**: Ensures structured data linkage between transactional data (like streams) and customer master data.  
+
+No contradictions exist; the descriptions collectively emphasize **CUSTOMER_ID**&#8217;s dual role in identification (primary key) and relationship mapping (foreign key).</data>
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7,6560620170abc6e57b18b7932d106d3f,cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CUSTOMER" target="CONSUM">
+      <data key="d4">16.0</data>
+      <data key="d5">Consum schema organizes and defines the structure of the Customer table for data storage</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CUSTOMER" target="FIRST_NAME">
+      <data key="d4">12.0</data>
+      <data key="d5">First_Name is a descriptive attribute capturing the customer's legal given name</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CUSTOMER" target="LAST_NAME">
+      <data key="d4">12.0</data>
+      <data key="d5">Last_Name is a descriptive attribute capturing the customer's legal family name</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CUSTOMER" target="EMAIL_ID">
+      <data key="d4">14.0</data>
+      <data key="d5">Email_ID is a unique identifier attribute for customer accounts</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CUSTOMER" target="PHONE_NUMBER">
+      <data key="d4">12.0</data>
+      <data key="d5">Phone_Number is a contact attribute for customer communication</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CUSTOMER" target="STATE">
+      <data key="d4">12.0</data>
+      <data key="d5">State is a geographical attribute indicating the customer's sub-national region</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CUSTOMER" target="COUNTRY">
+      <data key="d4">12.0</data>
+      <data key="d5">Country is a geographical attribute indicating the customer's ISO country code</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CUSTOMER" target="SIGN_UP_DATE">
+      <data key="d4">14.0</data>
+      <data key="d5">Sign_Up_Date is a temporal attribute recording the account creation date</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CONTENT" target="CONTENT_ID">
+      <data key="d4">19.0</data>
+      <data key="d5">Based on the provided data about the entities **CONTENT** and **CONTENT_ID**, the consolidated description is:
+
+**CONTENT_ID** serves dual relational roles across tables:  
+1. As the **primary key** in the **CONTENT** table (or "content catalog table"), it uniquely identifies every content item.  
+2. As a **foreign key** in the **STREAMS** table, it links stream records to their corresponding content entries in the **CONTENT** table.  
+
+This establishes a direct relationship where:  
+- The **CONTENT** table catalogs all content items (keyed by **CONTENT_ID**).  
+- The **STREAMS** table references these content items via **CONTENT_ID** to associate streaming activities with specific catalog entries.  
+
+No contradictions exist; the descriptions complement each other by clarifying **CONTENT_ID**'s role as both a unique identifier (primary key) and a relational bridge (foreign key).</data>
+      <data key="d6">6560620170abc6e57b18b7932d106d3f,cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CONTENT" target="CONSUM">
+      <data key="d4">16.0</data>
+      <data key="d5">Consum schema organizes and defines the structure of the Content table for data storage</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CONTENT" target="TITLE">
+      <data key="d4">12.0</data>
+      <data key="d5">Title is a descriptive attribute specifying the official name of the content</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CONTENT" target="EPISODE">
+      <data key="d4">12.0</data>
+      <data key="d5">Episode is a numerical attribute indicating the episode number (0 for movies)</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CONTENT" target="GENRE">
+      <data key="d4">12.0</data>
+      <data key="d5">Genre is a categorical attribute classifying the content type</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CONTENT" target="DURATION">
+      <data key="d4">12.0</data>
+      <data key="d5">Duration is a quantitative attribute measuring total runtime in minutes</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="CONTENT" target="COST">
+      <data key="d4">2.0</data>
+      <data key="d5">Cost is a financial attribute representing the monetary value of the content</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="INVOICE" target="INVOICE_NUMBER">
+      <data key="d4">18.0</data>
+      <data key="d5">Invoice number serves as unique identifier for billing records</data>
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7</data>
+    </edge>
+    <edge source="INVOICE" target="CUSTOMER_ID">
+      <data key="d4">18.0</data>
+      <data key="d5">Customer ID links invoices to subscriber profiles for analysis</data>
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7</data>
+    </edge>
+    <edge source="INVOICE" target="SIGN_UP_DATE">
+      <data key="d4">18.0</data>
+      <data key="d5">Sign-up date indicates when billing occurred for subscriptions</data>
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7</data>
+    </edge>
+    <edge source="INVOICE" target="PLAN">
+      <data key="d4">18.0</data>
+      <data key="d5">Plan specifies subscription tier associated with billing records</data>
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7</data>
+    </edge>
+    <edge source="INVOICE" target="SERVICE_PERIOD">
+      <data key="d4">18.0</data>
+      <data key="d5">Service period defines active duration covered by invoice</data>
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7</data>
+    </edge>
+    <edge source="INVOICE" target="PAYMENT_METHOD">
+      <data key="d4">18.0</data>
+      <data key="d5">Payment method denotes financial instrument used for transaction</data>
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7</data>
+    </edge>
+    <edge source="INVOICE" target="TOTAL">
+      <data key="d4">18.0</data>
+      <data key="d5">Total displays formatted monetary amount charged</data>
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7</data>
+    </edge>
+    <edge source="INVOICE" target="TOTAL_NUMERIC">
+      <data key="d4">18.0</data>
+      <data key="d5">Total numeric enables quantitative analysis of revenue</data>
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7</data>
+    </edge>
+    <edge source="INVOICE" target="SERVICE_START_DATE">
+      <data key="d4">18.0</data>
+      <data key="d5">Service start date is derived from service period for temporal analysis</data>
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7</data>
+    </edge>
+    <edge source="INVOICE" target="SERVICE_END_DATE">
+      <data key="d4">18.0</data>
+      <data key="d5">Service end date is derived from service period for expiration tracking</data>
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7</data>
+    </edge>
+    <edge source="STREAM_DURATION" target="STREAM">
+      <data key="d4">18.0</data>
+      <data key="d5">Stream duration is a measurable attribute of media streaming events</data>
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7</data>
+    </edge>
+    <edge source="STREAM_RATING" target="STREAM">
+      <data key="d4">18.0</data>
+      <data key="d5">Stream rating captures user feedback for specific streaming sessions</data>
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7</data>
+    </edge>
+    <edge source="STREAM" target="STREAM_TIMESTAMP">
+      <data key="d4">18.0</data>
+      <data key="d5">Stream timestamp precisely marks the initiation of playback events</data>
+      <data key="d6">2c48c4a92d71155612fdbf70e9f0edc7</data>
+    </edge>
+    <edge source="NETFLIX" target="CONSUM">
+      <data key="d4">16.0</data>
+      <data key="d5">Netflix database system contains and hosts the Consum schema as a structural component</data>
+      <data key="d6">cffcda8a51675f1f2fce635cc560a247</data>
+    </edge>
+    <edge source="GENRE" target="MEDIA_CONTENT">
+      <data key="d4">20.0</data>
+      <data key="d5">Genre is a categorical attribute that classifies the type of media content</data>
+      <data key="d6">2d6bb29d3cb7bfcead920894c56c1262</data>
+    </edge>
+    <edge source="DURATION" target="MEDIA_CONTENT">
+      <data key="d4">20.0</data>
+      <data key="d5">Duration quantifies the runtime length of media content</data>
+      <data key="d6">2d6bb29d3cb7bfcead920894c56c1262</data>
+    </edge>
+    <edge source="MEDIA_CONTENT" target="COST_PER_STREAM">
+      <data key="d4">20.0</data>
+      <data key="d5">Cost per stream represents the licensing fee associated with consuming media content</data>
+      <data key="d6">2d6bb29d3cb7bfcead920894c56c1262</data>
+    </edge>
+    <edge source="MEDIA_CONTENT" target="RELEASE_DATE">
+      <data key="d4">20.0</data>
+      <data key="d5">Release date indicates the initial publication timeline of media content</data>
+      <data key="d6">2d6bb29d3cb7bfcead920894c56c1262</data>
+    </edge>
+    <edge source="MEDIA_CONTENT" target="DISTRIBUTOR">
+      <data key="d4">2.0</data>
+      <data key="d5">Distributor identifies the rights management entity responsible for media content distribution</data>
+      <data key="d6">2d6bb29d3cb7bfcead920894c56c1262</data>
+    </edge>
+  </graph>
+</graphml>

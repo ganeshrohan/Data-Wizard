@@ -1,0 +1,908 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d6" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d5" for="edge" attr.name="description" attr.type="string" />
+  <key id="d4" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d3" for="node" attr.name="entity_type" attr.type="string" />
+  <key id="d2" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="description" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="INVOICE">
+      <data key="d0">TABLE</data>
+      <data key="d1" />
+      <data key="d2">0fb1ff622118db7ea406ecb833495a85,6fc936fd90ea593869dff055901dcbbc,963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="CONTENT">
+      <data key="d0">TABLE</data>
+      <data key="d1">The **CONTENT** entity represents a comprehensive catalog of media assets (such as movies and shows) available for streaming on Netflix. It serves as a central table for storing metadata, financial metrics, and distribution details for each unique media title. Key attributes include:  
+- A **unique content identifier** to reference individual titles across the system.  
+- **Descriptive metadata** like title, genre, duration, release date, and distributor information.  
+- **Financial metrics**, specifically cost per stream data and associated currency details.  
+- **Distribution and streaming context**, indicating availability for customer streaming and integration with other entities via foreign key relationships.  
+
+This entity consolidates content-related information to support analytics, financial reporting, and operational workflows, ensuring traceability through its unique identifiers and relational links to other data structures.</data>
+      <data key="d2">0fb1ff622118db7ea406ecb833495a85,0ff66c610a851cbd22c79b14ef4b14fa,6fc936fd90ea593869dff055901dcbbc,963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="SNOWFLAKE">
+      <data key="d0">DATABASE</data>
+      <data key="d1">The cloud-based data platform used to store and process the analytical data models and metrics}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="TOTAL">
+      <data key="d0">COLUMN</data>
+      <data key="d1">Based on the provided data for the entity **TOTAL**, the consolidated description is:  
+
+**The TOTAL column in the invoice table stores raw billing amounts as VARCHAR(20) strings that include embedded currency symbols (e.g., '$15.99'). This unprocessed format requires extraction of numerical values for quantitative analysis and supports the derivation of currency-specific metrics.**  
+
+### Key Details from Source Descriptions:  
+1. **Source Context**: Explicitly resides in the invoice table as a source column.  
+2. **Data Format**: Raw values combine numeric amounts with currency symbols (e.g., '$15.99'), stored as variable-length strings (VARCHAR(20)).  
+3. **Processing Needs**:  
+   - Requires cleansing to isolate numerical values for arithmetic operations or aggregation.  
+   - Enables creation of currency-specific derived metrics (e.g., conversions, currency-based aggregations).  
+4. **Analytical Limitation**: Cannot be used directly for numerical analysis due to non-numeric characters.  
+
+This summary resolves both descriptions into a unified view, emphasizing the column&#8217;s role, structural constraints, and downstream transformation requirements.</data>
+      <data key="d2">6fc936fd90ea593869dff055901dcbbc,963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="COST_PER_STREAM">
+      <data key="d0">COLUMN</data>
+      <data key="d1">Based on the provided descriptions for the **COST_PER_STREAM** entity, the consolidated summary is:
+
+**COST_PER_STREAM** is a source column in the content table that stores raw licensing costs per view as text strings, including embedded currency symbols (e.g., '&#8364;0.05'). This field serves as foundational data for content expenditure calculations but cannot be used directly in numeric operations due to its text format. To enable quantitative analysis, the raw values require derivation&#8212;specifically, extraction of numeric components and currency conversion&#8212;to generate usable metrics for downstream calculations.  
+
+*(Summary derived from: (1) Storage location/format and purpose in content expenditure, (2) Text-based nature with currency symbols and need for derivation to support metrics.)*</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa,963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="SERVICE_PERIOD">
+      <data key="d0">COLUMN</data>
+      <data key="d1">Based on the provided descriptions for the **SERVICE_PERIOD** entity, the consolidated summary is:
+
+The **SERVICE_PERIOD** is a source column within the invoice table that stores the date range representing the active service duration or billing period covered by an invoice. It is persisted as a text field containing explicitly formatted date range strings (e.g., "2023-01-01 to 2023-01-31"), which denote both the start and end dates of the service timeframe for which the invoice is generated. Due to its textual storage format, this field requires explicit conversion or parsing to derive usable date metrics (such as individual start/end dates or duration calculations) for analytical or operational date-handling purposes. The column fundamentally links billing records to the specific time intervals of service delivery.</data>
+      <data key="d2">0fb1ff622118db7ea406ecb833495a85,6fc936fd90ea593869dff055901dcbbc,963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="INVOICE AMOUNT (USD)">
+      <data key="d0">METRIC</data>
+      <data key="d1">Calculated metric extracting USD values from total column using regex, returning NULL for non-USD entries. Used in SUM() aggregations for revenue analysis}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="INVOICE AMOUNT (EUR)">
+      <data key="d0">METRIC</data>
+      <data key="d1">Calculated metric extracting EUR values from total column using regex, returning NULL for non-EUR entries. Supports euro-denominated revenue reporting}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="INVOICE CURRENCY">
+      <data key="d0">METRIC</data>
+      <data key="d1">Derived metric identifying currency codes ('USD','EUR') based on symbol presence in total column. Enables currency-specific filtering and grouping}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="COST PER STREAM (USD)">
+      <data key="d0">METRIC</data>
+      <data key="d1">Calculated metric extracting USD cost values from cost_per_stream column using regex. Essential for content cost analysis in dollars}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="COST PER STREAM (EUR)">
+      <data key="d0">METRIC</data>
+      <data key="d1">Calculated metric extracting EUR cost values from cost_per_stream column using regex. Supports content cost analysis in euros}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="COST CURRENCY">
+      <data key="d0">METRIC</data>
+      <data key="d1">Derived metric identifying currency codes ('USD','EUR') from cost_per_stream column symbols. Facilitates currency-based cost categorization}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="TYPED SERVICE START DATE">
+      <data key="d0">METRIC</data>
+      <data key="d1">Date-conversion metric parsing the first part of service_period strings into DATE type for temporal operations and filtering}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="TYPED SERVICE END DATE">
+      <data key="d0">METRIC</data>
+      <data key="d1">Date-conversion metric parsing the second part of service_period strings into DATE type for period-end analysis}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="ENTITIES">
+      <data key="d0">COMPONENT</data>
+      <data key="d1">Physical tables containing raw data that serve as foundational elements in the analytics model}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="METRICS">
+      <data key="d0">COMPONENT</data>
+      <data key="d1">Reusable calculations applied to entities that transform raw data into analysis-ready quantitative measures}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="RELATIONSHIPS">
+      <data key="d0">COMPONENT</data>
+      <data key="d1">Defined logical rules joining tables together to enable integrated data analysis across entities}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="NUMERIC METRICS">
+      <data key="d0">CATEGORY</data>
+      <data key="d1">Metrics handling quantitative values, specifically currency amounts and numerical conversions}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="DATE/TIME METRICS">
+      <data key="d0">CATEGORY</data>
+      <data key="d1">Metrics focused on temporal data processing and date-type conversions}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="ALIASES">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Alternative names for metrics that facilitate natural language querying and user recognition}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="DESCRIPTION">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Detailed explanations clarifying metric purpose, behavior, and usage constraints}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="CALCULATION_LOGIC">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">SQL expressions defining how metrics derive values from source columns through transformations}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="DATA_TYPE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Defines the storage format and validation rules for metric output values}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="NLQ_EXAMPLES">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Demonstrations linking natural language questions to SQL implementations using specific metrics}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="NATURAL_LANGUAGE_QUERY">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">User-friendly question formulations that map to underlying metric calculations}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="SQL_SNIPPET">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Executable code examples showing practical implementation of metrics in analytical queries}</data>
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="ANALYTICS MODEL">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">963ab3e147677f25b3a70f663372621a</data>
+    </node>
+    <node id="STREAMS">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">Atomic events capturing media content consumption by customers, serving as the core dataset for engagement analysis}</data>
+      <data key="d2">0fb1ff622118db7ea406ecb833495a85</data>
+    </node>
+    <node id="CUSTOMER">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">Based on the provided descriptions for the **CUSTOMER** entity, the following consolidated summary is generated:
+
+The **CUSTOMER** entity represents an individual or business entity subscribed to a service, functioning as a central account hub for relationships within the system. It encompasses personal identification details such as last name, email, phone number, and location, along with account-specific information including sign-up data and subscription plans. This entity is directly associated with streaming activities (e.g., content viewing behavior) and billing records, linking consumption patterns to financial transactions. Attributes comprehensively cover personal, geographic, and account metadata, positioning the customer as the primary anchor for interactions across service-related domains.
+
+### Key Details Unified:
+- **Nature**: Individual or business subscribers.
+- **Core Attributes**: Last name, email, phone, location, sign-up details, and account-specific data.
+- **Functional Role**: Central relationship entity for downstream processes.
+- **Associations**: Streaming activities (usage tracking) and billing records (financials).
+- **Scope**: Personal identification, subscription management, and geographic context.</data>
+      <data key="d2">0fb1ff622118db7ea406ecb833495a85,0ff66c610a851cbd22c79b14ef4b14fa,6fc936fd90ea593869dff055901dcbbc</data>
+    </node>
+    <node id="STREAM_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The **STREAM_DATE** entity represents the original date of a streaming event, stored as text in the standardized 'DD-Mon-YYYY' format (e.g., "01-Jan-2023"). As a textual field, it cannot be used directly for date-based calculations or temporal analysis and requires conversion into a structured date format to derive meaningful metrics. This attribute serves as the foundational source for all downstream temporal operations, ensuring consistency in event tracking while necessitating additional processing for practical use in analytics or reporting.</data>
+      <data key="d2">0fb1ff622118db7ea406ecb833495a85,6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="INVOICE_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Based on the provided data for the entity **INVOICE_DATE**, the consolidated description is:
+
+**INVOICE_DATE** represents the date when an invoice was issued or generated. The date is stored as a text string in the `MM/DD/YY` format. Due to its textual representation, this field requires standardization (conversion to a proper date data type) to enable date operations and support derived metrics (e.g., day/month/year extraction, date arithmetic, or temporal analytics). Both descriptions emphasize the necessity of transforming this raw text value into a standardized date format for practical use in data processing.</data>
+      <data key="d2">0fb1ff622118db7ea406ecb833495a85,6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="SIGN_UP_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Based on the provided descriptions for the **SIGN_UP_DATE** entity, the consolidated summary is:
+
+**SIGN_UP_DATE** represents the date when a customer registered for a service (synonymous with account creation). It is stored as a raw text field in the specific format `DD-Mon-YYYY` (e.g., `01-Jan-2023`). Due to its text-based storage, this field requires explicit conversion to a date data type before it can be used operationally. Once converted, it enables critical analyses such as calculating customer tenure (duration since sign-up) and performing cohort-based segmentation. The field is foundational for deriving date-related metrics but cannot be used directly in date operations without preprocessing.</data>
+      <data key="d2">0fb1ff622118db7ea406ecb833495a85,0ff66c610a851cbd22c79b14ef4b14fa</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="RELEASE_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">&lt;think&gt;Okay, let's tackle this problem. The user wants a comprehensive summary of the RELEASE_DATE entity based on the provided descriptions. First, I need to parse the input data.
+
+The entity is "RELEASE_DATE". The descriptions given are two strings. Let me look at them closely. 
+
+The first description says: "Original release date stored as text; requires conversion for date operations.&gt;Original release date stored as text; requires derived metrics for date operations." Hmm, there's a bit of repetition here. It mentions that the release date is stored as text, which needs conversion for date operations and derived metrics. So the key points here are the storage format (text) and the need for conversion for processing.
+
+The second description is: "Publication date of media content in 'DD-Mon-YYYY' format, used for freshness and catalog analysis}Content publication date in 'DD-Mon-YYYY' format for catalog management". Again, some repetition. This one specifies the exact date format 'DD-Mon-YYYY', used for media content publication. The use cases mentioned are freshness analysis and catalog management.
+
+Now, I need to combine these into a single, concise description. Both mention the date stored as text, but the second gives the specific format. The first talks about conversion for date operations and derived metrics, while the second highlights usage in catalog analysis and freshness. There's no contradiction here, just complementary information. 
+
+I should make sure to include the entity name (RELEASE_DATE), the storage format (text with 'DD-Mon-YYYY'), the need for conversion, and the use cases like catalog management, freshness analysis, and derived metrics. Also, mention that it's for media content. 
+
+Wait, the first description mentions "original release date" and the second "publication date of media content". Are these referring to the same thing? The user says all descriptions relate to the same entity or group, so I can treat them as the same. So RELEASE_DATE is the publication date for media content, stored as text in a specific format, needing conversion for operations, used in various analyses.
+
+I need to present this in third person, concise, with all relevant info. Avoid repetition. Make sure to resolve any possible contradictions, but here they seem to align. The format is specified in the second description, which the first doesn't mention, so that's an addition. The use cases from both should be included.
+
+Final summary should mention the entity, storage details, format, conversion needs, and use cases. Let me structure that.
+&lt;/think&gt;
+
+**RELEASE_DATE** represents the publication date of media content, stored as text in the 'DD-Mon-YYYY' format (e.g., 01-Jan-2023). While this textual storage enables human-readable freshness tracking and catalog management, it requires explicit conversion to a date/time data type for operational use, such as deriving metrics (e.g., age calculations, time-based aggregations) or performing chronological analyses. The field supports catalog organization, content lifecycle monitoring, and temporal trend evaluations but necessitates preprocessing to unlock its full analytical potential in databases or data warehouses. Its dual role as a display-friendly string and a raw input for date operations highlights its importance in both frontend reporting and backend data processing workflows.</data>
+      <data key="d2">0fb1ff622118db7ea406ecb833495a85,0ff66c610a851cbd22c79b14ef4b14fa</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="CUSTOMER_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Based on the provided descriptions for the entity **CUSTOMER_ID**, the following coherent summary integrates all details while resolving minor redundancies:
+
+**Summary:**  
+The **CUSTOMER_ID** is a universal unique identifier for individual customers. It functions as the primary key in the customer table and serves as a foreign key in both streaming and invoice tables. This identifier enables consistent linkage of customer profiles across multiple domains&#8212;including streaming events, billing systems, and account management entities&#8212;ensuring unified data integration across all related datasets. Its role is critical for connecting customer interactions (e.g., streaming activities) with financial transactions (e.g., invoices) within the broader data ecosystem.
+
+**Key Resolutions:**  
+- Redundancies in the descriptions (e.g., repeated emphasis on cross-dataset linking) were consolidated.  
+- Contradictions: None found; both descriptions align on core functionality.  
+- Enriched context: Explicitly connected "streaming events" (from Description 2) with "stream tables" (Description 1) and "billing" with "invoice tables" for clarity.</data>
+      <data key="d2">0fb1ff622118db7ea406ecb833495a85,6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="CONTENT_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Based on the provided descriptions for **CONTENT_ID**, the consolidated summary is:
+
+**CONTENT_ID** is a unique numeric identifier for media content items, serving as the primary key in the content catalog entity. It functions as a foreign key in the stream table, where it references the content entity to link streaming activity records (e.g., viewing events) to specific media items. This enables the association between the content catalog and streaming events, ensuring traceability of user interactions with individual content assets.  
+
+### Key Details Extracted:
+- **Uniqueness and Type**: Uniquely identifies each media content item and is numeric.
+- **Primary Key Role**: Serves as the primary key for the content catalog/entity.
+- **Foreign Key Role**: Referenced in the stream table to connect streaming events (e.g., plays, views) to content.
+- **Functional Purpose**: Bridges content metadata (catalog) with user activity data (streaming records), enabling analysis of content engagement.  
+
+*Note: Contradictions were resolved by prioritizing overlapping details</data>
+      <data key="d2">0fb1ff622118db7ea406ecb833495a85,0ff66c610a851cbd22c79b14ef4b14fa,6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STREAM_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1" />
+      <data key="d2">0fb1ff622118db7ea406ecb833495a85,6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STREAM">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">Represents a streaming event by a customer for specific content, including details like date, time, duration, and rating}</data>
+      <data key="d2">6fc936fd90ea593869dff055901dcbbc</data>
+    </node>
+    <node id="FIRST_NAME">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Given name of the customer, stored as VARCHAR(15) for personal identification}</data>
+      <data key="d2">6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="LAST_NAME">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Based on the provided descriptions for the entity `LAST_NAME`, the following coherent summary is generated:
+
+**LAST_NAME** represents the family name of a customer. It serves as a key identifier for personal identification purposes within the system and is also utilized for personalization features. This attribute is stored in the database using the data type `VARCHAR(15)`, accommodating variable-length strings up to 15 characters to efficiently capture typical surname lengths while optimizing storage.
+
+*Key details synthesized from all descriptions:*
+1.  **Nature:** Family name (surname) of the customer.
+2.  **Primary Purpose:** Personal identification.
+3.  **Secondary Purpose:** Enabling personalization.
+4.  **Data Storage:** Implemented as `VARCHAR(15)`, balancing flexibility for name lengths with storage efficiency.</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa,6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="EMAIL_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">&lt;think&gt;Okay, let's tackle this. The user wants a comprehensive summary of the EMAIL_ID entity based on the provided descriptions. First, I need to parse the input data. The entity is EMAIL_ID, and there are three descriptions listed. Wait, actually, looking closely, the third one seems to have a typo with the closing brace. Maybe that's a formatting error.
+
+The first description says it's a unique email address for the customer's account used for communication. The second one is similar, mentioning it's a communication channel. The third adds that it's stored as VARCHAR(32). So, the key points are uniqueness, association with the customer account, use for communication, and the data type VARCHAR(32). 
+
+I need to combine these into a concise third-person summary. Make sure to mention the entity name, EMAIL_ID, and include all relevant details. Check for contradictions, but here they all seem consistent. Also, the user emphasized enriching with nearby text, but in this case, the data provided is straightforward. Resolve any formatting issues in the third description. The output should be a single paragraph without markdown, just plain text. Let me structure it to include all the elements: purpose, uniqueness, data type, and usage. Avoid redundancy since the first two descriptions are similar. Ensure it's concise but comprehensive.
+&lt;/think&gt;
+
+EMAIL_ID is a critical entity representing the unique email address associated with a customer account, specifically designed for communication purposes. It is stored as a VARCHAR(32) data type, balancing storage efficiency with typical email address length requirements. This identifier serves as a primary contact channel, ensuring direct and traceable interactions between the organization and the customer. The field enforces uniqueness to maintain account integrity, prevent duplicates, and enable accurate user identification across systems. Its structured format aligns with database normalization practices while supporting essential functions like login authentication, transactional notifications, and customer support workflows.</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa,6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="PHONE_NUMBER">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Based on the provided descriptions for the entity **PHONE_NUMBER**, the following coherent summary is generated:
+
+The **PHONE_NUMBER** represents the primary contact phone number for the customer. It serves as the key identifier for all customer communication and support interactions. This data is stored in the database using the **VARCHAR(12)** data type, which defines its format and storage requirements. Its fundamental purpose is to facilitate reliable communication channels between the organization and its customers.
+
+*Key points synthesized from all descriptions:*
+1.  **Designation:** Primary contact number
+2.  **Purpose:** Customer communication and support
+3.  **Data Type:** VARCHAR(12)
+4.  **Entity:** PHONE_NUMBER</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa,6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STREAM_CUSTOMER_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Foreign key in stream table referencing the customer who performed the stream}</data>
+      <data key="d2">6fc936fd90ea593869dff055901dcbbc</data>
+    </node>
+    <node id="STREAM_CONTENT_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Foreign key in stream table referencing the content that was streamed}</data>
+      <data key="d2">6fc936fd90ea593869dff055901dcbbc</data>
+    </node>
+    <node id="STREAM_TIME">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Local start time of the stream event, stored as VARCHAR(8)}</data>
+      <data key="d2">6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STREAM_DURATION">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Viewing duration in minutes, stored as INTEGER}</data>
+      <data key="d2">6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STREAM_RATING">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">User-provided rating (1-5) for the stream, stored as INTEGER with potential null values}</data>
+      <data key="d2">6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="INVOICE_NUMBER">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Unique identifier for each invoice, serving as primary key in the invoice table}</data>
+      <data key="d2">6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="INVOICE_CUSTOMER_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Foreign key in invoice table referencing the customer being billed}</data>
+      <data key="d2">6fc936fd90ea593869dff055901dcbbc</data>
+    </node>
+    <node id="PLAN">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Subscription tier name (e.g., Basic, Premium), stored as VARCHAR(8) with value mappings}</data>
+      <data key="d2">6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="PAYMENT_METHOD">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Payment instrument used (e.g., Visa), stored as VARCHAR(15)}</data>
+      <data key="d2">6fc936fd90ea593869dff055901dcbbc</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The state or province where the customer resides, indicating geographical location.Geographical region where a customer resides, used for demographic analysis.&gt;</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="COUNTRY">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">National location of a customer, used for regional segmentation.&gt;The country where the customer resides, indicating geographical location.</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="TITLE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Official display name of the content item, such as a movie or show title.Official display name of media content for identification and search.&gt;</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="EPISODE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Episode number for series content (0 for movies), indicating sequence or type.Sequence indicator for episodic content (0 denotes non-episodic media).&gt;</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="GENRE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Primary classification of content, potentially as a pipe-separated list of categories.Classification category/categories describing media content type.&gt;</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="DURATION">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Total runtime of the content in minutes.Total runtime length in minutes for media consumption.&gt;</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="DISTRIBUTOR">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Entity holding distribution rights for media content.&gt;Rights holder or distributor responsible for the content.</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="TYPED_SIGN_UP_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Derived date metric enabling temporal operations on customer sign-up events.&gt;</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </node>
+    <node id="COST_PER_STREAM_USD">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Derived metric representing licensing cost in US dollars for financial analysis.&gt;</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </node>
+    <node id="COST_PER_STREAM_EUR">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Derived metric representing licensing cost in Euros for financial analysis.&gt;</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </node>
+    <node id="COST_CURRENCY">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Derived metric identifying currency type from raw cost data.&gt;</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </node>
+    <node id="TYPED_RELEASE_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Derived date metric enabling temporal operations on content release events.&gt;</data>
+      <data key="d2">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </node>
+    <edge source="INVOICE" target="SNOWFLAKE">
+      <data key="d4">7.0</data>
+      <data key="d5">The invoice table is stored and managed within the Snowflake database environment</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="INVOICE" target="TOTAL">
+      <data key="d4">28.0</data>
+      <data key="d5">Based on the provided data entities and descriptions, the consolidated summary is:
+
+**The INVOICE entity contains a TOTAL attribute that serves as a direct column in the invoice table. This attribute stores raw financial data representing the monetary amount and value of the invoice. As a core numerical component of the invoice structure, it quantifies the complete financial obligation specified in the document.**
+
+### Key Details Resolved:
+- **Structural Role**: Both descriptions confirm TOTAL is a direct column attribute within the INVOICE table.
+- **Data Nature**: It contains raw, unprocessed financial data.
+- **Semantic Purpose**: Specifies the monetary amount/value of the invoice (redundant phrasing in the source descriptions unified into a single concept).
+- **Contextual Significance**: Embodies the complete financial sum associated with the invoice entity.
+
+No contradictions exist; the descriptions complement each other by addressing both structural (database column) and semantic (monetary value) perspectives.</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc,963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="INVOICE" target="SERVICE_PERIOD">
+      <data key="d4">46.0</data>
+      <data key="d5">Based on the provided data about the **INVOICE** and **SERVICE_PERIOD** entities, the consolidated description is:
+
+The **SERVICE_PERIOD** is a direct column attribute within the **INVOICE** table that defines the billing timeframe and coverage period for services associated with an invoice record. It contains date range strings specifying the active duration covered by the billing document, thereby indicating the exact temporal scope of the billed services. This attribute explicitly represents the period for which charges are applied in the invoice entity.
+
+### Key Details Resolved from All Descriptions:
+1. **Structural Context**:  
+   SERVICE_PERIOD exists as a column in the INVOICE table (explicitly stated in Description 3).  
+2. **Functional Purpose**:  
+   Defines the billing period/coverage period for services (from Descriptions 1 and 2).  
+3. **Data Format**:  
+   Stores values as date range strings (e.g., "2023-01-01 to 2023-01-31") to denote start/end dates (from Description 3).  
+4. **Semantic Meaning**:  
+   Represents the active service duration tied to a billing document (invoice record), ensuring clarity on what timeframe the charges encompass (from Descriptions 1 and 2).  
+
+No contradictions exist; all descriptions align to reinforce SERVICE_PERIOD's role as a temporal anchor within the invoice data model.</data>
+      <data key="d6">0fb1ff622118db7ea406ecb833495a85,6fc936fd90ea593869dff055901dcbbc,963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="INVOICE" target="INVOICE AMOUNT (USD)">
+      <data key="d4">10.0</data>
+      <data key="d5">This metric is explicitly defined for and applied to the invoice entity in analytical contexts</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="INVOICE" target="INVOICE AMOUNT (EUR)">
+      <data key="d4">10.0</data>
+      <data key="d5">This metric is explicitly defined for and applied to the invoice entity in analytical contexts</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="INVOICE" target="INVOICE CURRENCY">
+      <data key="d4">10.0</data>
+      <data key="d5">This metric is explicitly defined for and applied to the invoice entity in analytical contexts</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="INVOICE" target="TYPED SERVICE START DATE">
+      <data key="d4">10.0</data>
+      <data key="d5">This metric is explicitly defined for and applied to the invoice entity in analytical contexts</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="INVOICE" target="TYPED SERVICE END DATE">
+      <data key="d4">10.0</data>
+      <data key="d5">This metric is explicitly defined for and applied to the invoice entity in analytical contexts</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="INVOICE" target="CUSTOMER">
+      <data key="d4">11.0</data>
+      <data key="d5" />
+      <data key="d6">0fb1ff622118db7ea406ecb833495a85,6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="INVOICE" target="STREAMS">
+      <data key="d4">7.0</data>
+      <data key="d5">Invoices indirectly connect to streaming events through shared customer_id for usage-based analytics</data>
+      <data key="d6">0fb1ff622118db7ea406ecb833495a85</data>
+    </edge>
+    <edge source="INVOICE" target="INVOICE_DATE">
+      <data key="d4">36.0</data>
+      <data key="d5">Based on the provided data for the entities **INVOICE** and **INVOICE_DATE**, the consolidated description is:
+
+**INVOICE_DATE** is an attribute of the **INVOICE** entity that records the temporal dimension of billing events. It specifically captures the issuance timing of billing documents (statements), indicating the precise date when an invoice was issued. This attribute describes the temporal characteristics fundamental to the **INVOICE** entity, serving as a key timestamp for billing operations.
+
+### Key Points Resolved &amp; Included:
+1.  **Entity Relationship**: Explicitly states **INVOICE_DATE** belongs to the **INVOICE** entity.
+2.  **Temporal Dimension**: Combines "records temporal dimension of billing events" and "describes temporal characteristics of the invoice entity" into a core characteristic.
+3.  **Specific Function**: Integrates "indicates when a billing document was issued" and "captures issuance timing of billing statements" to define the attribute's precise purpose.
+4.  **Synonym Handling**: Treats "billing events," "billing documents," and "billing statements" as equivalent terms referring to the **INVOICE** entity's purpose.
+5.  **Conciseness**: Merges overlapping concepts (issuance timing = temporal dimension of issuance) without redundancy. No contradictions were present.</data>
+      <data key="d6">0fb1ff622118db7ea406ecb833495a85,6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="INVOICE" target="INVOICE_CUSTOMER_ID">
+      <data key="d4">9.0</data>
+      <data key="d5">Foreign key attribute directly belongs to and describes the invoice entity</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="INVOICE" target="INVOICE_NUMBER">
+      <data key="d4">18.0</data>
+      <data key="d5">Primary key attribute uniquely identifies and describes the invoice entityPrimary key attribute uniquely identifies each invoice entity</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="INVOICE" target="PLAN">
+      <data key="d4">18.0</data>
+      <data key="d5">Attribute defines subscription tier associated with billingAttribute defines the subscription tier associated with the invoice entity</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="INVOICE" target="PAYMENT_METHOD">
+      <data key="d4">18.0</data>
+      <data key="d5">Attribute indicates transaction mechanism for paymentsAttribute describes the payment mechanism for the invoice entity</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="CONTENT" target="SNOWFLAKE">
+      <data key="d4">7.0</data>
+      <data key="d5">The content table resides in and is processed by the Snowflake database system</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="CONTENT" target="COST_PER_STREAM">
+      <data key="d4">28.0</data>
+      <data key="d5">The CONTENT table contains a direct attribute named COST_PER_STREAM, which stores raw licensing cost values per individual view of content. This column represents the direct, unprocessed cost data associated with each stream event, specifically capturing the licensing expenses incurred per view. As a direct attribute within the CONTENT table, COST_PER_STREAM serves as a foundational data point for financial analysis related to content consumption.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa,963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="CONTENT" target="COST PER STREAM (USD)">
+      <data key="d4">10.0</data>
+      <data key="d5">This metric is explicitly defined for and applied to the content entity in analytical contexts</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="CONTENT" target="COST PER STREAM (EUR)">
+      <data key="d4">10.0</data>
+      <data key="d5">This metric is explicitly defined for and applied to the content entity in analytical contexts</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="CONTENT" target="COST CURRENCY">
+      <data key="d4">10.0</data>
+      <data key="d5">This metric is explicitly defined for and applied to the content entity in analytical contexts</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="CONTENT" target="STREAMS">
+      <data key="d4">9.0</data>
+      <data key="d5">Streaming events reference specific media content through content_id for viewing behavior analysis</data>
+      <data key="d6">0fb1ff622118db7ea406ecb833495a85</data>
+    </edge>
+    <edge source="CONTENT" target="RELEASE_DATE">
+      <data key="d4">36.0</data>
+      <data key="d5" />
+      <data key="d6">0fb1ff622118db7ea406ecb833495a85,0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="CONTENT" target="CONTENT_ID">
+      <data key="d4">47.0</data>
+      <data key="d5">&lt;think&gt;Okay, let's tackle this problem. The user wants a comprehensive summary of the data provided, focusing on the entities CONTENT and CONTENT_ID. The descriptions given all relate to CONTENT_ID as the primary key.
+
+First, I need to parse each description. The first one says CONTENT_ID is the primary key uniquely identifying content items and media items. The second mentions it's the primary identifier for media content entities, serving as the primary key. The third states it's the primary key that uniquely identifies each content entity.
+
+Looking for commonalities: all agree CONTENT_ID is the primary key. Some mention media items, others content entities. The task is to resolve contradictions, but here there's no real contradiction&#8212;just different terms like "content items," "media items," and "content entities." These can be consolidated under the broader term "media content entities."
+
+I should combine these into a concise summary, ensuring all points are covered. Mention that CONTENT_ID uniquely identifies each entity, acts as the primary key, and note the various contexts (content items, media items) under the umbrella of media content entities. Also, specify that it's part of the CONTENT entity to maintain context.
+
+Check if any info is missing. The user emphasized including nearby text, but all provided data is used. No contradictions to resolve, just synonyms. Make sure the summary is in third person and includes entity names. Avoid any markdown and keep it natural.
+&lt;/think&gt;
+
+CONTENT_ID serves as the primary key attribute within the CONTENT entity, uniquely identifying individual media/content items and ensuring entity-level uniqueness across the system. This identifier acts as the foundational structural element for organizing media content entities (including digital assets, documents, or multimedia resources), with explicit emphasis on its role as an immutable unique identifier in database schemas and data warehousing contexts. The attribute's consistency across descriptions confirms its critical function in content management systems &#8211; distinguishing between "content items," "media items," and "content entities" reflects contextual variations in implementation, all unified under CONTENT_ID's core purpose as a unique tracking mechanism. Its designation as a primary key implies enforced uniqueness constraints, index optimization for content retrieval operations, and inherent relationships with foreign keys in dependent tables.</data>
+      <data key="d6">0fb1ff622118db7ea406ecb833495a85,0ff66c610a851cbd22c79b14ef4b14fa,6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="CONTENT" target="STREAM">
+      <data key="d4">18.0</data>
+      <data key="d5">Stream events reference specific content via content_id foreign keyStream events reference specific content, linked via foreign key (STREAM_CONTENT_ID)</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="CONTENT" target="TITLE">
+      <data key="d4">18.0</data>
+      <data key="d5">Direct attribute defining media's display name.TITLE is a direct attribute specifying the official name of the content.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="CONTENT" target="EPISODE">
+      <data key="d4">18.0</data>
+      <data key="d5">EPISODE is a direct attribute indicating the sequence or type of content (series/movie).Direct attribute indicating content sequence/type.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="CONTENT" target="GENRE">
+      <data key="d4">18.0</data>
+      <data key="d5">Direct attribute categorizing media content.GENRE is a direct attribute categorizing the content.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="CONTENT" target="DURATION">
+      <data key="d4">18.0</data>
+      <data key="d5">Direct attribute specifying runtime length.DURATION is a direct attribute defining the runtime of the content.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="CONTENT" target="DISTRIBUTOR">
+      <data key="d4">10.0</data>
+      <data key="d5">DISTRIBUTOR is a direct attribute identifying the rights holder for the content.Direct attribute identifying rights holder.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="CONTENT" target="COST_PER_STREAM_USD">
+      <data key="d4">9.0</data>
+      <data key="d5">Derived attribute for USD cost calculations.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="CONTENT" target="COST_PER_STREAM_EUR">
+      <data key="d4">9.0</data>
+      <data key="d5">Derived attribute for EUR cost calculations.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="CONTENT" target="COST_CURRENCY">
+      <data key="d4">9.0</data>
+      <data key="d5">Derived attribute identifying cost currency type.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="CONTENT" target="TYPED_RELEASE_DATE">
+      <data key="d4">9.0</data>
+      <data key="d5">Derived attribute enabling date operations on releases.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="TOTAL" target="INVOICE AMOUNT (USD)">
+      <data key="d4">9.0</data>
+      <data key="d5">The metric's calculation logic directly processes and transforms values from the total column</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="TOTAL" target="INVOICE AMOUNT (EUR)">
+      <data key="d4">9.0</data>
+      <data key="d5">The metric's calculation logic directly processes and transforms values from the total column</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="TOTAL" target="INVOICE CURRENCY">
+      <data key="d4">9.0</data>
+      <data key="d5">The metric's calculation logic directly processes and transforms values from the total column</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="COST_PER_STREAM" target="COST PER STREAM (USD)">
+      <data key="d4">9.0</data>
+      <data key="d5">The metric's calculation logic directly processes and transforms values from the cost_per_stream column</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="COST_PER_STREAM" target="COST PER STREAM (EUR)">
+      <data key="d4">9.0</data>
+      <data key="d5">The metric's calculation logic directly processes and transforms values from the cost_per_stream column</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="COST_PER_STREAM" target="COST CURRENCY">
+      <data key="d4">9.0</data>
+      <data key="d5">The metric's calculation logic directly processes and transforms values from the cost_per_stream column</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="COST_PER_STREAM" target="COST_PER_STREAM_USD">
+      <data key="d4">8.0</data>
+      <data key="d5">USD cost metric derived from raw cost-per-stream data.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="COST_PER_STREAM" target="COST_PER_STREAM_EUR">
+      <data key="d4">8.0</data>
+      <data key="d5">EUR cost metric derived from raw cost-per-stream data.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="COST_PER_STREAM" target="COST_CURRENCY">
+      <data key="d4">1.0</data>
+      <data key="d5">Currency identifier extracted from raw cost-per-stream field.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="SERVICE_PERIOD" target="TYPED SERVICE START DATE">
+      <data key="d4">9.0</data>
+      <data key="d5">The metric parses and converts the service_period column values to derive start dates</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="SERVICE_PERIOD" target="TYPED SERVICE END DATE">
+      <data key="d4">1.0</data>
+      <data key="d5">The metric parses and converts the service_period column values to derive end dates</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="ENTITIES" target="ANALYTICS MODEL">
+      <data key="d4">9.0</data>
+      <data key="d5">Entities constitute the foundational data containers within the analytics model</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="METRICS" target="ANALYTICS MODEL">
+      <data key="d4">9.0</data>
+      <data key="d5">Metrics represent derived calculations applied to entities within the model</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="METRICS" target="NUMERIC METRICS">
+      <data key="d4">8.0</data>
+      <data key="d5">Numeric metrics are a specialized subclass handling quantitative data</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="METRICS" target="DATE/TIME METRICS">
+      <data key="d4">8.0</data>
+      <data key="d5">Date/time metrics are a specialized subclass handling temporal data</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="METRICS" target="ALIASES">
+      <data key="d4">7.0</data>
+      <data key="d5">Aliases provide alternative naming for metrics to enhance usability</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="METRICS" target="DESCRIPTION">
+      <data key="d4">8.0</data>
+      <data key="d5">Descriptions document the purpose and usage rules for each metric</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="METRICS" target="CALCULATION_LOGIC">
+      <data key="d4">10.0</data>
+      <data key="d5">Calculation logic defines the transformation rules for each metric</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="METRICS" target="DATA_TYPE">
+      <data key="d4">8.0</data>
+      <data key="d5">Data types enforce structural consistency for metric outputs</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="METRICS" target="NLQ_EXAMPLES">
+      <data key="d4">7.0</data>
+      <data key="d5">NLQ examples demonstrate practical applications of metrics</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="RELATIONSHIPS" target="ANALYTICS MODEL">
+      <data key="d4">9.0</data>
+      <data key="d5">Relationships define connections between entities in the model</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="NLQ_EXAMPLES" target="NATURAL_LANGUAGE_QUERY">
+      <data key="d4">9.0</data>
+      <data key="d5">Natural language queries represent user-facing question formulations</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="NLQ_EXAMPLES" target="SQL_SNIPPET">
+      <data key="d4">1.0</data>
+      <data key="d5">SQL snippets provide executable implementations for NLQ mappings</data>
+      <data key="d6">963ab3e147677f25b3a70f663372621a</data>
+    </edge>
+    <edge source="STREAMS" target="CUSTOMER">
+      <data key="d4">9.0</data>
+      <data key="d5">Streaming events are linked to customer accounts via customer_id for activity profiling</data>
+      <data key="d6">0fb1ff622118db7ea406ecb833495a85</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_DATE">
+      <data key="d4">19.0</data>
+      <data key="d5">Stream date captures when content consumption occurred in the events tableRecords when content viewing occurred in raw string format</data>
+      <data key="d6">0fb1ff622118db7ea406ecb833495a85</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_ID">
+      <data key="d4">2.0</data>
+      <data key="d5">Unique identifier for individual streaming event recordsStream_ID uniquely identifies individual streaming event records</data>
+      <data key="d6">0fb1ff622118db7ea406ecb833495a85</data>
+    </edge>
+    <edge source="CUSTOMER" target="SIGN_UP_DATE">
+      <data key="d4">36.0</data>
+      <data key="d5">Based on the provided data entities and descriptions, the consolidated summary is:
+
+**CUSTOMER.SIGN_UP_DATE** is a direct attribute that records the timestamp of a customer's account creation. It serves as a critical marker in the customer profile, specifically capturing their registration timeline. This attribute is essential for customer lifecycle analysis, enabling temporal tracking of account inception events. The data is stored as a first-class property within the entity structure (not derived), providing a foundational timestamp for analyzing customer journeys and engagement timelines.
+
+*Key details synthesized from all descriptions:*
+- Directly stores account creation timestamp (not calculated)
+- Functions as a registration timeline marker in customer profiles
+- Explicitly supports customer lifecycle analysis
+- Maintained as an intrinsic attribute of the CUSTOMER entity
+- Serves as the temporal anchor point for account inception events</data>
+      <data key="d6">0fb1ff622118db7ea406ecb833495a85,0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="CUSTOMER" target="CUSTOMER_ID">
+      <data key="d4">38.0</data>
+      <data key="d5" />
+      <data key="d6">0fb1ff622118db7ea406ecb833495a85,6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="CUSTOMER" target="STREAM">
+      <data key="d4">18.0</data>
+      <data key="d5">Stream events are performed by customers, linked via foreign key (STREAM_CUSTOMER_ID)Stream events are performed by customers via customer_id foreign key</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="CUSTOMER" target="FIRST_NAME">
+      <data key="d4">18.0</data>
+      <data key="d5">Attribute provides personal identification detail for the customer entity</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="CUSTOMER" target="LAST_NAME">
+      <data key="d4">36.0</data>
+      <data key="d5">Based on the provided data about the entities **CUSTOMER** and **LAST_NAME**, the consolidated description is:  
+
+**LAST_NAME** is a direct attribute of the **CUSTOMER** entity that serves as a personal identification detail, specifically capturing the customer's family name (surname) or family identifier. It provides essential information for distinguishing individuals within the customer data structure.  
+
+### Key Details from Source Descriptions:  
+- **Role**: Direct attribute of the **CUSTOMER** entity.  
+- **Purpose**: Provides personal identification details.  
+- **Specificity**: Represents the customer&#8217;s family name (surname) and acts as a family identifier.  
+- **Consistency**: Both descriptions align, emphasizing **LAST_NAME**&#8217;s role in identifying familial lineage within customer records.  
+
+No contradictions were found; the descriptions complement each other to clarify the attribute&#8217;s function in customer data modeling.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa,6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="CUSTOMER" target="EMAIL_ID">
+      <data key="d4">36.0</data>
+      <data key="d5">Based on the provided data about the entities **CUSTOMER** and **EMAIL_ID**, the consolidated description is:
+
+The **EMAIL_ID** is a direct attribute of the **CUSTOMER** entity that provides contact information for the customer. It serves as a primary means of communication and identification, enabling direct outreach and engagement with the customer. This attribute is explicitly defined as essential for customer contact purposes within the data model.  
+
+*(Note: All source descriptions consistently emphasize EMAIL_ID's role as a contact-information attribute for CUSTOMER, with no contradictions observed.)*</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa,6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="CUSTOMER" target="PHONE_NUMBER">
+      <data key="d4">36.0</data>
+      <data key="d5">Based on the provided data entities and descriptions, the consolidated summary is:
+
+**CUSTOMER** and **PHONE_NUMBER**:  
+The PHONE_NUMBER serves as a direct attribute of the CUSTOMER entity, functioning as a dedicated contact mechanism for customer communication. It provides essential contact information to facilitate interactions with the customer, enabling direct outreach and engagement. This attribute is explicitly designed for customer-specific communication purposes within the data model.
+
+*Key points resolved from all descriptions:*  
+- PHONE_NUMBER is an atomic attribute directly associated with the CUSTOMER entity.  
+- Its primary purpose is enabling contact and communication with the customer.  
+- No contradictions exist; both descriptions reinforce its role as a contact-information attribute.  
+- No additional contextual details beyond the provided descriptions are incorporated.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa,6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="CUSTOMER" target="STATE">
+      <data key="d4">18.0</data>
+      <data key="d5">STATE is a direct attribute indicating the customer's geographical location.Direct attribute indicating customer's regional location.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="CUSTOMER" target="COUNTRY">
+      <data key="d4">18.0</data>
+      <data key="d5">COUNTRY is a direct attribute specifying the customer's country of residence.Direct attribute specifying customer's national location.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="CUSTOMER" target="TYPED_SIGN_UP_DATE">
+      <data key="d4">9.0</data>
+      <data key="d5">Derived attribute enabling date operations on sign-up events.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="STREAM_DATE" target="STREAM">
+      <data key="d4">18.0</data>
+      <data key="d5">Attribute describes temporal characteristics of the stream entityAttribute captures temporal dimension of stream events</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="SIGN_UP_DATE" target="TYPED_SIGN_UP_DATE">
+      <data key="d4">8.0</data>
+      <data key="d5">Derived metric created from raw sign-up date for operational use.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="RELEASE_DATE" target="TYPED_RELEASE_DATE">
+      <data key="d4">8.0</data>
+      <data key="d5">Derived metric created from raw release date for temporal analysis.</data>
+      <data key="d6">0ff66c610a851cbd22c79b14ef4b14fa</data>
+    </edge>
+    <edge source="STREAM_ID" target="STREAM">
+      <data key="d4">18.0</data>
+      <data key="d5">Primary key attribute uniquely identifies and describes the stream entityPrimary key attribute uniquely identifies each stream entity</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="STREAM" target="STREAM_CUSTOMER_ID">
+      <data key="d4">9.0</data>
+      <data key="d5">Foreign key attribute directly belongs to and describes the stream entity</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="STREAM" target="STREAM_CONTENT_ID">
+      <data key="d4">9.0</data>
+      <data key="d5">Foreign key attribute directly belongs to and describes the stream entity</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="STREAM" target="STREAM_TIME">
+      <data key="d4">18.0</data>
+      <data key="d5">Attribute describes temporal characteristics of the stream entityAttribute captures temporal dimension of stream events</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="STREAM" target="STREAM_DURATION">
+      <data key="d4">18.0</data>
+      <data key="d5">Attribute quantifies duration of stream engagementAttribute quantifies the duration of the stream entity</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+    <edge source="STREAM" target="STREAM_RATING">
+      <data key="d4">18.0</data>
+      <data key="d5">Attribute captures user feedback for streamed contentAttribute captures user feedback for the stream entity</data>
+      <data key="d6">6fc936fd90ea593869dff055901dcbbc</data>
+    </edge>
+  </graph>
+</graphml>

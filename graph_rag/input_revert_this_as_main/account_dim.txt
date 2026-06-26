@@ -1,0 +1,10 @@
+table_name,column_name,data_type,description,join_condition,sample_data,scd_type
+account_dim,account_id,BIGINT,Unique identifier for each account,,1,
+account_dim,account_name,VARCHAR(255),Name of the account,,Account A,
+account_dim,account_type,VARCHAR(50),Type of account (e.g., Corporate),,Corporate,
+account_dim,country,VARCHAR(100),Country associated with the account,,USA,
+account_dim,business_unit,VARCHAR(100),Business unit responsible for the account,,Investment,
+account_dim,effective_from_date,DATE,SCD Type 2 start date for the account,,2023-01-01,2
+account_dim,effective_to_date,DATE,SCD Type 2 end date (NULL if current),,NULL,2
+account_dim,is_current,BOOLEAN,Flag to indicate if this is the current record,,TRUE,2
+account_dim,version,INT,Version of the record,,1,2

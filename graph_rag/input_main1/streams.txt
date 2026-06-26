@@ -1,0 +1,8 @@
+table_name,column_name,data_type,description,join_condition,sample_data
+Streams,Stream_id,INT,Unique identifier for each stream,,2
+Streams,Customer_id,INT,ID of the customer who streamed the content,Join Key: Customer.Customer_Id,48
+Streams,Content_id,INT,ID of the content that was streamed,Join Key: Content.Content_id,91
+Streams,Stream_date,DATE,Date when the streams occurred,,04-Sep-2019
+Streams,Stream_time,VARCHAR(50),Time when the streams occurred,,8:39 PM
+Streams,Stream_duration,INT,Duration of the streams in minutes,,22
+Streams,Stream_rating,INT,Rating given to the streams by the customer,,3

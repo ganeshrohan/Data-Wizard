@@ -1,0 +1,463 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d6" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d5" for="edge" attr.name="description" attr.type="string" />
+  <key id="d4" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d3" for="node" attr.name="entity_type" attr.type="string" />
+  <key id="d2" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="description" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="STREAMS">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">Streams refer to the flow of data or information, possibly related to customer activity or transactions, and have unique identifiers, customer IDs, content IDs, and other attributes&gt;
+Streams refer to the flow of data or information, possibly related to content streaming or viewer activity}</data>
+      <data key="d2">d4c32cb337d90fe6c32a1507c69b61b3,dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </node>
+    <node id="STREAM_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A unique identifier for each stream, used to track and analyze stream information&gt;</data>
+      <data key="d2">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="CUSTOMER_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The ID of the customer who streamed the content, used to join tables and track customer information&gt;
+A unique identifier for each customer, used to join tables and track customer information}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5,dcf10bbfcd07ccf54a18b52e04a4d891</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="CONTENT_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The ID of the content that was streamed, used to join tables and track content information&gt;
+A unique identifier for each content item, used to track and analyze content information}</data>
+      <data key="d2">d4c32cb337d90fe6c32a1507c69b61b3,dcf10bbfcd07ccf54a18b52e04a4d891</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STREAM_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The date when the streams occurred, used for tracking and analysis&gt;</data>
+      <data key="d2">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STREAM_TIME">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The time when the streams occurred, used for tracking and analysis&gt;</data>
+      <data key="d2">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STREAM_DURATION">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The duration of the streams in minutes, used for tracking and analysis&gt;</data>
+      <data key="d2">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="STREAM_RATING">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The rating given to the streams by the customer, used for tracking and analysis&gt;</data>
+      <data key="d2">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="CUSTOMER">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">A customer is an individual who has streamed content, and has a unique identifier, and other attributes&gt;A customer is an individual who has signed up for a service or purchased a product, and has a unique identifier&gt;
+A customer is an individual who has signed up for a service or purchased a product, and has a unique identifier}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5,dcf10bbfcd07ccf54a18b52e04a4d891</data>
+      <data key="d3">CONCEPT</data>
+    </node>
+    <node id="CONTENT">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">Content refers to the material that was streamed, and has a unique identifier, and other attributes&gt;
+A content item is a unique piece of media, such as a movie, TV show, or documentary, with its own attributes and characteristics}</data>
+      <data key="d2">d4c32cb337d90fe6c32a1507c69b61b3,dcf10bbfcd07ccf54a18b52e04a4d891</data>
+      <data key="d3">CONCEPT</data>
+    </node>
+    <node id="TABLE_NAME">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The name of the table, which is Streams, used to identify the table and its attributes&gt;
+The name of the table, used to identify the table and its contents}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5,dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </node>
+    <node id="COLUMN_NAME">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The name of the column, used to identify the column and its attributes&gt;
+The name of the column, used to identify the column and its contents}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5,dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </node>
+    <node id="DATA_TYPE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The data type of the column, used to define the type of data stored in the column&gt;</data>
+      <data key="d2">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </node>
+    <node id="DESCRIPTION">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The description of the column, used to provide a brief explanation of the column's purpose&gt;
+A description of the attribute, used to provide context and understanding}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5,dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </node>
+    <node id="JOIN_CONDITION">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The join condition, used to specify how to join the Streams table with other tables&gt;
+A condition used to join tables, linking related data together}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5,dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </node>
+    <node id="SAMPLE_DATA">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The sample data, used to provide an example of the data stored in the column&gt;
+Sample data used to illustrate the contents of the table}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5,dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </node>
+    <node id="TITLE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The title of the content item, used to identify and describe the content}</data>
+      <data key="d2">d4c32cb337d90fe6c32a1507c69b61b3</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="EPISODE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The episode number of the content item, if applicable, used to track and organize content}</data>
+      <data key="d2">d4c32cb337d90fe6c32a1507c69b61b3</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="GENRE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The genre of the content item, used to categorize and recommend content}</data>
+      <data key="d2">d4c32cb337d90fe6c32a1507c69b61b3</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="DURATION">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The duration of the content item in minutes, used to track and analyze content engagement}</data>
+      <data key="d2">d4c32cb337d90fe6c32a1507c69b61b3</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="COST_PER_STREAM">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The cost to stream the content item, used to track and analyze revenue and viewer activity}</data>
+      <data key="d2">d4c32cb337d90fe6c32a1507c69b61b3</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="RELEASE_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The release date of the content item, used to track and analyze content popularity and trends}</data>
+      <data key="d2">d4c32cb337d90fe6c32a1507c69b61b3</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="DISTRIBUTOR">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The distributor of the content item, used to track and analyze content ownership and rights}</data>
+      <data key="d2">d4c32cb337d90fe6c32a1507c69b61b3</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="INTEGER">
+      <data key="d0">DATA_TYPE</data>
+      <data key="d1">A data type that represents whole numbers, used to store and analyze numerical data}
+A data type representing whole numbers, used for attributes such as invoice numbers and customer IDs}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5,d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </node>
+    <node id="VARCHAR">
+      <data key="d0">DATA_TYPE</data>
+      <data key="d1">A data type that represents character strings, used to store and analyze text data}
+A data type representing character strings, used for attributes such as plans, service periods, and payment methods}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5,d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </node>
+    <node id="INVOICE">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">An invoice is a document that lists the goods or services provided to a customer, along with the amount due}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5</data>
+    </node>
+    <node id="INVOICE_NUMBER">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A unique identifier for each invoice, used to track and analyze invoice information}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="SIGN_UP_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The date when the customer signed up for the service or product, used for tracking and analysis}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="PLAN">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The subscription plan selected by the customer, used for billing and service provision}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="SERVICE_PERIOD">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The period covered by the invoice, used for billing and service provision}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="PAYMENT_METHOD">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The payment method used by the customer, used for billing and payment processing}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <node id="TOTAL">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The total amount billed on the invoice, used for billing and payment processing}</data>
+      <data key="d2">ae531614ad2754d6b083288c0595dfa5</data>
+      <data key="d3">ATTRIBUTE</data>
+    </node>
+    <edge source="STREAMS" target="CUSTOMER">
+      <data key="d4">16.0</data>
+      <data key="d5">A stream is associated with a customer, who streamed the content, and has a unique customer ID</data>
+      <data key="d6">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="STREAMS" target="CONTENT">
+      <data key="d4">32.0</data>
+      <data key="d5">A stream is associated with content, which was streamed, and has a unique content ID
+A content item is associated with one or more streams of data or information, possibly related to viewer activity or engagement</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3,dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_ID">
+      <data key="d4">18.0</data>
+      <data key="d5">A stream ID is a unique identifier for each stream, used to track and analyze stream information</data>
+      <data key="d6">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_DATE">
+      <data key="d4">12.0</data>
+      <data key="d5">A stream date is an attribute of a stream, used for tracking and analysis</data>
+      <data key="d6">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_TIME">
+      <data key="d4">12.0</data>
+      <data key="d5">A stream time is an attribute of a stream, used for tracking and analysis</data>
+      <data key="d6">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_DURATION">
+      <data key="d4">14.0</data>
+      <data key="d5">A stream duration is an attribute of a stream, used for tracking and analysis</data>
+      <data key="d6">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_RATING">
+      <data key="d4">8.0</data>
+      <data key="d5">A stream rating is an attribute of a stream, used for tracking and analysis</data>
+      <data key="d6">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="STREAMS" target="CUSTOMER_ID">
+      <data key="d4">8.0</data>
+      <data key="d5">A customer ID is associated with a stream, indicating the customer who streamed the content</data>
+      <data key="d6">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="STREAMS" target="CONTENT_ID">
+      <data key="d4">8.0</data>
+      <data key="d5">A content ID is associated with a stream, indicating the content that was streamed</data>
+      <data key="d6">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="STREAMS" target="TABLE_NAME">
+      <data key="d4">9.0</data>
+      <data key="d5">The table name is an attribute of the Streams table, used to identify the table</data>
+      <data key="d6">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="STREAMS" target="COLUMN_NAME">
+      <data key="d4">8.0</data>
+      <data key="d5">The column name is an attribute of the Streams table, used to identify the columns</data>
+      <data key="d6">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="STREAMS" target="DATA_TYPE">
+      <data key="d4">8.0</data>
+      <data key="d5">The data type is an attribute of the Streams table, used to define the type of data stored in the columns</data>
+      <data key="d6">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="STREAMS" target="DESCRIPTION">
+      <data key="d4">8.0</data>
+      <data key="d5">The description is an attribute of the Streams table, used to provide a brief explanation of the columns' purposes</data>
+      <data key="d6">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="STREAMS" target="JOIN_CONDITION">
+      <data key="d4">8.0</data>
+      <data key="d5">The join condition is an attribute of the Streams table, used to specify how to join the table with other tables</data>
+      <data key="d6">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="STREAMS" target="SAMPLE_DATA">
+      <data key="d4">1.0</data>
+      <data key="d5">The sample data is an attribute of the Streams table, used to provide an example of the data stored in the columns</data>
+      <data key="d6">dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="CUSTOMER_ID" target="CUSTOMER">
+      <data key="d4">36.0</data>
+      <data key="d5">A customer ID is a unique identifier for each customer, used to track and analyze customer information
+A customer ID is a unique identifier for each customer, used to track and analyze customer information</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5,dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="CUSTOMER_ID" target="INVOICE">
+      <data key="d4">16.0</data>
+      <data key="d5">A customer ID is used to join the customer and invoice tables, linking a customer to their invoices</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="CUSTOMER_ID" target="INTEGER">
+      <data key="d4">9.0</data>
+      <data key="d5">A customer ID is an attribute of type integer, used to uniquely identify each customer</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="CONTENT_ID" target="CONTENT">
+      <data key="d4">36.0</data>
+      <data key="d5">A content ID is a unique identifier for each content, used to track and analyze content information
+A content ID is a unique identifier for each content item, used to track and analyze content information</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3,dcf10bbfcd07ccf54a18b52e04a4d891</data>
+    </edge>
+    <edge source="CONTENT_ID" target="INTEGER">
+      <data key="d4">9.0</data>
+      <data key="d5">The content ID is of type integer, used to store and analyze unique identifiers</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="CUSTOMER" target="INVOICE">
+      <data key="d4">18.0</data>
+      <data key="d5">An invoice is associated with a customer, who is being billed for goods or services</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="CUSTOMER" target="SIGN_UP_DATE">
+      <data key="d4">16.0</data>
+      <data key="d5">A sign-up date is an attribute of a customer, used for tracking and analysis</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="CONTENT" target="TITLE">
+      <data key="d4">12.0</data>
+      <data key="d5">A title is an attribute of a content item, used to identify and describe the content</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="CONTENT" target="EPISODE">
+      <data key="d4">12.0</data>
+      <data key="d5">An episode number is an attribute of a content item, used to track and organize content</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="CONTENT" target="GENRE">
+      <data key="d4">14.0</data>
+      <data key="d5">A genre is an attribute of a content item, used to categorize and recommend content</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="CONTENT" target="DURATION">
+      <data key="d4">14.0</data>
+      <data key="d5">A duration is an attribute of a content item, used to track and analyze content engagement</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="CONTENT" target="COST_PER_STREAM">
+      <data key="d4">16.0</data>
+      <data key="d5">A cost per stream is an attribute of a content item, used to track and analyze revenue and viewer activity</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="CONTENT" target="RELEASE_DATE">
+      <data key="d4">16.0</data>
+      <data key="d5">A release date is an attribute of a content item, used to track and analyze content popularity and trends</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="CONTENT" target="DISTRIBUTOR">
+      <data key="d4">9.0</data>
+      <data key="d5">A distributor is an attribute of a content item, used to track and analyze content ownership and rights</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="TABLE_NAME" target="INVOICE">
+      <data key="d4">9.0</data>
+      <data key="d5">The table name is an attribute of the invoice table, used to identify the table and its contents</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="COLUMN_NAME" target="INVOICE">
+      <data key="d4">9.0</data>
+      <data key="d5">The column name is an attribute of the invoice table, used to identify the column and its contents</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="DESCRIPTION" target="INVOICE">
+      <data key="d4">8.0</data>
+      <data key="d5">A description is an attribute of the invoice table, used to provide context and understanding</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="JOIN_CONDITION" target="INVOICE">
+      <data key="d4">8.0</data>
+      <data key="d5">A join condition is an attribute of the invoice table, used to link related data together</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="SAMPLE_DATA" target="INVOICE">
+      <data key="d4">1.0</data>
+      <data key="d5">Sample data is an attribute of the invoice table, used to illustrate the contents of the table</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="TITLE" target="VARCHAR">
+      <data key="d4">8.0</data>
+      <data key="d5">The title is of type varchar, used to store and analyze text data</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="EPISODE" target="INTEGER">
+      <data key="d4">9.0</data>
+      <data key="d5">The episode number is of type integer, used to store and analyze numerical data</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="GENRE" target="VARCHAR">
+      <data key="d4">8.0</data>
+      <data key="d5">The genre is of type varchar, used to store and analyze text data</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="DURATION" target="INTEGER">
+      <data key="d4">9.0</data>
+      <data key="d5">The duration is of type integer, used to store and analyze numerical data</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="COST_PER_STREAM" target="VARCHAR">
+      <data key="d4">1.0</data>
+      <data key="d5">The cost per stream is of type varchar, used to store and analyze monetary data</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="RELEASE_DATE" target="VARCHAR">
+      <data key="d4">8.0</data>
+      <data key="d5">The release date is of type varchar, used to store and analyze date data</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="DISTRIBUTOR" target="VARCHAR">
+      <data key="d4">8.0</data>
+      <data key="d5">The distributor is of type varchar, used to store and analyze text data</data>
+      <data key="d6">d4c32cb337d90fe6c32a1507c69b61b3</data>
+    </edge>
+    <edge source="INTEGER" target="INVOICE_NUMBER">
+      <data key="d4">9.0</data>
+      <data key="d5">An invoice number is an attribute of type integer, used to uniquely identify each invoice</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="VARCHAR" target="PLAN">
+      <data key="d4">7.0</data>
+      <data key="d5">A plan is an attribute of type varchar, representing the subscription plan selected by the customer</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="VARCHAR" target="SERVICE_PERIOD">
+      <data key="d4">7.0</data>
+      <data key="d5">A service period is an attribute of type varchar, representing the period covered by the invoice</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="VARCHAR" target="PAYMENT_METHOD">
+      <data key="d4">7.0</data>
+      <data key="d5">A payment method is an attribute of type varchar, representing the payment method used by the customer</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="VARCHAR" target="TOTAL">
+      <data key="d4">8.0</data>
+      <data key="d5">A total is an attribute of type varchar, representing the total amount billed on the invoice</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="INVOICE" target="INVOICE_NUMBER">
+      <data key="d4">18.0</data>
+      <data key="d5">An invoice number is a unique identifier for each invoice, used to track and analyze invoice information</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="INVOICE" target="PLAN">
+      <data key="d4">14.0</data>
+      <data key="d5">A plan is an attribute of an invoice, representing the subscription plan selected by the customer</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="INVOICE" target="SERVICE_PERIOD">
+      <data key="d4">14.0</data>
+      <data key="d5">A service period is an attribute of an invoice, representing the period covered by the invoice</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="INVOICE" target="PAYMENT_METHOD">
+      <data key="d4">14.0</data>
+      <data key="d5">A payment method is an attribute of an invoice, representing the payment method used by the customer</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+    <edge source="INVOICE" target="TOTAL">
+      <data key="d4">9.0</data>
+      <data key="d5">A total is an attribute of an invoice, representing the total amount billed on the invoice</data>
+      <data key="d6">ae531614ad2754d6b083288c0595dfa5</data>
+    </edge>
+  </graph>
+</graphml>

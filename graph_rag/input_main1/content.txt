@@ -1,0 +1,9 @@
+table_name,column_name,data_type,description,join_condition,sample_data
+Content,Content_id,INTEGER,Unique identifier for each content item,Join Key: Streams.Content_id,100
+Content,Title,VARCHAR(90),Title of the content,,Jay-Z: Made in America
+Content,Episode,INTEGER,Episode number, if applicable,,3
+Content,Genre,VARCHAR(29),Genre of the content,,Documentary
+Content,Duration,INTEGER,Duration of the content in minutes,,53
+Content,Cost_per_stream,VARCHAR(6),Cost to stream the content,,\$7.96
+Content,Release_date,VARCHAR(11),Release date of the content,,11-Jul-2007
+Content,Distributor,VARCHAR(36),Distributor of the content,,Crooks, Beer and Schmidt

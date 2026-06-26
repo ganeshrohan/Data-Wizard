@@ -1,0 +1,13 @@
+table_name,column_name,data_type,description,join_condition,sample_data
+exposure_fact,exposure_id,BIGINT,Unique identifier for each exposure,,1
+exposure_fact,account_id,BIGINT,Foreign key to account_dim,Join Keys: account_dim.account_id,1
+exposure_fact,security_id,BIGINT,Foreign key to security_dim,Join Keys: security_dim.security_id,1001
+exposure_fact,date_key,DATE,Foreign key to date_dim,Join Keys: date_dim.date_key,2024-01-01
+exposure_fact,currency_code,VARCHAR(10),Foreign key to currency_dim,Join Keys: currency_dim.currency_code,USD
+exposure_fact,region_id,BIGINT,Foreign key to region_dim,Join Keys: region_dim.region_id,1
+exposure_fact,exposure_amount,DECIMAL(18, 4),The amount of exposure in the respective currency,,500000
+exposure_fact,exposure_value,DECIMAL(18, 4),Calculated value of exposure,,550000
+exposure_fact,market_value,DECIMAL(18, 4),Market value of exposure,,600000
+exposure_fact,risk_category,VARCHAR(100),Category of risk (e.g., High Risk),,High Risk
+exposure_fact,source_system,VARCHAR(50),Source system for the exposure data,,System A
+exposure_fact,load_timestamp,TIMESTAMP,Timestamp when the record was loaded,,CURRENT_TIMESTAMP

@@ -1,0 +1,5 @@
+table_name,column_name,data_type,description,join_condition,sample_data
+region_dim,region_id,BIGINT,Unique identifier for each region,,1
+region_dim,region_name,VARCHAR(100),Name of the region,,North America
+region_dim,country,VARCHAR(100),Country within the region,,USA
+region_dim,subregion,VARCHAR(100),Subregion within the country (if applicable),,Eastern

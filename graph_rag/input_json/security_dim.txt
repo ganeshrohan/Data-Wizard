@@ -1,0 +1,86 @@
+{
+  "table_name": "security_dim",
+  "columns": [
+    {
+      "column_name": "security_id",
+      "data_type": "BIGINT",
+      "description": "Unique identifier for each security",
+      "join_condition": null,
+      "sample_data": 1001
+    },
+    {
+      "column_name": "security_name",
+      "data_type": "VARCHAR(255)",
+      "description": "Name of the security",
+      "join_condition": null,
+      "sample_data": "Security A"
+    },
+    {
+      "column_name": "security_type",
+      "data_type": "VARCHAR(50)",
+      "description": "Type of security (e.g., Equity)",
+      "join_condition": null,
+      "sample_data": "Equity"
+    },
+    {
+      "column_name": "issuer",
+      "data_type": "VARCHAR(255)",
+      "description": "Issuer of the security",
+      "join_condition": null,
+      "sample_data": "Issuer 1"
+    },
+    {
+      "column_name": "country",
+      "data_type": "VARCHAR(100)",
+      "description": "Country associated with the security",
+      "join_condition": null,
+      "sample_data": "USA"
+    },
+    {
+      "column_name": "risk_rating",
+      "data_type": "VARCHAR(10)",
+      "description": "Risk rating of the security",
+      "join_condition": null,
+      "sample_data": "AAA"
+    },
+    {
+      "column_name": "industry",
+      "data_type": "VARCHAR(100)",
+      "description": "Industry associated with the security",
+      "join_condition": null,
+      "sample_data": "Technology"
+    },
+    {
+      "column_name": "effective_from_date",
+      "data_type": "DATE",
+      "description": "SCD Type 2 start date for the security",
+      "join_condition": null,
+      "sample_data": "2022-01-01",
+      "scd_type": 2
+    },
+    {
+      "column_name": "effective_to_date",
+      "data_type": "DATE",
+      "description": "SCD Type 2 end date (NULL if current)",
+      "join_condition": null,
+      "sample_data": null,
+      "scd_type": 2
+    },
+    {
+      "column_name": "is_current",
+      "data_type": "BOOLEAN",
+      "description": "Flag to indicate if this is the current record",
+      "join_condition": null,
+      "sample_data": true,
+      "scd_type": 2
+    },
+    {
+      "column_name": "version",
+      "data_type": "INT",
+      "description": "Version of the record",
+      "join_condition": null,
+      "sample_data": 1,
+      "scd_type": 2
+    }
+  ]
+}

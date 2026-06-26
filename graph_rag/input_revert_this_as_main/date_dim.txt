@@ -1,0 +1,10 @@
+table_name,column_name,data_type,description,join_condition,sample_data
+date_dim,date_key,DATE,Primary key for each date,,2024-01-01
+date_dim,day_of_week,INT,Day of the week (1=Sunday, 2=Monday, etc.),,2
+date_dim,day_of_month,INT,Day of the month,,1
+date_dim,day_of_year,INT,Day of the year,,1
+date_dim,week_of_year,INT,Week of the year,,1
+date_dim,month,INT,Month number,,1
+date_dim,quarter,INT,Quarter of the year,,1
+date_dim,year,INT,Year,,2024
+date_dim,is_weekend,BOOLEAN,Indicates whether the date falls on a weekend,,FALSE

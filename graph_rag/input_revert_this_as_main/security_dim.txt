@@ -1,0 +1,12 @@
+table_name,column_name,data_type,description,join_condition,sample_data,scd_type
+security_dim,security_id,BIGINT,Unique identifier for each security,,1001,
+security_dim,security_name,VARCHAR(255),Name of the security,,Security A,
+security_dim,security_type,VARCHAR(50),Type of security (e.g., Equity),,Equity,
+security_dim,issuer,VARCHAR(255),Issuer of the security,,Issuer 1,
+security_dim,country,VARCHAR(100),Country associated with the security,,USA,
+security_dim,risk_rating,VARCHAR(10),Risk rating of the security,,AAA,
+security_dim,industry,VARCHAR(100),Industry associated with the security,,Technology,
+security_dim,effective_from_date,DATE,SCD Type 2 start date for the security,,2022-01-01,2
+security_dim,effective_to_date,DATE,SCD Type 2 end date (NULL if current),,NULL,2
+security_dim,is_current,BOOLEAN,Flag to indicate if this is the current record,,TRUE,2
+security_dim,version,INT,Version of the record,,1,2

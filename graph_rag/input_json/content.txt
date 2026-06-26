@@ -1,0 +1,61 @@
+{
+  "table_name": "Content",
+  "columns": [
+    {
+      "column_name": "Content_id",
+      "data_type": "INTEGER",
+      "description": "Unique identifier for each content item",
+      "join_condition": "Join Key: Streams.Content_id",
+      "sample_data": 100
+    },
+    {
+      "column_name": "Title",
+      "data_type": "VARCHAR(90)",
+      "description": "Title of the content",
+      "join_condition": null,
+      "sample_data": "Jay-Z: Made in America"
+    },
+    {
+      "column_name": "Episode",
+      "data_type": "INTEGER",
+      "description": "Episode number, if applicable",
+      "join_condition": null,
+      "sample_data": 3
+    },
+    {
+      "column_name": "Genre",
+      "data_type": "VARCHAR(29)",
+      "description": "Genre of the content",
+      "join_condition": null,
+      "sample_data": "Documentary"
+    },
+    {
+      "column_name": "Duration",
+      "data_type": "INTEGER",
+      "description": "Duration of the content in minutes",
+      "join_condition": null,
+      "sample_data": 53
+    },
+    {
+      "column_name": "Cost_per_stream",
+      "data_type": "VARCHAR(6)",
+      "description": "Cost to stream the content",
+      "join_condition": null,
+      "sample_data": "$7.96"
+    },
+    {
+      "column_name": "Release_date",
+      "data_type": "VARCHAR(11)",
+      "description": "Release date of the content",
+      "join_condition": null,
+      "sample_data": "11-Jul-2007"
+    },
+    {
+      "column_name": "Distributor",
+      "data_type": "VARCHAR(36)",
+      "description": "Distributor of the content",
+      "join_condition": null,
+      "sample_data": "Crooks, Beer and Schmidt"
+    }
+  ]
+}

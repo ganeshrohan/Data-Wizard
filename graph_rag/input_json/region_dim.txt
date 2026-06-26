@@ -1,0 +1,33 @@
+{
+  "table_name": "region_dim",
+  "columns": [
+    {
+      "column_name": "region_id",
+      "data_type": "BIGINT",
+      "description": "Unique identifier for each region",
+      "join_condition": null,
+      "sample_data": 1
+    },
+    {
+      "column_name": "region_name",
+      "data_type": "VARCHAR(100)",
+      "description": "Name of the region",
+      "join_condition": null,
+      "sample_data": "North America"
+    },
+    {
+      "column_name": "country",
+      "data_type": "VARCHAR(100)",
+      "description": "Country within the region",
+      "join_condition": null,
+      "sample_data": "USA"
+    },
+    {
+      "column_name": "subregion",
+      "data_type": "VARCHAR(100)",
+      "description": "Subregion within the country (if applicable)",
+      "join_condition": null,
+      "sample_data": "Eastern"
+    }
+  ]
+}

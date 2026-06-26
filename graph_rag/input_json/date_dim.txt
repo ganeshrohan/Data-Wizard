@@ -1,0 +1,68 @@
+{
+  "table_name": "date_dim",
+  "columns": [
+    {
+      "column_name": "date_key",
+      "data_type": "DATE",
+      "description": "Primary key for each date",
+      "join_condition": null,
+      "sample_data": "2024-01-01"
+    },
+    {
+      "column_name": "day_of_week",
+      "data_type": "INT",
+      "description": "Day of the week (1=Sunday, 2=Monday, etc.)",
+      "join_condition": null,
+      "sample_data": 2
+    },
+    {
+      "column_name": "day_of_month",
+      "data_type": "INT",
+      "description": "Day of the month",
+      "join_condition": null,
+      "sample_data": 1
+    },
+    {
+      "column_name": "day_of_year",
+      "data_type": "INT",
+      "description": "Day of the year",
+      "join_condition": null,
+      "sample_data": 1
+    },
+    {
+      "column_name": "week_of_year",
+      "data_type": "INT",
+      "description": "Week of the year",
+      "join_condition": null,
+      "sample_data": 1
+    },
+    {
+      "column_name": "month",
+      "data_type": "INT",
+      "description": "Month number",
+      "join_condition": null,
+      "sample_data": 1
+    },
+    {
+      "column_name": "quarter",
+      "data_type": "INT",
+      "description": "Quarter of the year",
+      "join_condition": null,
+      "sample_data": 1
+    },
+    {
+      "column_name": "year",
+      "data_type": "INT",
+      "description": "Year",
+      "join_condition": null,
+      "sample_data": 2024
+    },
+    {
+      "column_name": "is_weekend",
+      "data_type": "BOOLEAN",
+      "description": "Indicates whether the date falls on a weekend",
+      "join_condition": null,
+      "sample_data": false
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+table_name,column_name,data_type,description,join_condition,sample_data
+Invoice,Invoice_number,INTEGER,Unique identifier for each invoice,,31875
+Invoice,Customer_id,INTEGER,ID of the customer being billed,Join Key: Customer.Customer_Id,1
+Invoice,Sign_up_date,VARCHAR(13),Date when the customer signed up,,8/7/10
+Invoice,Plan,VARCHAR(8),Subscription plan selected by the customer,,Premium
+Invoice,Service_period,VARCHAR(25),Period covered by the invoice,,2010-08-07 to 2010-09-06
+Invoice,Payment_method,VARCHAR(15),Payment method used by the customer,,MasterCard
+Invoice,Total,VARCHAR(20),Total amount billed on the invoice,,$15.99

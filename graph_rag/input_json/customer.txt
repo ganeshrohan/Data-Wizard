@@ -1,0 +1,61 @@
+{
+  "table_name": "Customer",
+  "columns": [
+    {
+      "column_name": "Customer_Id",
+      "data_type": "INTEGER",
+      "description": "Unique identifier for each customer",
+      "join_condition": "Join Keys: Invoice.Customer_id, Streams.Customer_id",
+      "sample_data": 1
+    },
+    {
+      "column_name": "First_Name",
+      "data_type": "VARCHAR(15)",
+      "description": "First name of the customer",
+      "join_condition": null,
+      "sample_data": "Freedman"
+    },
+    {
+      "column_name": "Last_Name",
+      "data_type": "VARCHAR(15)",
+      "description": "Last name of the customer",
+      "join_condition": null,
+      "sample_data": "Akroyd"
+    },
+    {
+      "column_name": "Email_ID",
+      "data_type": "VARCHAR(32)",
+      "description": "Email address of the customer",
+      "join_condition": null,
+      "sample_data": "fakroyd0@umich.edu"
+    },
+    {
+      "column_name": "Phone_Number",
+      "data_type": "VARCHAR(12)",
+      "description": "Phone number of the customer",
+      "join_condition": null,
+      "sample_data": "913-680-9878"
+    },
+    {
+      "column_name": "State",
+      "data_type": "VARCHAR(19)",
+      "description": "State where the customer resides",
+      "join_condition": null,
+      "sample_data": "Kansas"
+    },
+    {
+      "column_name": "Country",
+      "data_type": "VARCHAR(13)",
+      "description": "Country where the customer resides",
+      "join_condition": null,
+      "sample_data": "United States"
+    },
+    {
+      "column_name": "Sign_up_date",
+      "data_type": "VARCHAR(11)",
+      "description": "Date when the customer signed up",
+      "join_condition": null,
+      "sample_data": "07-Aug-2010"
+    }
+  ]
+}

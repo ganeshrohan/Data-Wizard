@@ -1,0 +1,238 @@
+# Netflix Data Concept 
+# Databse used: Snowflake
+
+This analytics model uses entities to represent physical tables with raw data, 
+while metrics not actual columsn but are reusable calculations that make the data analysis-ready. 
+Relationships are the defined logical rules that join these tables together. 
+
+metrics:
+  # --- Numeric Metrics ---
+  - metric_name: "Invoice Amount (USD)"
+    aliases: ["Revenue in Dollars", "USD Payments"]
+    description: "The numeric value of an invoice ONLY IF it is in USD. Returns NULL for other currencies. Use this metric directly in a SUM() aggregation to get the total dollar revenue. To use this in SQL, you MUST use its 'calculation_logic' expression. This is NOT a physical column."
+    applies_to_entity: "invoice"
+    source_column: "total"
+    calculation_logic: "CASE WHEN total LIKE '$%' THEN CAST(REGEXP_REPLACE(total, '[^0-9.]', '') AS DECIMAL(10,2)) ELSE NULL END"
+    data_type: "DECIMAL(10,2)"
+    nlq_examples:
+      - natural_language_query: "What is the total revenue in dollars?"
+        sql_snippet: "SELECT SUM(CASE WHEN i.total LIKE '$%' THEN CAST(REGEXP_REPLACE(i.total, '[^0-9.]', '') AS DECIMAL(10,2)) ELSE NULL END) FROM invoice i"
+  - metric_name: "Invoice Amount (EUR)"
+    description: "The numeric value of an invoice ONLY IF it is in EUR. Returns NULL for other currencies. Use this metric directly in a SUM() aggregation to get the total euro revenue. To use this in SQL, you MUST use its 'calculation_logic' expression. This is NOT a physical column."
+    applies_to_entity: "invoice"
+    source_column: "total"
+    calculation_logic: "CASE WHEN total LIKE '€%' THEN CAST(REGEXP_REPLACE(total, '[^0-9.]', '') AS DECIMAL(10,2)) ELSE NULL END"
+    data_type: "DECIMAL(10,2)"
+    nlq_examples:
+      - natural_language_query: "Calculate the sum of all payments in euros."
+        sql_snippet: "SELECT SUM(CASE WHEN i.total LIKE '€%' THEN CAST(REGEXP_REPLACE(i.total, '[^0-9.]', '') AS DECIMAL(10,2)) ELSE NULL END) FROM invoice i"
+  - metric_name: "Invoice Currency"
+    description: "The original CURRENCY CODE ('USD', 'EUR') of the invoice. Use this for filtering or grouping by currency type. To use this in SQL, you MUST use its 'calculation_logic' expression."
+    applies_to_entity: "invoice"
+    source_column: "total"
+    calculation_logic: "CASE WHEN total LIKE '$%' THEN 'USD' WHEN total LIKE '€%' THEN 'EUR' ELSE 'UNKNOWN' END"
+    data_type: "VARCHAR(7)"
+    nlq_examples:
+      - natural_language_query: "Show the number of invoices per currency."
+        sql_snippet: "SELECT (CASE WHEN i.total LIKE '$%' THEN 'USD' WHEN i.total LIKE '€%' THEN 'EUR' ELSE 'UNKNOWN' END), COUNT(*) FROM invoice i GROUP BY 1"
+  - metric_name: "Cost Per Stream (USD)"
+    description: "The numeric value of the content cost ONLY IF it is in USD. Returns NULL otherwise. Use this for summing up costs in dollars. To use this in SQL, you MUST use its 'calculation_logic' expression."
+    applies_to_entity: "content"
+    source_column: "cost_per_stream"
+    calculation_logic: "CASE WHEN cost_per_stream LIKE '$%' THEN CAST(REGEXP_REPLACE(cost_per_stream, '[^0-9.]', '') AS DECIMAL(10,2)) ELSE NULL END"
+    data_type: "DECIMAL(10,2)"
+  - metric_name: "Cost Per Stream (EUR)"
+    description: "The numeric value of the content cost ONLY IF it is in EUR. Returns NULL otherwise. Use this for summing up costs in euros. To use this in SQL, you MUST use its 'calculation_logic' expression."
+    applies_to_entity: "content"
+    source_column: "cost_per_stream"
+    calculation_logic: "CASE WHEN cost_per_stream LIKE '€%' THEN CAST(REGEXP_REPLACE(cost_per_stream, '[^0-9.]', '') AS DECIMAL(10,2)) ELSE NULL END"
+    data_type: "DECIMAL(10,2)"
+  - metric_name: "Cost Currency"
+    description: "The original CURRENCY CODE ('USD', 'EUR') of the content cost. Use this for filtering or grouping by currency type."
+    applies_to_entity: "content"
+    source_column: "cost_per_stream"
+    calculation_logic: "CASE WHEN cost_per_stream LIKE '$%' THEN 'USD' WHEN cost_per_stream LIKE '€%' THEN 'EUR' ELSE 'UNKNOWN' END"
+    data_type: "VARCHAR(7)"
+
+  # --- Date/Time Metrics ---
+  - metric_name: "Typed Service Start Date"
+    description: "The proper DATE type for the start of an invoice service period. Use this for all date-based filtering and operations on the service start."
+    applies_to_entity: "invoice"
+    source_column: "service_period"
+    calculation_logic: "TO_DATE(SPLIT_PART(service_period, ' to ', 1), 'YYYY-MM-DD')"
+    data_type: "DATE"
+  - metric_name: "Typed Service End Date"
+    description: "The proper DATE type for the end of an invoice service period. Use this for all date-based filtering and operations on the service end."
+    applies_to_entity: "invoice"
+    source_column: "service_period"
+    calculation_logic: "TO_DATE(SPLIT_PART(service_period, ' to ', 2), 'YYYY-MM-DD')"
+    data_type: "DATE"
+  - metric_name: "Typed Stream Date"
+    description: "The 'stream_date' column converted to a proper DATE type. Use this for all date-based operations."
+    applies_to_entity: "streams"
+    source_column: "stream_date"
+    format_string: "DD-Mon-YYYY"
+    calculation_logic: "TO_DATE(stream_date)"
+    data_type: "DATE"
+  - metric_name: "Year of Stream"
+    description: "The year component of the stream date. Useful for annual reporting."
+    applies_to_entity: "streams"
+    source_column: "stream_date"
+    calculation_logic: "EXTRACT(YEAR FROM TO_DATE(stream_date))"
+    data_type: "INT"
+  - metric_name: "Month of Stream"
+    description: "The month number (1-12) of the stream date. Useful for monthly reporting."
+    applies_to_entity: "streams"
+    source_column: "stream_date"
+    calculation_logic: "EXTRACT(MONTH FROM TO_DATE(stream_date))"
+    data_type: "INT"
+  - metric_name: "Typed Invoice Date"
+    description: "The 'invoice_date' column converted to a proper DATE type. Use this for all date-based operations."
+    applies_to_entity: "invoice"
+    source_column: "invoice_date"
+    format_string: "MM/DD/YY"
+    calculation_logic: "TO_DATE(invoice_date, 'MM/DD/YY')"
+    data_type: "DATE"
+  - metric_name: "Typed Sign Up Date"
+    description: "The customer 'sign_up_date' column converted to a proper DATE type. Use this for all date-based operations."
+    applies_to_entity: "customer"
+    source_column: "sign_up_date"
+    format_string: "DD-Mon-YYYY"
+    calculation_logic: "TO_DATE(sign_up_date, 'DD-Mon-YYYY')"
+    data_type: "DATE"
+  - metric_name: "Typed Release Date"
+    description: "The content 'release_date' column converted to a proper DATE type. Use this for all date-based operations."
+    applies_to_entity: "content"
+    source_column: "release_date"
+    format_string: "DD-Mon-YYYY"
+    calculation_logic: "TO_DATE(release_date, 'DD-Mon-YYYY')"
+    data_type: "DATE"
+
+relationships:
+  - name: "streams_to_customer"
+    semantic_description: "Links a customer's individual streaming events to their main account profile."
+    from_entity: "streams"
+    to_entity: "customer"
+    cardinality: "MANY_TO_ONE"
+    join_on:
+      - { from_column: "customer_id", to_column: "customer_id" }
+  - name: "streams_to_content"
+    semantic_description: "Connects a specific streaming event to the content that was watched."
+    from_entity: "streams"
+    to_entity: "content"
+    cardinality: "MANY_TO_ONE"
+    join_on:
+      - { from_column: "content_id", to_column: "content_id" }
+  - name: "invoices_to_customer"
+    semantic_description: "Associates a customer's billing records with their main account profile."
+    usage_hint: "Use this join for any query combining billing information (plan, total) with customer attributes (state, country)."
+    from_entity: "invoice"
+    to_entity: "customer"
+    cardinality: "MANY_TO_ONE"
+    join_on:
+      - { from_column: "customer_id", to_column: "customer_id" }
+  - name: "invoice_to_streams"
+    semantic_description: "A multi-hop relationship connecting billing to streaming activity via the customer. Essential for analyzing viewing behavior of customers on specific plans (e.g., 'What do Premium users watch?')."
+    from_entity: "invoice"
+    to_entity: "streams"
+    cardinality: "ONE_TO_MANY"
+    join_path:
+      - { from: "invoice", to: "customer", on: "customer_id" }
+      - { from: "customer", to: "streams", on: "customer_id" }
+
+entities:
+  - entity_name: "streams"
+    business_concept: "Streaming Event"
+    description: "Atomic streaming events. Primary fact table for engagement metrics."
+    aliases: ["viewing_history", "plays"]
+    base_table: { database: "Netflix", schema: "Consum", table: "streams" }
+    hierarchies:
+      - name: "Time Hierarchy"
+        levels: ["Year of Stream", "Month of Stream"]
+    columns:
+      - { name: "stream_id", description: "Unique identifier for each stream event.", data_type: "INT", is_primary_key: true, sample_values: [2, 3] }
+      - { name: "customer_id", description: "Foreign key to the 'customer' entity.", aliases: ["user_id"], data_type: "INT", is_foreign_key: true, references_entity: "customer", sample_values: [48, 92] }
+      - { name: "content_id", description: "Foreign key to the 'content' entity.", aliases: ["title_id"], data_type: "INT", is_foreign_key: true, references_entity: "content", sample_values: [91, 2] }
+      - name: "stream_date"
+        description: "Date of the stream. WARNING: Stored as text. For date operations, use the 'Typed Stream Date' metric."
+        data_type: "VARCHAR(11)"
+        derived_metric_name: "Typed Stream Date"
+        sample_values: ["04-Sep-2019", "25-Jan-2019"]
+      - { name: "stream_time", description: "Local start time of the stream.", data_type: "VARCHAR(8)", sample_values: ["8:39 PM", "9:47 PM"] }
+      - { name: "stream_duration", description: "The viewing duration in minutes.", data_type: "INT", sample_values: [22, 85] }
+      - { name: "stream_rating", description: "User-provided rating (1-5).", data_type: "INT", sample_values: [3, 4, null], data_quality_notes: ["Contains a high percentage of NULL values. Use COUNT(stream_rating) instead of COUNT(*) when analyzing rating counts."] }
+  - entity_name: "invoice"
+    business_concept: "Subscription Bill"
+    description: "Subscription billing records. Primary table for revenue analysis."
+    aliases: ["billing", "subscriptions", "payments"]
+    base_table: { database: "Netflix", schema: "Consum", table: "invoice" }
+    columns:
+      - { name: "invoice_number", description: "Unique identifier for each invoice.", data_type: "INT", is_primary_key: true, sample_values: [68584, 86500] }
+      - { name: "customer_id", description: "Foreign key to the 'customer' entity.", data_type: "INT", is_foreign_key: true, references_entity: "customer", sample_values: [6, 7] }
+      - name: "invoice_date"
+        description: "Date the invoice was generated. WARNING: Stored as text. For date operations, use the 'Typed Invoice Date' metric."
+        data_type: "VARCHAR(8)"
+        derived_metric_name: "Typed Invoice Date"
+        sample_values: ["8/5/17", "7/15/19"]
+      - name: "plan"
+        description: "The name of the subscription tier."
+        data_type: "VARCHAR(8)"
+        sample_values: ["Basic", "Premium", "Standard"]
+        value_mappings:
+          Premium: "The top-tier plan with 4K streaming and maximum simultaneous screens. Often referred to as the 'best' or 'ultra' plan."
+          Standard: "The most popular mid-tier plan with HD streaming."
+          Basic: "The entry-level plan with SD streaming."
+      - name: "service_period"
+        description: "The billing period. WARNING: Stored as text. For filtering, use 'Typed Service Start Date' and 'Typed Service End Date' metrics."
+        data_type: "VARCHAR(25)"
+        derived_metric_name: ["Typed Service Start Date", "Typed Service End Date"]
+        sample_values: ["2017-08-05 to 2017-09-04", "2019-07-15 to 2019-08-14"]
+      - { name: "payment_method", description: "Payment instrument used.", data_type: "VARCHAR(15)", sample_values: ["Visa", "MasterCard"] }
+      - name: "total"
+        description: "Raw billing amount as text, including currency symbols ($ or €). WARNING: Do NOT use this column directly for any operation. You MUST use the 'Invoice Amount (USD)' or 'Invoice Amount (EUR)' metrics for calculations, and the 'Invoice Currency' metric for currency-specific filtering."
+        data_type: "VARCHAR(20)"
+        derived_metric_name: ["Invoice Amount (USD)", "Invoice Amount (EUR)", "Invoice Currency"]
+        sample_values: ["$8.99", "€15.99"]
+  - entity_name: "customer"
+    business_concept: "Customer Account"
+    description: "Dimension table with detailed information about each subscriber."
+    aliases: ["subscribers", "users"]
+    base_table: { database: "Netflix", schema: "Consum", table: "customer" }
+    hierarchies:
+      - name: "Geography"
+        levels: ["country", "state"]
+    columns:
+      - { name: "customer_id", description: "Unique identifier for each subscriber.", aliases: ["user_id"], data_type: "INT", is_primary_key: true, sample_values: [1, 2] }
+      - { name: "first_name", description: "The given name of the customer.", data_type: "VARCHAR(15)", sample_values: ["Freedman", "Nollie"] }
+      - { name: "last_name", description: "The family name of the customer.", data_type: "VARCHAR(15)", sample_values: ["Akroyd", "Haibel"] }
+      - { name: "email_id", description: "Unique email address for the account.", data_type: "VARCHAR(32)", sample_values: ["fakroyd0@umich.edu", "nhaibel1@mediafire.com"] }
+      - { name: "phone_number", description: "Primary contact phone number.", data_type: "VARCHAR(12)", sample_values: ["913-680-9878", "480-518-4776"] }
+      - { name: "state", description: "The state/province where the customer resides.", data_type: "VARCHAR(19)", sample_values: ["Kansas", "Arizona"] }
+      - { name: "country", description: "The country where the customer resides.", data_type: "VARCHAR(13)", sample_values: ["United States", "Canada"] }
+      - name: "sign_up_date"
+        description: "The account creation date. WARNING: Stored as text. For date operations, use the 'Typed Sign Up Date' metric."
+        data_type: "VARCHAR(11)"
+        derived_metric_name: "Typed Sign Up Date"
+        sample_values: ["07-Aug-2010", "11-Mar-2009"]
+  - entity_name: "content"
+    business_concept: "Media Title"
+    description: "Dimension table for the video content catalog."
+    aliases: ["titles", "media"]
+    base_table: { database: "Netflix", schema: "Consum", table: "content" }
+    columns:
+      - { name: "content_id", description: "Unique identifier for each content item.", data_type: "INT", is_primary_key: true, sample_values: [7, 8] }
+      - { name: "title", description: "The official display name of the content item.", data_type: "VARCHAR(90)", sample_values: ["Going Clear: Scientology and the Prison of Belief", "The Blood of Fu Manchu"] }
+      - { name: "episode", description: "The episode number (0 for movies).", data_type: "INT", sample_values: [2, 19] }
+      - { name: "genre", description: "Primary classification of the content. Can be a pipe-separated list.", data_type: "VARCHAR(29)", sample_values: ["Documentary", "Adventure|Crime|Horror"] }
+      - { name: "duration", description: "The total runtime in minutes.", data_type: "INT", sample_values: [73, 47] }
+      - name: "cost_per_stream"
+        description: "Raw licensing cost per view as text, including currency. WARNING: Do NOT use this column directly. You MUST use the 'Cost Per Stream (USD)' or 'Cost Per Stream (EUR)' for calculations, and 'Cost Currency' for identification."
+        data_type: "VARCHAR(6)"
+        derived_metric_name: ["Cost Per Stream (USD)", "Cost Per Stream (EUR)", "Cost Currency"]
+        sample_values: ["$20.73", "$5.05"]
+      - name: "release_date"
+        description: "Original release date. WARNING: Stored as text. For date operations, use the 'Typed Release Date' metric."
+        data_type: "VARCHAR(11)"
+        derived_metric_name: "Typed Release Date"
+        sample_values: ["29-Oct-2005", "07-Jan-2006"]
+      - { name: "distributor", description: "The rights holder or distributor.", data_type: "VARCHAR(36)", sample_values: ["Kuphal, Sipes and Collier", "Von LLC"] }

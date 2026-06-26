@@ -1,0 +1,54 @@
+{
+  "table_name": "Invoice",
+  "columns": [
+    {
+      "column_name": "Invoice_number",
+      "data_type": "INTEGER",
+      "description": "Unique identifier for each invoice",
+      "join_condition": null,
+      "sample_data": 31875
+    },
+    {
+      "column_name": "Customer_id",
+      "data_type": "INTEGER",
+      "description": "ID of the customer being billed",
+      "join_condition": "Join Key: Customer.Customer_Id",
+      "sample_data": 1
+    },
+    {
+      "column_name": "Sign_up_date",
+      "data_type": "VARCHAR(13)",
+      "description": "Date when the customer signed up",
+      "join_condition": null,
+      "sample_data": "8/7/10"
+    },
+    {
+      "column_name": "Plan",
+      "data_type": "VARCHAR(8)",
+      "description": "Subscription plan selected by the customer",
+      "join_condition": null,
+      "sample_data": "Premium"
+    },
+    {
+      "column_name": "Service_period",
+      "data_type": "VARCHAR(25)",
+      "description": "Period covered by the invoice",
+      "join_condition": null,
+      "sample_data": "2010-08-07 to 2010-09-06"
+    },
+    {
+      "column_name": "Payment_method",
+      "data_type": "VARCHAR(15)",
+      "description": "Payment method used by the customer",
+      "join_condition": null,
+      "sample_data": "MasterCard"
+    },
+    {
+      "column_name": "Total",
+      "data_type": "VARCHAR(20)",
+      "description": "Total amount billed on the invoice",
+      "join_condition": null,
+      "sample_data": "$15.99"
+    }
+  ]
+}

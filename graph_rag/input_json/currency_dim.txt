@@ -1,0 +1,26 @@
+{
+  "table_name": "currency_dim",
+  "columns": [
+    {
+      "column_name": "currency_code",
+      "data_type": "VARCHAR(10)",
+      "description": "Unique code for each currency",
+      "join_condition": null,
+      "sample_data": "USD"
+    },
+    {
+      "column_name": "currency_name",
+      "data_type": "VARCHAR(50)",
+      "description": "Name of the currency",
+      "join_condition": null,
+      "sample_data": "US Dollar"
+    },
+    {
+      "column_name": "exchange_rate",
+      "data_type": "DECIMAL(10, 6)",
+      "description": "Exchange rate relative to a base currency",
+      "join_condition": null,
+      "sample_data": 1.0000
+    }
+  ]
+}

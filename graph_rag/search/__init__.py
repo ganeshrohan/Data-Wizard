@@ -1,0 +1,1 @@
+from .templet import graphrag_system_propmpt_instruct

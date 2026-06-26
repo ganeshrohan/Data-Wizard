@@ -1,0 +1,510 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d5" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d4" for="edge" attr.name="description" attr.type="string" />
+  <key id="d3" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d2" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="description" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="NETFLIX">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">A streaming service company that provides online content to its customers&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="STREAMS">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">A collection of data related to the streaming activities of Netflix customers&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="INVOICE">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">A document that lists the goods or services provided to a customer, along with the amount due&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="CUSTOMER">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">The CUSTOMER entity refers to an individual who has signed up for the Netflix service. This individual has a unique identifier, which distinguishes them from other customers and enables personalized experiences within the platform. As a subscriber to Netflix, the CUSTOMER is likely to have access to a wide range of streaming content, including movies, TV shows, and original series. The unique identifier associated with each CUSTOMER allows for tailored recommendations, viewing history, and account management, ultimately enhancing their overall streaming experience.</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="CONTENT">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">The CONTENT entity refers to the items or products being offered, which include videos, movies, TV shows, and other media content, such as those provided by Netflix. These content items have various attributes associated with them, including title, episode, genre, duration, cost per stream, release date, and distributor. The CONTENT entity encompasses a wide range of media content, providing a comprehensive catalog of entertainment options with detailed characteristics.</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="STREAM_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A unique identifier for each stream&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="CUSTOMER_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A unique identifier for each customer, used to track and analyze customer information&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="CONTENT_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The CONTENT_ID entity is a unique identifier assigned to each content item, characterized by a data type of INT. It serves as a distinctive marker, enabling the differentiation of individual content items within a dataset. Sample values for the CONTENT_ID include integers such as 100 and 101, illustrating the numerical nature of this identifier. As a unique identifier, the CONTENT_ID plays a crucial role in data modeling and database design, particularly in the context of content management systems, where it facilitates the organization, retrieval, and analysis of content items. By providing a singular and consistent identifier for each piece of content, the CONTENT_ID entity ensures data integrity and supports efficient data querying and manipulation.</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="STREAM_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The date when the streams occurred&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="STREAM_TIME">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The time when the streams occurred&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="STREAM_DURATION">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The duration of the streams in minutes&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="STREAM_RATING">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The rating given to the streams by the customer&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="INVOICE_NUMBER">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A unique identifier for each invoice&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="SIGN_UP_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The SIGN_UP_DATE entity refers to the date when a customer signed up for a service. It is an attribute of a customer, utilized for tracking and analysis purposes. The SIGN_UP_DATE entity has a data type of VARCHAR(11) and typically includes sample values in the format "2010-08-07". This attribute is crucial for understanding customer behavior, retention, and overall service engagement, as it provides a reference point for measuring the duration of a customer's relationship with the service. By analyzing the SIGN_UP_DATE, businesses can gain valuable insights into customer trends, preferences, and patterns, ultimately informing strategic decisions to enhance customer experience and drive growth.</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="PLAN">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The subscription plan selected by the customer&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="SERVICE_PERIOD">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The period covered by the invoice&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="PAYMENT_METHOD">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The payment method used by the customer&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="TOTAL">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The total amount billed on the invoice&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="FIRST_NAME">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The first name of the customer&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="LAST_NAME">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The last name of the customer&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="EMAIL_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The email address of the customer&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="PHONE_NUMBER">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The PHONE_NUMBER entity is an attribute of a customer, utilized for the purpose of communication and notification. It is characterized by a data type of VARCHAR(12), indicating that it can store string values with a maximum length of 12 characters. Sample values for PHONE_NUMBER include "913-680-9878" and "212-555-1234", which are typical formats for phone numbers in various regions. As an attribute of a customer, the PHONE_NUMBER entity plays a crucial role in facilitating interaction and sending notifications to customers, highlighting its significance in customer relationship management and overall business operations.</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="STATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The STATE entity refers to a geographical attribute associated with a customer, utilized for demographic analysis and targeting purposes. It is characterized by a data type of VARCHAR(19) and typically includes sample values such as "Kansas" and "California", which represent the state where the customer resides. This information is crucial for understanding customer demographics and enables targeted marketing efforts. The STATE entity plays a significant role in customer data analysis, providing valuable insights into regional customer behavior and preferences.</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="COUNTRY">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The COUNTRY entity refers to the nation where a customer resides, serving as a crucial attribute for demographic analysis and targeting purposes. It is characterized by a data type of VARCHAR(13) and typically includes sample values such as "United States" and "Canada". This information is vital in understanding customer demographics, enabling effective targeting and analysis. The COUNTRY entity plays a significant role in customer data, providing insights into the geographical distribution and characteristics of customers, which can be leveraged to inform business decisions and strategies.</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="SCHEMA">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">The SCHEMA entity is a crucial attribute of a database, describing the structure and organization of the data. It serves as a way to organize data in a database, providing a framework for the arrangement and management of data. In specific instances, such as the Consum schema, the SCHEMA entity plays a vital role in defining the layout and relationships within the database. Additionally, the SCHEMA entity can have various sample values, including "public", which further highlights its significance in database design and management. Overall, the SCHEMA entity is essential for effective data management and organization, enabling efficient data retrieval and analysis within a database.</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="TABLE">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">The TABLE entity is a collection of related data, serving as an attribute of a database. It describes a gathering of relevant information, such as the streams, invoice, and customer tables, which are all interconnected. In this context, a TABLE provides a structured format for organizing and storing data, with each table containing a sample value, for instance, "content". This enables efficient data management and analysis, allowing for the retrieval and manipulation of specific information within the database. The TABLE entity plays a crucial role in database design, as it helps to establish relationships between different data sets, facilitating a more comprehensive understanding of the data as a whole.</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="DIMENSION">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">A characteristic or attribute of a table, in this case, the dimensions of the streams, invoice, and customer tables&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="ATTRIBUTE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A characteristic or feature of an entity, in this case, the attributes of the customer, streams, and invoice entities&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="JOIN">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">A way to combine data from multiple tables, in this case, the joins between the streams, invoice, and customer tables&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="SAMPLE_VALUE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">An example value for an attribute, in this case, the sample values for the streams, invoice, and customer attributes&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="DATA_TYPE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The DATA_TYPE entity refers to an attribute of a column or field that describes the type of data it can hold. This attribute is crucial in defining the characteristics of the data stored in a database, including sample values such as VARCHAR, INT, and others. In various contexts, the DATA_TYPE entity plays a significant role, including in the streams, invoice, and customer attributes, where it determines the type of data stored. By defining the DATA_TYPE, it is possible to ensure data consistency, accuracy, and compatibility across different systems and applications. Furthermore, understanding the DATA_TYPE is essential for effective data modeling, database design, and data analysis, as it enables the creation of robust and scalable data structures that support a wide range of data types and formats. Overall, the DATA_TYPE entity is a fundamental concept in data management, and its proper definition and implementation are critical for ensuring the integrity and reliability of data in various domains.</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="DESCRIPTION">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A text that describes an entity or attribute, in this case, the descriptions for the streams, invoice, and customer entities and attributes&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="EXPRESSION">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A formula or equation that defines an attribute, in this case, the expressions for the streams, invoice, and customer attributes&gt;</data>
+      <data key="d2">a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="DATABASE">
+      <data key="d0" />
+      <data key="d1">The DATABASE is a repository that stores a collection of organized data. It has a predefined schema that defines how the data is structured and related, and it consists of multiple tables that hold the actual data content. The schema serves as a blueprint for the database, outlining the relationships between different data entities and defining the rules for data integrity. The tables within the DATABASE are designed to store specific types of data, with each table having its own set of columns and rows that provide a structured format for data storage and retrieval. Overall, the DATABASE provides a systematic and controlled approach to managing and accessing data, making it a crucial component of modern information systems.</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </node>
+    <node id="TITLE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A title is an attribute of content, describing the name of the content, with a data type of VARCHAR(90) and sample values such as "Jay-Z: Made in America" and "Planet Earth"&gt;</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </node>
+    <node id="EPISODE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">An episode is an attribute of content, describing the episode number if applicable, with a data type of INT and sample values such as 3 and 5&gt;</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </node>
+    <node id="GENRE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A genre is an attribute of content, describing the type or category of the content, with a data type of VARCHAR(29) and sample values such as "Documentary" and "Drama"&gt;</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </node>
+    <node id="DURATION">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A duration is an attribute of content, describing the length of the content in minutes, with a data type of INT and sample values such as 53 and 45&gt;</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </node>
+    <node id="COST_PER_STREAM">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A cost per stream is an attribute of content, describing the cost to stream the content, with a data type of VARCHAR(6) and sample values such as "7.96" and "5.99"&gt;</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </node>
+    <node id="RELEASE_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A release date is an attribute of content, describing the date the content was released, with a data type of VARCHAR(11) and sample values such as "2007-07-11"&gt;</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </node>
+    <node id="DISTRIBUTOR">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A distributor is an attribute of content, describing the company or entity that distributes the content, with a data type of VARCHAR(36) and sample values such as "Crooks, Beer and Schmidt"&gt;</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </node>
+    <node id="UNIQUE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">A unique identifier is an attribute of a column or field, describing whether the values must be unique, with sample values of true and false&gt;</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </node>
+    <node id="SAMPLE_VALUES">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Sample values are an attribute of a column or field, describing examples of the data it can hold, with sample values such as "913-680-9878" and "Kansas"&gt;</data>
+      <data key="d2">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </node>
+    <edge source="NETFLIX" target="STREAMS">
+      <data key="d3">9.0</data>
+      <data key="d4">Netflix provides the streaming service, and streams are a collection of data related to the streaming activities of Netflix customers</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="NETFLIX" target="INVOICE">
+      <data key="d3">8.0</data>
+      <data key="d4">Netflix generates invoices for its customers, which list the goods or services provided, along with the amount due</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="NETFLIX" target="CUSTOMER">
+      <data key="d3">9.0</data>
+      <data key="d4">Netflix has customers who have signed up for the service and have a unique identifier</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="STREAMS" target="CUSTOMER">
+      <data key="d3">8.0</data>
+      <data key="d4">A customer is associated with one or more streams, which are a collection of data related to the streaming activities</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="STREAMS" target="CONTENT">
+      <data key="d3">8.0</data>
+      <data key="d4">A stream is associated with a piece of content, which is the movie, TV show, or other media content provided by Netflix</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_ID">
+      <data key="d3">9.0</data>
+      <data key="d4">A stream ID is a unique identifier for each stream, which is a part of the streams collection</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_DATE">
+      <data key="d3">8.0</data>
+      <data key="d4">A stream date is the date when the streams occurred, which is part of the streams collection</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_TIME">
+      <data key="d3">8.0</data>
+      <data key="d4">A stream time is the time when the streams occurred, which is part of the streams collection</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_DURATION">
+      <data key="d3">8.0</data>
+      <data key="d4">A stream duration is the duration of the streams in minutes, which is part of the streams collection</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_RATING">
+      <data key="d3">8.0</data>
+      <data key="d4">A stream rating is the rating given to the streams by the customer, which is part of the streams collection</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="STREAMS" target="DATABASE">
+      <data key="d3">8.0</data>
+      <data key="d4">The streams table is part of the Netflix database, which stores data about the streaming activities</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="STREAMS" target="SCHEMA">
+      <data key="d3">8.0</data>
+      <data key="d4">The streams table is part of the Consum schema, which organizes the data about the streaming activities</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="INVOICE" target="CUSTOMER">
+      <data key="d3">9.0</data>
+      <data key="d4">An invoice is associated with a customer, who is being billed for the goods or services provided</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="INVOICE" target="INVOICE_NUMBER">
+      <data key="d3">9.0</data>
+      <data key="d4">An invoice number is a unique identifier for each invoice, which is generated by Netflix</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="INVOICE" target="SERVICE_PERIOD">
+      <data key="d3">8.0</data>
+      <data key="d4">A service period is the period covered by the invoice, which is generated by Netflix</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="INVOICE" target="PAYMENT_METHOD">
+      <data key="d3">8.0</data>
+      <data key="d4">A payment method is the method used by the customer to pay for the goods or services provided, which is associated with the invoice</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="INVOICE" target="TOTAL">
+      <data key="d3">9.0</data>
+      <data key="d4">A total is the total amount billed on the invoice, which is generated by Netflix</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="INVOICE" target="DATABASE">
+      <data key="d3">8.0</data>
+      <data key="d4">The invoice table is part of the Netflix database, which stores data about the invoices generated for customers</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="INVOICE" target="SCHEMA">
+      <data key="d3">8.0</data>
+      <data key="d4">The invoice table is part of the Consum schema, which organizes the data about the invoices generated for customers</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="CUSTOMER" target="CONTENT">
+      <data key="d3">7.0</data>
+      <data key="d4">A customer is associated with one or more pieces of content, which they have streamed</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="CUSTOMER" target="CUSTOMER_ID">
+      <data key="d3">9.0</data>
+      <data key="d4">A customer ID is a unique identifier for each customer, used to track and analyze customer information</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="CUSTOMER" target="SIGN_UP_DATE">
+      <data key="d3">16.0</data>
+      <data key="d4">The CUSTOMER entity has an associated attribute called SIGN_UP_DATE, which represents the date when the customer signed up for the service. This SIGN_UP_DATE attribute is utilized for tracking and analysis purposes, providing valuable insights into customer behavior and trends. As an attribute of the CUSTOMER entity, the SIGN_UP_DATE is closely tied to the customer's overall profile, enabling data analysts to examine patterns and correlations between the sign-up date and other customer characteristics. By leveraging this information, businesses can refine their marketing strategies, improve customer engagement, and optimize their services to meet the evolving needs of their customer base. Ultimately, the SIGN_UP_DATE attribute plays a crucial role in enhancing the overall understanding of the CUSTOMER entity, facilitating data-driven decision-making and driving business growth.</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="CUSTOMER" target="PLAN">
+      <data key="d3">7.0</data>
+      <data key="d4">A plan is the subscription plan selected by the customer, which is associated with the customer</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="CUSTOMER" target="FIRST_NAME">
+      <data key="d3">8.0</data>
+      <data key="d4">A first name is the first name of the customer, which is associated with the customer</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="CUSTOMER" target="LAST_NAME">
+      <data key="d3">8.0</data>
+      <data key="d4">A last name is the last name of the customer, which is associated with the customer</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="CUSTOMER" target="EMAIL_ID">
+      <data key="d3">8.0</data>
+      <data key="d4">An email ID is the email address of the customer, which is associated with the customer</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="CUSTOMER" target="PHONE_NUMBER">
+      <data key="d3">22.0</data>
+      <data key="d4">The CUSTOMER entity has a crucial attribute, PHONE_NUMBER, which serves as a primary means of communication and notification. The PHONE_NUMBER is directly associated with the CUSTOMER, implying a one-to-one relationship where each customer is assigned a unique phone number. This association enables effective communication and notification, highlighting the significance of the PHONE_NUMBER attribute in the context of the CUSTOMER entity. The PHONE_NUMBER attribute is essential for establishing and maintaining contact with the customer, underscoring its importance in the overall data structure.</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="CUSTOMER" target="STATE">
+      <data key="d3">17.0</data>
+      <data key="d4">The CUSTOMER and STATE entities are closely related, with a STATE being an attribute of a CUSTOMER. This attribute is utilized for demographic analysis and targeting purposes, allowing for a better understanding of the customer's location and characteristics. Specifically, the STATE represents the geographical location where the CUSTOMER resides, and this information is associated with the CUSTOMER's profile. By linking a CUSTOMER to a STATE, it enables organizations to gain valuable insights into their customer base, facilitating targeted marketing efforts and improved customer segmentation. The relationship between CUSTOMER and STATE is fundamental in understanding customer demographics, and this connection plays a crucial role in data analysis and decision-making processes.</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="CUSTOMER" target="COUNTRY">
+      <data key="d3">11.0</data>
+      <data key="d4">The CUSTOMER and COUNTRY entities are intimately related, with a country being the geographical location where the customer resides. The COUNTRY attribute is associated with the CUSTOMER entity, serving as a vital component for demographic analysis and targeting purposes. In essence, the CUSTOMER has a corresponding COUNTRY, which is utilized to gather valuable insights and inform targeted strategies. This relationship enables the analysis of customer demographics based on their country of residence, facilitating a deeper understanding of the customer base and allowing for more effective targeting initiatives. By linking the CUSTOMER to their respective COUNTRY, businesses can better comprehend the nuances of their customer demographics, ultimately driving more informed decision-making and tailored approaches to customer engagement.</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="CUSTOMER" target="DATABASE">
+      <data key="d3">8.0</data>
+      <data key="d4">The customer table is part of the Netflix database, which stores data about the customers</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="CUSTOMER" target="SCHEMA">
+      <data key="d3">1.0</data>
+      <data key="d4">The customer table is part of the public schema, which organizes the data about the customers</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="CONTENT" target="CONTENT_ID">
+      <data key="d3">18.0</data>
+      <data key="d4">The CONTENT entity, identified by a unique CONTENT_ID, refers to a distinct item or piece of content, which is provided by Netflix. The CONTENT_ID serves as a unique identifier for each CONTENT item, allowing for efficient differentiation and organization within the system. This unique identification enables accurate referencing and management of individual content pieces, facilitating various operations and analyses related to the CONTENT entity. The CONTENT_ID is a crucial component in the context of content management, particularly in platforms like Netflix, where it plays a vital role in cataloging and accessing specific content items.</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="CONTENT" target="TITLE">
+      <data key="d3">6.0</data>
+      <data key="d4">A title is an attribute of content, describing the name of the content</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="CONTENT" target="EPISODE">
+      <data key="d3">6.0</data>
+      <data key="d4">An episode is an attribute of content, describing the episode number if applicable</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="CONTENT" target="GENRE">
+      <data key="d3">6.0</data>
+      <data key="d4">A genre is an attribute of content, describing the type or category of the content</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="CONTENT" target="DURATION">
+      <data key="d3">6.0</data>
+      <data key="d4">A duration is an attribute of content, describing the length of the content in minutes</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="CONTENT" target="COST_PER_STREAM">
+      <data key="d3">6.0</data>
+      <data key="d4">A cost per stream is an attribute of content, describing the cost to stream the content</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="CONTENT" target="RELEASE_DATE">
+      <data key="d3">6.0</data>
+      <data key="d4">A release date is an attribute of content, describing the date the content was released</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="CONTENT" target="DISTRIBUTOR">
+      <data key="d3">1.0</data>
+      <data key="d4">A distributor is an attribute of content, describing the company or entity that distributes the content</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="CONTENT" target="DATABASE">
+      <data key="d3">8.0</data>
+      <data key="d4">Content is stored in a database, with a schema and tables</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="CONTENT_ID" target="TABLE">
+      <data key="d3">9.0</data>
+      <data key="d4">A table has content IDs, unique identifiers for each content item</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="CONTENT_ID" target="TITLE">
+      <data key="d3">6.0</data>
+      <data key="d4">A content ID is associated with a title, describing the name of the content</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="SCHEMA" target="DATABASE">
+      <data key="d3">17.0</data>
+      <data key="d4">The DATABASE contains one or more SCHEMAS, which organize the data in the DATABASE. A SCHEMA, in turn, describes the structure and organization of the data within the DATABASE, effectively outlining how the data is arranged and related. In essence, the SCHEMA serves as a blueprint for the DATABASE, defining the relationships between different data entities and governing how data is stored, managed, and retrieved. By containing multiple SCHEMAS, a DATABASE can efficiently manage complex data structures and provide a scalable framework for data storage and analysis. The relationship between the DATABASE and its constituent SCHEMAS is fundamental, as the SCHEMAS enable the DATABASE to maintain data consistency, support data querying and retrieval, and ensure data integrity.</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="SCHEMA" target="TABLE">
+      <data key="d3">17.0</data>
+      <data key="d4">The SCHEMA entity contains one or more TABLE entities, which store and describe collections of related data within the schema. In essence, the TABLE entities serve as the core components of the SCHEMA, as they are responsible for storing the actual data, while the SCHEMA provides the overall structure and organization for these tables. The relationship between the SCHEMA and TABLE entities is one of containment, where the SCHEMA encompasses multiple TABLE entities, each describing a specific collection of related data. This hierarchical structure enables efficient data management and organization, allowing for the storage and retrieval of complex data sets within the SCHEMA.</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810,a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="TABLE" target="DIMENSION">
+      <data key="d3">8.0</data>
+      <data key="d4">A table has one or more dimensions, which describe the characteristics of the table</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="TABLE" target="JOIN">
+      <data key="d3">8.0</data>
+      <data key="d4">A join combines data from two or more tables, which are related through common attributes</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="DIMENSION" target="ATTRIBUTE">
+      <data key="d3">9.0</data>
+      <data key="d4">A dimension is composed of one or more attributes, which describe the characteristics of the dimension</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="ATTRIBUTE" target="SAMPLE_VALUE">
+      <data key="d3">7.0</data>
+      <data key="d4">An attribute has one or more sample values, which provide examples of the data stored in the attribute</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="ATTRIBUTE" target="DATA_TYPE">
+      <data key="d3">8.0</data>
+      <data key="d4">An attribute has a data type, which describes the type of data stored in the attribute</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="ATTRIBUTE" target="DESCRIPTION">
+      <data key="d3">7.0</data>
+      <data key="d4">An attribute has a description, which provides a text description of the attribute</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="ATTRIBUTE" target="EXPRESSION">
+      <data key="d3">8.0</data>
+      <data key="d4">An attribute has an expression, which defines the formula or equation for the attribute</data>
+      <data key="d5">a1cd74f87f46d817f76f88a39169f777</data>
+    </edge>
+    <edge source="TITLE" target="EPISODE">
+      <data key="d3">6.0</data>
+      <data key="d4">A title can have an episode, describing the episode number if applicable</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="EPISODE" target="GENRE">
+      <data key="d3">6.0</data>
+      <data key="d4">An episode can have a genre, describing the type or category of the content</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="GENRE" target="DURATION">
+      <data key="d3">6.0</data>
+      <data key="d4">A genre can have a duration, describing the length of the content in minutes</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="DURATION" target="COST_PER_STREAM">
+      <data key="d3">6.0</data>
+      <data key="d4">A duration can have a cost per stream, describing the cost to stream the content</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="COST_PER_STREAM" target="RELEASE_DATE">
+      <data key="d3">6.0</data>
+      <data key="d4">A cost per stream can have a release date, describing the date the content was released</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+    <edge source="RELEASE_DATE" target="DISTRIBUTOR">
+      <data key="d3">1.0</data>
+      <data key="d4">A release date can have a distributor, describing the company or entity that distributes the content</data>
+      <data key="d5">0dda79c5a216edd70f4e70acaf4cd810</data>
+    </edge>
+  </graph>
+</graphml>

@@ -1,0 +1,350 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d5" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d4" for="edge" attr.name="description" attr.type="string" />
+  <key id="d3" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d2" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="description" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="STREAMS">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">Fact table containing records of every individual streaming event, used for analyzing user engagement and watch time. Includes details like stream duration and dates.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="INVOICE">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">Contains customer billing and subscription information, used for revenue tracking and financial analysis. Includes plan details, service periods, and invoice totals.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="CUSTOMER">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">Dimension table with demographic and contact details for each customer, used for segmentation and communication. Includes identifiers, email, country, and sign-up dates.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="CONTENT">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">The **CONTENT** entity is a dimension table designed to store detailed information about various pieces of content, such as movies and shows, to support analytical processes like content performance evaluation and popularity analysis. It serves as a centralized reference for attributes including a unique identifier (`content_id`), the content's title, genre, and distributor. The table is structured to enable granular analysis of content success metrics, leveraging its unique identifiers to link with related datasets (e.g., viewership or engagement facts). While both descriptions emphasize its role in performance analysis, the inclusion of "distributor" and explicit references to "popularity analysis" in the first description enriches the scope, suggesting the table also supports insights into content distribution strategies and audience reception trends. The combined view presents a cohesive structure optimized for multidimensional reporting and decision-making in content management.</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051,ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <node id="STREAM_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Unique identifier for each streaming event, serving as the primary key for the streams table.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="CUSTOMER_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Foreign key linking streams and invoices to customer records, uniquely identifying each customer.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="CONTENT_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The **CONTENT_ID** serves as both the **Primary Key** in the content table, uniquely identifying each content item (e.g., programs, videos), and as a **Foreign Key** in streaming event tables to link interactions (e.g., views, plays) to their corresponding content. It is central to relational integrity, enabling cross-table joins for analytics and reporting. The identifier has aliases like **program_id** and **video_id**, reflecting its application across diverse content types within the system. This dual role ensures traceability of content consumption while maintaining a standardized reference for metadata, such as titles, genres, or durations, stored in the content table.</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051,ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <node id="STREAM_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Calendar date of a streaming event in ISO 8601 format.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="STREAM_DURATION">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Duration of a streaming event in minutes, used to calculate total watch time.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="INVOICE_NUMBER">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Unique identifier for each invoice, serving as the primary key for the invoice table.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="PLAN">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Customer's subscription plan type (e.g., Premium, Basic), used for revenue segmentation.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="SERVICE_PERIOD">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Billing period covered by an invoice, including start and end dates.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="TOTAL">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Total invoice amount in USD, used for revenue and customer lifetime value calculations.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="EMAIL_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Customer's primary email address for communication.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="COUNTRY">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Customer's country of residence, used for geographic segmentation.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="SIGN_UP_DATE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">Date when the customer created their account.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="BILLING">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">Alias for the invoice table, containing financial transaction details.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="SUBSCRIBERS">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">Alias for the customer table, referring to users with active subscriptions.}</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="CATALOG">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">The **CATALOG** entity serves as an alias for the **content table**, specifically representing Netflix's available media library. It acts as an alternative reference to streamline interactions with the underlying data structure, enabling simplified querying or contextual clarity in database operations. Both descriptions confirm its role as a secondary identifier for the content table, emphasizing its purpose in abstracting or standardizing access to Netflix's media inventory within a data architecture. No contradictions exist between the descriptions, as they collectively reinforce its functional and referential utility.</data>
+      <data key="d2">7446f3bdab43b104430ec67356fd7051,ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <node id="VIEWING_HISTORY">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">7446f3bdab43b104430ec67356fd7051</data>
+    </node>
+    <node id="TITLE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The official title of the movie or TV show, with aliases including show_name and movie_title}</data>
+      <data key="d2">ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <node id="GENRE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The primary genre of the content, used for taste profiling and recommendations}</data>
+      <data key="d2">ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <node id="DISTRIBUTOR">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The company that distributed the content}</data>
+      <data key="d2">ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <node id="NETFLIX">
+      <data key="d0">SYSTEM</data>
+      <data key="d1">The database system hosting the content data within the Consum schema}</data>
+      <data key="d2">ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <node id="CONSUM">
+      <data key="d0">STRUCTURE</data>
+      <data key="d1">The schema that organizes the content table and related data within the Netflix database}</data>
+      <data key="d2">ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <node id="LIBRARY">
+      <data key="d0">LABEL</data>
+      <data key="d1">An alias for the content table, used as an alternative reference}</data>
+      <data key="d2">ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <node id="TITLES">
+      <data key="d0">LABEL</data>
+      <data key="d1">An alias for the content table, used as an alternative reference}</data>
+      <data key="d2">ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <node id="PROGRAM_ID">
+      <data key="d0">LABEL</data>
+      <data key="d1">An alias for the content_id attribute, used as an alternative reference}</data>
+      <data key="d2">ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <node id="VIDEO_ID">
+      <data key="d0">LABEL</data>
+      <data key="d1">An alias for the content_id attribute, used as an alternative reference}</data>
+      <data key="d2">ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <node id="SHOW_NAME">
+      <data key="d0">LABEL</data>
+      <data key="d1">An alias for the title attribute, used as an alternative reference}</data>
+      <data key="d2">ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <node id="MOVIE_TITLE">
+      <data key="d0">LABEL</data>
+      <data key="d1">An alias for the title attribute, used as an alternative reference}</data>
+      <data key="d2">ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <node id="BASE_TABLE">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">ec58eb007760aac2843ddf10b7ac617a</data>
+    </node>
+    <edge source="STREAMS" target="CUSTOMER">
+      <data key="d3">9.0</data>
+      <data key="d4">Streaming events are linked to customers via customer_id, enabling analysis of user engagement.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="STREAMS" target="CONTENT">
+      <data key="d3">9.0</data>
+      <data key="d4">Streaming events are linked to content via content_id, allowing tracking of content popularity.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_ID">
+      <data key="d3">9.0</data>
+      <data key="d4">Stream ID is the primary key uniquely identifying each record in the streams table.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="STREAMS" target="CUSTOMER_ID">
+      <data key="d3">9.0</data>
+      <data key="d4">Customer ID in streams is a foreign key linking to the customer table.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="STREAMS" target="CONTENT_ID">
+      <data key="d3">9.0</data>
+      <data key="d4">Content ID in streams is a foreign key linking to the content table.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_DATE">
+      <data key="d3">8.0</data>
+      <data key="d4">Stream date is an attribute recording when a streaming event occurred.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_DURATION">
+      <data key="d3">8.0</data>
+      <data key="d4">Stream duration measures the length of a streaming event in minutes.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="STREAMS" target="VIEWING_HISTORY">
+      <data key="d3">9.0</data>
+      <data key="d4">Viewing_history is an alias for the streams table.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="INVOICE" target="CUSTOMER">
+      <data key="d3">9.0</data>
+      <data key="d4">Invoices are linked to customers via customer_id for billing and subscription management.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="INVOICE" target="INVOICE_NUMBER">
+      <data key="d3">9.0</data>
+      <data key="d4">Invoice number is the primary key uniquely identifying each invoice.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="INVOICE" target="CUSTOMER_ID">
+      <data key="d3">9.0</data>
+      <data key="d4">Customer ID in invoices is a foreign key linking to the customer table.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="INVOICE" target="PLAN">
+      <data key="d3">7.0</data>
+      <data key="d4">Plan type categorizes the customer's subscription in the invoice.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="INVOICE" target="SERVICE_PERIOD">
+      <data key="d3">7.0</data>
+      <data key="d4">Service period defines the billing cycle dates for the invoice.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="INVOICE" target="TOTAL">
+      <data key="d3">8.0</data>
+      <data key="d4">Total amount represents the revenue generated from the invoice.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="INVOICE" target="BILLING">
+      <data key="d3">9.0</data>
+      <data key="d4">Billing is an alias for the invoice table.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="CUSTOMER" target="CUSTOMER_ID">
+      <data key="d3">9.0</data>
+      <data key="d4">Customer ID is the primary key uniquely identifying each customer.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="CUSTOMER" target="EMAIL_ID">
+      <data key="d3">7.0</data>
+      <data key="d4">Email ID is a contact attribute of the customer.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="CUSTOMER" target="COUNTRY">
+      <data key="d3">7.0</data>
+      <data key="d4">Country is a demographic attribute of the customer.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="CUSTOMER" target="SIGN_UP_DATE">
+      <data key="d3">1.0</data>
+      <data key="d4">Sign-up date tracks when the customer joined the service.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="CUSTOMER" target="SUBSCRIBERS">
+      <data key="d3">9.0</data>
+      <data key="d4">Subscribers is an alias for the customer table.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051</data>
+    </edge>
+    <edge source="CONTENT" target="CATALOG">
+      <data key="d3">8.0</data>
+      <data key="d4">The **CONTENT** entity is structured as a table within the data model, and the **CATALOG** entity serves as a direct alias for this table. Both provided descriptions explicitly confirm that "Catalog" (or "catalog," indicating case insensitivity in this context) is synonymous with the **CONTENT** table, establishing a one-to-one relationship between the two entities. This alias relationship implies that queries or references to **CATALOG** will interact with the underlying **CONTENT** table, ensuring consistency in data access and manipulation. No contradictions exist between the descriptions, as both uniformly define **CATALOG** as an alternative identifier for the **CONTENT** table.</data>
+      <data key="d5">7446f3bdab43b104430ec67356fd7051,ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="CONTENT" target="CONSUM">
+      <data key="d3">8.0</data>
+      <data key="d4">The content table is organized within the Consum schema</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="CONTENT" target="CONTENT_ID">
+      <data key="d3">9.0</data>
+      <data key="d4">content_id is the primary key attribute of the content table</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="CONTENT" target="TITLE">
+      <data key="d3">9.0</data>
+      <data key="d4">title is an attribute of the content table</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="CONTENT" target="GENRE">
+      <data key="d3">9.0</data>
+      <data key="d4">genre is an attribute of the content table</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="CONTENT" target="DISTRIBUTOR">
+      <data key="d3">9.0</data>
+      <data key="d4">distributor is an attribute of the content table</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="CONTENT" target="LIBRARY">
+      <data key="d3">7.0</data>
+      <data key="d4">library is an alias for the content table</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="CONTENT" target="TITLES">
+      <data key="d3">7.0</data>
+      <data key="d4">titles is an alias for the content table</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="CONTENT" target="BASE_TABLE">
+      <data key="d3">9.0</data>
+      <data key="d4">The content table is physically stored in the base table structure within the Netflix database</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="CONTENT_ID" target="PROGRAM_ID">
+      <data key="d3">7.0</data>
+      <data key="d4">program_id is an alias for the content_id attribute</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="CONTENT_ID" target="VIDEO_ID">
+      <data key="d3">7.0</data>
+      <data key="d4">video_id is an alias for the content_id attribute</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="TITLE" target="SHOW_NAME">
+      <data key="d3">7.0</data>
+      <data key="d4">show_name is an alias for the title attribute</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="TITLE" target="MOVIE_TITLE">
+      <data key="d3">1.0</data>
+      <data key="d4">movie_title is an alias for the title attribute</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="NETFLIX" target="CONSUM">
+      <data key="d3">8.0</data>
+      <data key="d4">The Consum schema is part of the Netflix database system</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="NETFLIX" target="BASE_TABLE">
+      <data key="d3">9.0</data>
+      <data key="d4">The base table structure exists within the Netflix database system</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+    <edge source="CONSUM" target="BASE_TABLE">
+      <data key="d3">1.0</data>
+      <data key="d4">The base table structure is organized under the Consum schema</data>
+      <data key="d5">ec58eb007760aac2843ddf10b7ac617a</data>
+    </edge>
+  </graph>
+</graphml>

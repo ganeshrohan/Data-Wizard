@@ -1,0 +1,9 @@
+table_name,column_name,data_type,description,join_condition,sample_data
+Customer,Customer_Id,INTEGER,Unique identifier for each customer,Join Keys: Invoice.Customer_id, Streams.Customer_id,1
+Customer,First_Name,VARCHAR(15),First name of the customer,,Freedman
+Customer,Last_Name,VARCHAR(15),Last name of the customer,,Akroyd
+Customer,Email_ID,VARCHAR(32),Email address of the customer,,fakroyd0@umich.edu
+Customer,Phone_Number,VARCHAR(12),Phone number of the customer,,913-680-9878
+Customer,State,VARCHAR(19),State where the customer resides,,Kansas
+Customer,Country,VARCHAR(13),Country where the customer resides,,United States
+Customer,Sign_up_date,VARCHAR(11),Date when the customer signed up,,07-Aug-2010

@@ -1,0 +1,786 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d14" for="edge" attr.name="level" attr.type="long" />
+  <key id="d13" for="edge" attr.name="human_readable_id" attr.type="long" />
+  <key id="d12" for="edge" attr.name="id" attr.type="string" />
+  <key id="d11" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d10" for="edge" attr.name="description" attr.type="string" />
+  <key id="d9" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d8" for="node" attr.name="entity_type" attr.type="string" />
+  <key id="d7" for="node" attr.name="id" attr.type="string" />
+  <key id="d6" for="node" attr.name="human_readable_id" attr.type="long" />
+  <key id="d5" for="node" attr.name="degree" attr.type="long" />
+  <key id="d4" for="node" attr.name="level" attr.type="long" />
+  <key id="d3" for="node" attr.name="cluster" attr.type="string" />
+  <key id="d2" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="description" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="NETFLIX">
+      <data key="d0">CONCEPT, ORGANIZATION</data>
+      <data key="d1">NETFLIX is a media-services provider that offers a wide variety of content, including movies, shows, and original content, and has a large customer base with various subscription plans, operating as a streaming service provider that caters to diverse viewer preferences. With its extensive range of content, including a broad selection of movies and TV shows, NETFLIX has established itself as a prominent player in the digital entertainment industry, providing users with flexible subscription plans to access its vast library of content. By combining the aspects of a media-services provider and a streaming service, NETFLIX has successfully created a comprehensive platform that meets the evolving needs of its substantial customer base.</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9,ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">2</data>
+      <data key="d4">0</data>
+      <data key="d5">4</data>
+      <data key="d6">0</data>
+      <data key="d7">b45241d70f0e43fca764df95b2b81f77</data>
+    </node>
+    <node id="CUSTOMER">
+      <data key="d0">CONCEPT, PERSON</data>
+      <data key="d1">An individual who has a subscription to Netflix and engages with its content, having demographic and contact details, and generating revenue for the company through their subscription plans and viewing activities}</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">3</data>
+      <data key="d4">0</data>
+      <data key="d5">14</data>
+      <data key="d6">1</data>
+      <data key="d7">4119fd06010c494caa07f439b333f4c5</data>
+    </node>
+    <node id="STREAMS">
+      <data key="d0">CONCEPT, EVENT</data>
+      <data key="d1">A record of every individual streaming event, including the content viewed, the customer who viewed it, and the date of the stream, used for analyzing user engagement and content performance}</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">4</data>
+      <data key="d4">0</data>
+      <data key="d5">3</data>
+      <data key="d6">2</data>
+      <data key="d7">d3835bf3dda84ead99deadbeac5d0d7d</data>
+    </node>
+    <node id="INVOICE">
+      <data key="d0">CONCEPT, DOCUMENT</data>
+      <data key="d1">A billing document that contains information about a customer's subscription plan, billing period, and total amount due, used for revenue tracking and financial analysis}</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">0</data>
+      <data key="d4">0</data>
+      <data key="d5">8</data>
+      <data key="d6">3</data>
+      <data key="d7">077d2820ae1845bcbb1803379a3d1eae</data>
+    </node>
+    <node id="CONTENT">
+      <data key="d0">CONCEPT, PRODUCT</data>
+      <data key="d1">The CONTENT entity refers to a piece of media, such as a movie or TV show, that possesses associated details and attributes. This entity is utilized for content performance and popularity analysis, particularly in the context of streaming services like Netflix. Each CONTENT entity is uniquely identified and contains its own specific details, enabling comprehensive analysis and evaluation of its performance. The CONTENT entity encompasses various attributes and characteristics that define a piece of media, including but not limited to its title, genre, release date, and viewer engagement metrics. By examining the CONTENT entity, data analysts can gain valuable insights into consumer preferences, viewing patterns, and the overall popularity of different types of content on platforms like Netflix. Ultimately, the CONTENT entity serves as a fundamental component in understanding the complex dynamics of media consumption and streaming services.</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9,ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">4</data>
+      <data key="d4">0</data>
+      <data key="d5">11</data>
+      <data key="d6">4</data>
+      <data key="d7">3671ea0dd4e84c1a9b02c5ab2c8f4bac</data>
+    </node>
+    <node id="CUSTOMER_ID">
+      <data key="d0">ATTRIBUTE, IDENTIFIER</data>
+      <data key="d1">A unique identifier for each customer, used to link customers to their streaming activities, invoices, and demographic information&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">3</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">5</data>
+      <data key="d7">19a7f254a5d64566ab5cc15472df02de</data>
+    </node>
+    <node id="STREAM_ID">
+      <data key="d0">ATTRIBUTE, IDENTIFIER</data>
+      <data key="d1">A unique identifier for each stream, used to track individual streaming events and analyze user engagement&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">4</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">6</data>
+      <data key="d7">e7ffaee9d31d4d3c96e04f911d0a8f9e</data>
+    </node>
+    <node id="CONTENT_ID">
+      <data key="d0">ATTRIBUTE, IDENTIFIER</data>
+      <data key="d1">The CONTENT_ID entity serves as a unique identifier for each content item, functioning as a primary key. It plays a crucial role in linking content to its respective streaming events, thereby facilitating the analysis of content performance. By leveraging the CONTENT_ID, it becomes possible to track and evaluate the performance of individual content items, enabling a deeper understanding of their impact and reach. This identifier is essential for maintaining data integrity and consistency across the content database, ensuring that each content item is distinct and easily identifiable. Through its use, the CONTENT_ID enables the establishment of relationships between content items and their associated streaming events, ultimately supporting informed decision-making and strategic planning in the context of content management and analysis.</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9,ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">4</data>
+      <data key="d4">0</data>
+      <data key="d5">3</data>
+      <data key="d6">7</data>
+      <data key="d7">f7e11b0e297a44a896dc67928368f600</data>
+    </node>
+    <node id="EMAIL_ID">
+      <data key="d0">ATTRIBUTE, CONTACT INFORMATION</data>
+      <data key="d1">A customer's primary email address, used for communication and notification&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">3</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">8</data>
+      <data key="d7">1fd3fa8bb5a2408790042ab9573779ee</data>
+    </node>
+    <node id="COUNTRY">
+      <data key="d0">ATTRIBUTE, LOCATION</data>
+      <data key="d1">The country where a customer resides, used for geographic segmentation and demographic analysis&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">3</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">9</data>
+      <data key="d7">27f9fbe6ad8c4a8b9acee0d3596ed57c</data>
+    </node>
+    <node id="SIGN_UP_DATE">
+      <data key="d0">ATTRIBUTE, DATE</data>
+      <data key="d1">The SIGN_UP_DATE entity refers to the date a customer or user created their account, which is utilized for tracking and analysis purposes to understand customer behavior and engagement over time. This date is specifically recorded when a user signs up for a service, enabling the collection of valuable data that can be used to inform business decisions and improve customer interactions. By analyzing the SIGN_UP_DATE, organizations can gain insights into customer trends, preferences, and patterns, ultimately enhancing their overall customer experience and retention strategies.</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9,ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">3</data>
+      <data key="d4">0</data>
+      <data key="d5">2</data>
+      <data key="d6">10</data>
+      <data key="d7">e1fd0e904a53409aada44442f23a51cb</data>
+    </node>
+    <node id="PLAN">
+      <data key="d0">ATTRIBUTE, SUBSCRIPTION DETAILS</data>
+      <data key="d1">A customer's subscription plan, used for revenue segmentation and analysis of customer behavior&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">0</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">11</data>
+      <data key="d7">de988724cfdf45cebfba3b13c43ceede</data>
+    </node>
+    <node id="SERVICE_PERIOD">
+      <data key="d0">ATTRIBUTE, DATE RANGE</data>
+      <data key="d1">The billing period covered by an invoice, used for revenue tracking and financial analysis&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">0</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">12</data>
+      <data key="d7">96aad7cb4b7d40e9b7e13b94a67af206</data>
+    </node>
+    <node id="TOTAL">
+      <data key="d0">ATTRIBUTE, MONETARY VALUE</data>
+      <data key="d1">The total amount due on an invoice, used for revenue tracking and financial analysis&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">0</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">13</data>
+      <data key="d7">c9632a35146940c2a86167c7726d35e9</data>
+    </node>
+    <node id="BILLING_PERIOD">
+      <data key="d0">ATTRIBUTE, DATE RANGE</data>
+      <data key="d1">The period of time covered by an invoice, used for revenue tracking and financial analysis&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">0</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">14</data>
+      <data key="d7">9646481f66ce4fd2b08c2eddda42fc82</data>
+    </node>
+    <node id="REVENUE">
+      <data key="d0">CONCEPT, MONETARY VALUE</data>
+      <data key="d1">The income generated by Netflix from its customers' subscriptions and viewing activities&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">2</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">15</data>
+      <data key="d7">d91a266f766b4737a06b0fda588ba40b</data>
+    </node>
+    <node id="USER_ENGAGEMENT">
+      <data key="d0">CONCEPT, METRIC</data>
+      <data key="d1">A measure of how customers interact with Netflix's content, including streaming events and viewing time&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">3</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">16</data>
+      <data key="d7">bc0e3f075a4c4ebbb7c7b152b65a5625</data>
+    </node>
+    <node id="CONTENT_PERFORMANCE">
+      <data key="d0">CONCEPT, METRIC</data>
+      <data key="d1">A measure of how well a piece of content performs, including its popularity and viewing time&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">4</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">17</data>
+      <data key="d7">254770028d7a4fa9877da4ba0ad5ad21</data>
+    </node>
+    <node id="CUSTOMER_BEHAVIOR">
+      <data key="d0">CONCEPT, METRIC</data>
+      <data key="d1">A measure of how customers behave, including their viewing habits and subscription plans&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">3</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">18</data>
+      <data key="d7">4a67211867e5464ba45126315a122a8a</data>
+    </node>
+    <node id="GEOGRAPHIC_SEGMENTATION">
+      <data key="d0">CONCEPT, ANALYSIS</data>
+      <data key="d1">The process of dividing customers into groups based on their geographic location&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">3</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">19</data>
+      <data key="d7">04dbbb2283b845baaeac0eaf0c34c9da</data>
+    </node>
+    <node id="DEMOGRAPHIC_ANALYSIS">
+      <data key="d0">CONCEPT, ANALYSIS</data>
+      <data key="d1">The process of studying the characteristics of a population, including age, location, and behavior&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">3</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">20</data>
+      <data key="d7">1943f245ee4243bdbfbd2fd619ae824a</data>
+    </node>
+    <node id="STREAMING_ACTIVITY">
+      <data key="d0">CONCEPT, EVENT</data>
+      <data key="d1">A record of a customer's streaming events, including the content viewed and the date of the stream&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">3</data>
+      <data key="d4">0</data>
+      <data key="d5">2</data>
+      <data key="d6">21</data>
+      <data key="d7">273daeec8cad41e6b3e450447db58ee7</data>
+    </node>
+    <node id="VIEWING_TIME">
+      <data key="d0">ATTRIBUTE, METRIC</data>
+      <data key="d1">The amount of time a customer spends watching content on Netflix&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">3</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">22</data>
+      <data key="d7">e69dc259edb944ea9ea41264b9fcfe59</data>
+    </node>
+    <node id="STREAMING_HISTORY">
+      <data key="d0">CONCEPT, RECORD</data>
+      <data key="d1">A record of a customer's past streaming activities, including the content viewed and the date of the stream&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">3</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">23</data>
+      <data key="d7">e2f5735c7d714423a2c4f61ca2644626</data>
+    </node>
+    <node id="INVOICE_NUMBER">
+      <data key="d0">ATTRIBUTE, IDENTIFIER</data>
+      <data key="d1">A unique identifier for each invoice, used to track and manage billing documents&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">0</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">24</data>
+      <data key="d7">deece7e64b2a4628850d4bb6e394a9c3</data>
+    </node>
+    <node id="SERVICE_START_DATE">
+      <data key="d0">ATTRIBUTE, DATE</data>
+      <data key="d1">The beginning of the service period covered by an invoice&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">0</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">25</data>
+      <data key="d7">e657b5121ff8456b9a610cfaead8e0cb</data>
+    </node>
+    <node id="SERVICE_END_DATE">
+      <data key="d0">ATTRIBUTE, DATE</data>
+      <data key="d1">The end of the service period covered by an invoice&gt;</data>
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">0</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">26</data>
+      <data key="d7">bf4e255cdac94ccc83a56435a5e4b075</data>
+    </node>
+    <node id="SUBSCRIPTION">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d3">3</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">27</data>
+      <data key="d7">3b040bcc19f14e04880ae52881a89c1c</data>
+    </node>
+    <node id="TITLE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The official title of a movie or TV show, used for identification and search}</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d8">ATTRIBUTE</data>
+      <data key="d3">1</data>
+      <data key="d4">0</data>
+      <data key="d5">3</data>
+      <data key="d6">28</data>
+      <data key="d7">3d6b216c14354332b1bf1927ba168986</data>
+    </node>
+    <node id="GENRE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The primary genre of a content item, used for taste profiling and recommendations}</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d8">ATTRIBUTE</data>
+      <data key="d3">4</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">29</data>
+      <data key="d7">1c109cfdc370463eb6d537e5b7b382fb</data>
+    </node>
+    <node id="DISTRIBUTOR">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">The company that distributed a content item, used for tracking and analysis}</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d8">ATTRIBUTE</data>
+      <data key="d3">4</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">30</data>
+      <data key="d7">3d0dcbc8971b415ea18065edc4d8c8ef</data>
+    </node>
+    <node id="DATABASE">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">A collection of organized data, such as the Netflix database}</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d3">2</data>
+      <data key="d4">0</data>
+      <data key="d5">2</data>
+      <data key="d6">31</data>
+      <data key="d7">68105770b523412388424d984e711917</data>
+    </node>
+    <node id="SCHEMA">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">A structure for organizing data within a database, such as the Consum schema}</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d3">2</data>
+      <data key="d4">0</data>
+      <data key="d5">2</data>
+      <data key="d6">32</data>
+      <data key="d7">85c79fd84f5e4f918471c386852204c5</data>
+    </node>
+    <node id="TABLE">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">A collection of related data within a database, such as the content table}</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d3">2</data>
+      <data key="d4">0</data>
+      <data key="d5">2</data>
+      <data key="d6">33</data>
+      <data key="d7">eae4259b19a741ab9f9f6af18c4a0470</data>
+    </node>
+    <node id="DIMENSION">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">A category or attribute of data, used for analysis and filtering}</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d3">2</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">34</data>
+      <data key="d7">3138f39f2bcd43a69e0697cd3b05bc4d</data>
+    </node>
+    <node id="PROGRAM_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">An alternative identifier for a content item, used for tracking and analysis}</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d3">4</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">35</data>
+      <data key="d7">dde131ab575d44dbb55289a6972be18f</data>
+    </node>
+    <node id="VIDEO_ID">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">An alternative identifier for a content item, used for tracking and analysis}</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d3">4</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">36</data>
+      <data key="d7">de9e343f2e334d88a8ac7f8813a915e5</data>
+    </node>
+    <node id="SHOW_NAME">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">An alternative title for a TV show, used for identification and search}</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d3">1</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">37</data>
+      <data key="d7">e2bf260115514fb3b252fd879fb3e7be</data>
+    </node>
+    <node id="MOVIE_TITLE">
+      <data key="d0">ATTRIBUTE</data>
+      <data key="d1">An alternative title for a movie, used for identification and search}</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d3">1</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">38</data>
+      <data key="d7">b462b94ce47a4b8c8fffa33f7242acec</data>
+    </node>
+    <node id="CATALOG">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">A collection of content items, used for organization and search}</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d3">4</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">39</data>
+      <data key="d7">17ed1d92075643579a712cc6c29e8ddb</data>
+    </node>
+    <node id="LIBRARY">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">A collection of content items, used for organization and search}</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d3">4</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">40</data>
+      <data key="d7">3ce7c210a21b4deebad7cc9308148d86</data>
+    </node>
+    <node id="TITLES">
+      <data key="d0">CONCEPT</data>
+      <data key="d1">A collection of content items, used for organization and search}</data>
+      <data key="d2">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d3">4</data>
+      <data key="d4">0</data>
+      <data key="d5">1</data>
+      <data key="d6">41</data>
+      <data key="d7">d64ed762ea924caa95c8d06f072a9a96</data>
+    </node>
+    <edge source="NETFLIX" target="CUSTOMER">
+      <data key="d9">9.0</data>
+      <data key="d10">Netflix provides a service to its customers, who engage with its content and generate revenue for the company</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">adf4ee3fbe9b4d0381044838c4f889c8</data>
+      <data key="d13">0</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="NETFLIX" target="REVENUE">
+      <data key="d9">9.0</data>
+      <data key="d10">Revenue is generated by Netflix from its customers' subscriptions and viewing activities</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">32ee140946e5461f9275db664dc541a5</data>
+      <data key="d13">1</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="NETFLIX" target="CONTENT">
+      <data key="d9">18.0</data>
+      <data key="d10">Content is offered by Netflix, which provides a platform for streaming and accessing content</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">c160b9cb27d6408ba6ab20214a2f3f81</data>
+      <data key="d13">2</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="NETFLIX" target="DATABASE">
+      <data key="d9">8.0</data>
+      <data key="d10">The Netflix database is a collection of organized data used by the Netflix organization</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">23527cd679ff4d5a988d52e7cd056078</data>
+      <data key="d13">3</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CUSTOMER" target="STREAMS">
+      <data key="d9">8.0</data>
+      <data key="d10">A customer is associated with one or more streams, which are records of their individual streaming events</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">f1c6eed066f24cbdb376b910fce29ed4</data>
+      <data key="d13">4</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CUSTOMER" target="INVOICE">
+      <data key="d9">17.0</data>
+      <data key="d10">An invoice is associated with a customer, who is the one being billedA customer is associated with one or more invoices, which are billing documents that contain information about their subscription plan and billing period</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">83a6cb03df6b41d8ad6ee5f6fef5f024</data>
+      <data key="d13">5</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CUSTOMER" target="CUSTOMER_ID">
+      <data key="d9">9.0</data>
+      <data key="d10">A customer ID is a unique identifier for each customer, used to link customers to their streaming activities, invoices, and demographic information</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">147c038aef3e4422acbbc5f7938c4ab8</data>
+      <data key="d13">6</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CUSTOMER" target="EMAIL_ID">
+      <data key="d9">7.0</data>
+      <data key="d10">An email ID is a customer's primary email address, used for communication and notification</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">b7702b90c7f24190b864e8c6e64612a5</data>
+      <data key="d13">7</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CUSTOMER" target="COUNTRY">
+      <data key="d9">6.0</data>
+      <data key="d10">A country is associated with a customer, who resides in that country</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">de6fa24480894518ab3cbcb66f739266</data>
+      <data key="d13">8</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CUSTOMER" target="SIGN_UP_DATE">
+      <data key="d9">8.0</data>
+      <data key="d10">A sign-up date is associated with a customer, who created their account on that date</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">6fae5ee1a831468aa585a1ea09095998</data>
+      <data key="d13">9</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CUSTOMER" target="SUBSCRIPTION">
+      <data key="d9">8.0</data>
+      <data key="d10">A subscription is associated with a customer, who has a specific plan and billing details</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">ef32c4b208d041cc856f6837915dc1b0</data>
+      <data key="d13">10</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CUSTOMER" target="USER_ENGAGEMENT">
+      <data key="d9">8.0</data>
+      <data key="d10">User engagement is a measure of how customers interact with Netflix's content</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">07b2425216bd4f0aa4e079827cb48ef5</data>
+      <data key="d13">11</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CUSTOMER" target="CUSTOMER_BEHAVIOR">
+      <data key="d9">8.0</data>
+      <data key="d10">Customer behavior is a measure of how customers behave, including their viewing habits and subscription plans</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">2670deebfa3f4d69bb82c28ab250a209</data>
+      <data key="d13">12</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CUSTOMER" target="GEOGRAPHIC_SEGMENTATION">
+      <data key="d9">7.0</data>
+      <data key="d10">Geographic segmentation is the process of dividing customers into groups based on their geographic location</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">404309e89a5241d6bff42c05a45df206</data>
+      <data key="d13">13</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CUSTOMER" target="DEMOGRAPHIC_ANALYSIS">
+      <data key="d9">8.0</data>
+      <data key="d10">Demographic analysis is the process of studying the characteristics of a population, including age, location, and behavior</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">b785a9025069417f94950ad231bb1441</data>
+      <data key="d13">14</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CUSTOMER" target="STREAMING_ACTIVITY">
+      <data key="d9">8.0</data>
+      <data key="d10">A streaming activity is associated with a customer, who has a record of their past streaming events</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">3b6cd96a27304614850709aba1c9598b</data>
+      <data key="d13">15</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CUSTOMER" target="STREAMING_HISTORY">
+      <data key="d9">8.0</data>
+      <data key="d10">A streaming history is a record of a customer's past streaming activities</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">d54956b79dd147f894b67a8b97dcbef0</data>
+      <data key="d13">16</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="STREAMS" target="CONTENT">
+      <data key="d9">17.0</data>
+      <data key="d10">A stream is associated with a piece of content, which is the movie or show that was viewedA piece of content is associated with one or more streams, which are records of individual streaming events for that content</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">958beecdb5bb4060948415ffd75d2b03</data>
+      <data key="d13">17</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="STREAMS" target="STREAM_ID">
+      <data key="d9">9.0</data>
+      <data key="d10">A stream ID is a unique identifier for each stream, used to track individual streaming events</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">b999ed77e19e4f85b7f1ae79af5c002a</data>
+      <data key="d13">18</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="INVOICE" target="PLAN">
+      <data key="d9">7.0</data>
+      <data key="d10">A plan is associated with an invoice, which contains information about a customer's subscription plan</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">48c0c4d72da74ff5bb926fa0c856d1a7</data>
+      <data key="d13">19</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="INVOICE" target="SERVICE_PERIOD">
+      <data key="d9">8.0</data>
+      <data key="d10">A service period is associated with an invoice, which covers a specific billing period</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">4f3c97517f794ebfb49c4c6315f9cf23</data>
+      <data key="d13">20</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="INVOICE" target="TOTAL">
+      <data key="d9">1.0</data>
+      <data key="d10">A total is associated with an invoice, which represents the total amount due on that invoice</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">1745a2485a9443bab76587ad650e9be0</data>
+      <data key="d13">21</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="INVOICE" target="BILLING_PERIOD">
+      <data key="d9">9.0</data>
+      <data key="d10">A billing period is associated with an invoice, which covers a specific period of time</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">32e6ccab20d94029811127dbbe424c64</data>
+      <data key="d13">22</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="INVOICE" target="INVOICE_NUMBER">
+      <data key="d9">9.0</data>
+      <data key="d10">An invoice number is a unique identifier for each invoice, used to track and manage billing documents</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">94a964c6992945ebb3833dfdfdc8d655</data>
+      <data key="d13">23</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="INVOICE" target="SERVICE_START_DATE">
+      <data key="d9">8.0</data>
+      <data key="d10">A service start date is associated with an invoice, which covers a specific period of time</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">1eb829d0ace042089f0746f78729696c</data>
+      <data key="d13">24</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="INVOICE" target="SERVICE_END_DATE">
+      <data key="d9">1.0</data>
+      <data key="d10">A service end date is associated with an invoice, which covers a specific period of time</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">015e7b58d1a14b44beab3bbc9f912c18</data>
+      <data key="d13">25</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CONTENT" target="CONTENT_ID">
+      <data key="d9">27.0</data>
+      <data key="d10">The CONTENT entity, identified by a unique CONTENT_ID, serves as a fundamental component in tracking and analyzing content data. The CONTENT_ID, in particular, plays a crucial role as it provides a distinct identifier for each content item, enabling the linkage of content to its respective streaming events. This unique identifier facilitates the organization and examination of content data, allowing for a more comprehensive understanding of content performance and engagement. By leveraging the CONTENT_ID, the CONTENT entity can be effectively monitored, analyzed, and connected to various streaming events, ultimately enhancing the overall management and evaluation of content-related data.</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9,ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">26f88ab3e2e04c33a459ad6270ade565</data>
+      <data key="d13">26</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CONTENT" target="CONTENT_PERFORMANCE">
+      <data key="d9">9.0</data>
+      <data key="d10">Content performance is a measure of how well a piece of content performs, including its popularity and viewing time</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">babe97e1d9784cffa1c85abc1e588126</data>
+      <data key="d13">27</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CONTENT" target="SIGN_UP_DATE">
+      <data key="d9">4.0</data>
+      <data key="d10">A sign-up date is not directly related to content, but may be used in conjunction with content data for analysis</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">1033a18c45aa4584b2aef6ab96890351</data>
+      <data key="d13">28</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CONTENT" target="TITLE">
+      <data key="d9">16.0</data>
+      <data key="d10">A title is an attribute of a content item, used for identification and search</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">c9b8ce91fc2945b4907fe35519339cac</data>
+      <data key="d13">29</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CONTENT" target="GENRE">
+      <data key="d9">16.0</data>
+      <data key="d10">A genre is an attribute of a content item, used for taste profiling and recommendations</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">fa3c4204421c48609e52c8de2da4c654</data>
+      <data key="d13">30</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CONTENT" target="DISTRIBUTOR">
+      <data key="d9">8.0</data>
+      <data key="d10">A distributor is an attribute of a content item, used for tracking and analysis</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">53af055f068244d0ac861b2e89376495</data>
+      <data key="d13">31</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CONTENT" target="CATALOG">
+      <data key="d9">7.0</data>
+      <data key="d10">A catalog is a collection of content items, related to the content concept</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">c03ab3ce8cb74ad2a03b94723bfab3c7</data>
+      <data key="d13">32</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CONTENT" target="LIBRARY">
+      <data key="d9">7.0</data>
+      <data key="d10">A library is a collection of content items, related to the content concept</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">ed6d2eee9d7b4f5db466b1f6404d31cc</data>
+      <data key="d13">33</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CONTENT" target="TITLES">
+      <data key="d9">1.0</data>
+      <data key="d10">Titles are a collection of content items, related to the content concept</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">fc01e9baa80e417c9206f941bb279407</data>
+      <data key="d13">34</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CONTENT_ID" target="PROGRAM_ID">
+      <data key="d9">8.0</data>
+      <data key="d10">A program ID is an alternative identifier for a content item, related to the content ID</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">56d0e5ebe79e4814bd1463cf6ca21394</data>
+      <data key="d13">35</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="CONTENT_ID" target="VIDEO_ID">
+      <data key="d9">8.0</data>
+      <data key="d10">A video ID is an alternative identifier for a content item, related to the content ID</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">7c49f2710e8b4d3b8dc9310834406ea5</data>
+      <data key="d13">36</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="STREAMING_ACTIVITY" target="VIEWING_TIME">
+      <data key="d9">9.0</data>
+      <data key="d10">Viewing time is a measure of the amount of time a customer spends watching content on Netflix</data>
+      <data key="d11">ff43e7cba7bafaf46db61875e440b932</data>
+      <data key="d12">c6d1e4f56c2843e89cf0b91c10bb6de2</data>
+      <data key="d13">37</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="TITLE" target="SHOW_NAME">
+      <data key="d9">8.0</data>
+      <data key="d10">A show name is an alternative title for a TV show, related to the title attribute</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">0adb2d9941f34ef7b2f7743cc6225844</data>
+      <data key="d13">38</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="TITLE" target="MOVIE_TITLE">
+      <data key="d9">8.0</data>
+      <data key="d10">A movie title is an alternative title for a movie, related to the title attribute</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">6b02373137fd438ba96af28f735cdbdb</data>
+      <data key="d13">39</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="DATABASE" target="SCHEMA">
+      <data key="d9">9.0</data>
+      <data key="d10">The Consum schema is a structure for organizing data within the Netflix database</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">36a4fcd8efc144e6b8af9a1c7ab8b2ce</data>
+      <data key="d13">40</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="SCHEMA" target="TABLE">
+      <data key="d9">9.0</data>
+      <data key="d10">The content table is a collection of related data within the Consum schema</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">fbeef791d19b413a9c93c6608286ab63</data>
+      <data key="d13">41</data>
+      <data key="d14">0</data>
+    </edge>
+    <edge source="TABLE" target="DIMENSION">
+      <data key="d9">8.0</data>
+      <data key="d10">Dimensions are categories or attributes of data within the content table, used for analysis and filtering</data>
+      <data key="d11">3bb6b174c7a40c7a097291ebfda5a8b9</data>
+      <data key="d12">d2b629c0396f4180a03e16ddf3818589</data>
+      <data key="d13">42</data>
+      <data key="d14">0</data>
+    </edge>
+  </graph>
+</graphml>

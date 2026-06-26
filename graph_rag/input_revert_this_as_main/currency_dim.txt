@@ -1,0 +1,4 @@
+table_name,column_name,data_type,description,join_condition,sample_data
+currency_dim,currency_code,VARCHAR(10),Unique code for each currency,,USD
+currency_dim,currency_name,VARCHAR(50),Name of the currency,,US Dollar
+currency_dim,exchange_rate,DECIMAL(10, 6),Exchange rate relative to a base currency,,1.000000

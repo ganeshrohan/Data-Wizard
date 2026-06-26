@@ -1,0 +1,54 @@
+{
+  "table_name": "Streams",
+  "columns": [
+    {
+      "column_name": "Stream_id",
+      "data_type": "INT",
+      "description": "Unique identifier for each stream",
+      "join_condition": null,
+      "sample_data": 2
+    },
+    {
+      "column_name": "Customer_id",
+      "data_type": "INT",
+      "description": "ID of the customer who streamed the content",
+      "join_condition": "Join Key: Customer.Customer_Id",
+      "sample_data": 48
+    },
+    {
+      "column_name": "Content_id",
+      "data_type": "INT",
+      "description": "ID of the content that was streamed",
+      "join_condition": "Join Key: Content.Content_id",
+      "sample_data": 91
+    },
+    {
+      "column_name": "Stream_date",
+      "data_type": "DATE",
+      "description": "Date when the streams occurred",
+      "join_condition": null,
+      "sample_data": "04-Sep-2019"
+    },
+    {
+      "column_name": "Stream_time",
+      "data_type": "VARCHAR(50)",
+      "description": "Time when the streams occurred",
+      "join_condition": null,
+      "sample_data": "8:39 PM"
+    },
+    {
+      "column_name": "Stream_duration",
+      "data_type": "INT",
+      "description": "Duration of the streams in minutes",
+      "join_condition": null,
+      "sample_data": 22
+    },
+    {
+      "column_name": "Stream_rating",
+      "data_type": "INT",
+      "description": "Rating given to the streams by the customer",
+      "join_condition": null,
+      "sample_data": 3
+    }
+  ]
+}
