@@ -2,7 +2,7 @@
 
 An enterprise-style analytics workbench that turns natural language into trusted data insights through Graph-RAG-powered SQL generation, visual code lineage, and conversational CSV analysis. Designed to improve both query accuracy and user trust, the platform unifies structured database querying, explainable AI, and no-code analytics in a single experience.
 
-![Project Banner](Screenprints/Home.png.png)
+![Project Banner](Screenprints/Home.png)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.9-blue" />
@@ -21,6 +21,10 @@ Data teams often face a familiar problem: business users need fast answers, but 
 Rather than treating Text-to-SQL as a standalone generation problem, this system approaches it as an end-to-end analytics workflow. It combines semantic retrieval, SQL generation, lineage transparency, and interactive exploration so users can move from question to validated insight with greater confidence. 
 
 ---
+![Project Banner](Screenprints/SQL-Generation.png)
+
+---
+![Project Banner](Screenprints/Data-rep.png)
 
 ## What Makes It Different
 
@@ -40,6 +44,9 @@ The result is a more production-oriented workflow that not only answers question
 - Deliver all of the above through a single Streamlit-based workbench. 
 
 ---
+![Project Banner](Screenprints/code-lineage.png) 
+
+![Project Banner](Screenprints/data-explore.png) 
 
 ## Architecture
 
@@ -63,6 +70,8 @@ The platform follows a dual-pathway architecture that supports both database-cen
 - The visualization layer enables drag-and-drop style exploration for deeper analysis. 
 
 ---
+![Project Banner](Screenprints/Ad-Hoc-file-analysis.png) 
+
 
 ## System Components
 
@@ -146,9 +155,11 @@ This project demonstrates how AI-assisted analytics can be made more useful in e
 
 ---
 
-## License
+## Contribute and Extend
 
-Choose a license that fits your intended use, such as MIT, Apache-2.0, or a private/internal license.
+This project is open for contributions and experimentation. Developers, researchers, and data professionals are welcome to improve SQL generation, lineage visualization, interactive analytics, and overall system reliability.
+
+New ideas, feature extensions, and performance improvements are encouraged.
 
 ---
 
